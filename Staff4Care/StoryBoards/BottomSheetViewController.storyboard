@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Bottom Sheet View Controller-->
+        <scene sceneID="ahC-qk-q5l">
+            <objects>
+                <viewController storyboardIdentifier="BottomSheetViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hlT-Dk-yTM" customClass="BottomSheetViewController" customModule="Staff4Care" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yk9-wp-xVa">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bSj-Ix-jBr">
+                                <rect key="frame" x="374" y="64" width="20" height="22"/>
+                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="multiply.circle.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="crossBtnPressed:" destination="hlT-Dk-yTM" eventType="touchUpInside" id="p8B-nz-oEi"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QpK-Jf-DAP">
+                                <rect key="frame" x="0.0" y="646" width="414" height="250"/>
+                                <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="gal-Ny-cEy"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="QpK-Jf-DAP" firstAttribute="leading" secondItem="my2-pz-5Ii" secondAttribute="leading" id="BXv-ym-ggq"/>
+                            <constraint firstItem="my2-pz-5Ii" firstAttribute="trailing" secondItem="bSj-Ix-jBr" secondAttribute="trailing" constant="20" id="FHC-KX-gXs"/>
+                            <constraint firstItem="my2-pz-5Ii" firstAttribute="trailing" secondItem="QpK-Jf-DAP" secondAttribute="trailing" id="LdY-YO-c47"/>
+                            <constraint firstAttribute="bottom" secondItem="QpK-Jf-DAP" secondAttribute="bottom" id="aR8-Pl-Y1B"/>
+                            <constraint firstItem="bSj-Ix-jBr" firstAttribute="top" secondItem="my2-pz-5Ii" secondAttribute="top" constant="20" id="pLn-wi-dwt"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="my2-pz-5Ii"/>
+                    </view>
+                    <connections>
+                        <outlet property="crossBtn" destination="bSj-Ix-jBr" id="nuv-8I-aae"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EQk-am-dkl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-126" y="84"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="multiply.circle.fill" catalog="system" width="128" height="121"/>
+    </resources>
+</document>

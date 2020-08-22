@@ -1,0 +1,678 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qbY-2Q-Pjw">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="ITCAvantGardeStd-Demi.otf">
+            <string>ITCAvantGardeStd-Demi</string>
+        </array>
+        <array key="ITCAvantGardeStdMd.otf">
+            <string>ITCAvantGardeStd-Md</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Registration-->
+        <scene sceneID="0FD-zq-WRK">
+            <objects>
+                <viewController storyboardIdentifier="Registration" id="4b4-r1-MgE" customClass="Registration" customModule="Staff4Care" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="v9s-uH-xJw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RegularBG" translatesAutoresizingMaskIntoConstraints="NO" id="g5M-EE-bP2">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="d9Z-BY-ILn">
+                                <rect key="frame" x="0.0" y="54" width="414" height="34"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Staff4Care" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LCL-BH-SKx">
+                                        <rect key="frame" x="166" y="0.0" width="82.5" height="16"/>
+                                        <fontDescription key="fontDescription" name="ITCAvantGardeStd-Md" family="ITC Avant Garde Gothic Std" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tV6-Qx-r4U">
+                                        <rect key="frame" x="0.0" y="32" width="414" height="2"/>
+                                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="2" id="U98-Ae-H6l"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="tV6-Qx-r4U" firstAttribute="width" secondItem="d9Z-BY-ILn" secondAttribute="width" id="qb4-hg-jFj"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Staff Registration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A9t-kb-JeP">
+                                <rect key="frame" x="141.5" y="108" width="131.5" height="16"/>
+                                <fontDescription key="fontDescription" name="ITCAvantGardeStd-Md" family="ITC Avant Garde Gothic Std" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s3i-1d-apY">
+                                <rect key="frame" x="0.0" y="144" width="414" height="752"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8bM-5q-Sw2">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1683.5"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="uiI-rZ-82o">
+                                                <rect key="frame" x="10" y="5" width="394" height="952"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tfH-IO-HVR" customClass="CustomTextField" customModule="Staff4Care" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="394" height="50"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="hTO-uy-s7J"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="leadingImage" value="profile"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="rtl" value="NO"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="padding">
+                                                                <real key="value" value="10"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YuC-XJ-X2g" customClass="CustomTextField" customModule="Staff4Care" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="82" width="394" height="50"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="g8E-YK-RLD"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="leadingImage" value="phone-icon"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="padding">
+                                                                <real key="value" value="10"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="rtl" value="NO"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uAV-p1-CTh" customClass="CustomTextField" customModule="Staff4Care" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="164" width="394" height="50"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="qhg-rs-2iF"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="leadingImage" value="Email"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="padding">
+                                                                <real key="value" value="10"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="rtl" value="NO"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qne-VS-K91" customClass="CustomTextField" customModule="Staff4Care" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="246" width="394" height="50"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="ZeB-OZ-AIJ"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="leadingImage" value="designation-icon"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="padding">
+                                                                <real key="value" value="10"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="rtl" value="NO"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </textField>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Wnv-EX-1nH">
+                                                        <rect key="frame" x="0.0" y="328" width="394" height="50"/>
+                                                        <subviews>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ej1-Ev-eMx" customClass="CustomTextField" customModule="Staff4Care" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="126" height="50"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="50" id="4wa-Nq-sJq"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rtl" value="YES"/>
+                                                                    <userDefinedRuntimeAttribute type="image" keyPath="leadingImage" value="Drop-Down"/>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="padding">
+                                                                        <real key="value" value="10"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </textField>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f65-XF-IEh" customClass="CustomTextField" customModule="Staff4Care" customModuleProvider="target">
+                                                                <rect key="frame" x="134" y="0.0" width="126" height="50"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rtl" value="YES"/>
+                                                                    <userDefinedRuntimeAttribute type="image" keyPath="leadingImage" value="Drop-Down"/>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="padding">
+                                                                        <real key="value" value="10"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </textField>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gv5-Yo-uaa" customClass="CustomTextField" customModule="Staff4Care" customModuleProvider="target">
+                                                                <rect key="frame" x="268" y="0.0" width="126" height="50"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rtl" value="YES"/>
+                                                                    <userDefinedRuntimeAttribute type="image" keyPath="leadingImage" value="Drop-Down"/>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="padding">
+                                                                        <real key="value" value="10"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </textField>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="gv5-Yo-uaa" firstAttribute="height" secondItem="ej1-Ev-eMx" secondAttribute="height" id="3Xv-k2-HJ3"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Uqf-Dy-T2y" customClass="CustomTextField" customModule="Staff4Care" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="410" width="394" height="50"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="GZn-Os-6aR"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="leadingImage" value="postcode-icon"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="padding">
+                                                                <real key="value" value="10"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="rtl" value="NO"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UHK-XR-LL5" customClass="CustomTextField" customModule="Staff4Care" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="492" width="394" height="50"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="bHF-t3-bfm"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="leadingImage" value="degree-icon"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="padding">
+                                                                <real key="value" value="10"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="rtl" value="NO"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pb7-Pw-spN" customClass="CustomTextField" customModule="Staff4Care" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="574" width="394" height="50"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="o1A-bR-vxL"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="leadingImage" value="reg-icon"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="padding">
+                                                                <real key="value" value="10"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="rtl" value="NO"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wcI-yX-lru" customClass="CustomTextField" customModule="Staff4Care" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="656" width="394" height="50"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="ZgI-bk-Jgw"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="leadingImage" value="ethnic-icon"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="padding">
+                                                                <real key="value" value="10"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="rtl" value="NO"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Uw-lQ-3Ae" customClass="CustomTextField" customModule="Staff4Care" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="738" width="394" height="50"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="f1I-Vv-Z9H"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="leadingImage" value="habit-icon"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="padding">
+                                                                <real key="value" value="10"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="rtl" value="NO"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jGm-jH-pn0" customClass="CustomTextField" customModule="Staff4Care" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="820" width="394" height="50"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="A01-oa-wOm"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="leadingImage" value="location-icon"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="padding">
+                                                                <real key="value" value="10"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="rtl" value="NO"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fvP-d4-ZDs" customClass="CustomTextField" customModule="Staff4Care" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="902" width="394" height="50"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="JtQ-5a-3a7"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="leadingImage" value="location-icon"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="padding">
+                                                                <real key="value" value="10"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="rtl" value="NO"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bank Detail" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cSj-3z-WfM">
+                                                <rect key="frame" x="0.0" y="977" width="414" height="24"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="fkS-Ac-sRY">
+                                                <rect key="frame" x="10" y="1021" width="394" height="642.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sort Code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fWT-7z-9GK">
+                                                        <rect key="frame" x="0.0" y="0.0" width="394" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="a4i-FP-IPd">
+                                                        <rect key="frame" x="0.0" y="35.5" width="394" height="40"/>
+                                                        <subviews>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wx7-Uc-tv0">
+                                                                <rect key="frame" x="0.0" y="0.0" width="120.5" height="40"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="40" id="Du6-LJ-lrU"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                            </textField>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mPu-eu-RPh">
+                                                                <rect key="frame" x="136.5" y="0.0" width="121" height="40"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                            </textField>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x9Y-e2-jUs">
+                                                                <rect key="frame" x="273.5" y="0.0" width="120.5" height="40"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                            </textField>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="mPu-eu-RPh" firstAttribute="height" secondItem="Wx7-Uc-tv0" secondAttribute="height" id="2C0-AC-l8f"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Account Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jud-Ec-uFA" customClass="CustomTextField" customModule="Staff4Care" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="90.5" width="394" height="50"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="6CT-kJ-RXC"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="rtl" value="NO"/>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="leadingImage" value="account-icon"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="padding">
+                                                                <real key="value" value="10"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select Bank" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3sB-nN-GfN" customClass="CustomTextField" customModule="Staff4Care" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="155.5" width="394" height="50"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="CUF-TL-c3S"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="rtl" value="NO"/>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="leadingImage" value="bank-icon"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="padding">
+                                                                <real key="value" value="10"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </textField>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Vrh-tN-MVZ">
+                                                        <rect key="frame" x="0.0" y="220.5" width="394" height="151"/>
+                                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
+                                                        <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                        <state key="normal" image="outline-button">
+                                                            <string key="title">Please tick here if you would like to receive occasional Staff4Care
+email news and information.
+You can opt-out at anytime. We respect your privacy and will
+never sell your data to third parties.  
+</string>
+                                                            <color key="titleColor" red="0.20000000000000001" green="0.59999999999999998" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="emailButtonTapped:" destination="4b4-r1-MgE" eventType="touchUpInside" id="efI-tM-zew"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="xKB-CQ-ZhJ">
+                                                        <rect key="frame" x="0.0" y="386.5" width="394" height="86"/>
+                                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
+                                                        <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                        <state key="normal" image="outline-button">
+                                                            <string key="title">Please tick here to confirm that you have read and understood
+our Terms and Conditions and Privacy Policy.  </string>
+                                                            <color key="titleColor" red="0.20000000000000001" green="0.59999999999999998" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="termsButtonTapped:" destination="4b4-r1-MgE" eventType="touchUpInside" id="KVd-3x-ilU"/>
+                                                        </connections>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mg4-es-noC">
+                                                        <rect key="frame" x="0.0" y="487.5" width="394" height="90"/>
+                                                        <string key="text">When you tap "Verify", Staff4Care will send you a text with
+a verification code. Message and data rates may apply.
+The verifies phone number can be used to login.
+Learn what happens when your number changes.</string>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                        <color key="textColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="rdg-sV-cuA" customClass="CustomButton" customModule="Staff4Care" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="592.5" width="394" height="50"/>
+                                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="WPA-m0-dif"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="ITCAvantGardeStd-Md" family="ITC Avant Garde Gothic Std" pointSize="20"/>
+                                                        <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                        <state key="normal" title="Verify Now">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="verifyButtonTapped:" destination="4b4-r1-MgE" eventType="touchUpInside" id="Ulm-Fz-2yR"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstItem="fkS-Ac-sRY" firstAttribute="leading" secondItem="8bM-5q-Sw2" secondAttribute="leading" constant="10" id="7ri-vT-AvR"/>
+                                            <constraint firstAttribute="trailing" secondItem="fkS-Ac-sRY" secondAttribute="trailing" constant="10" id="Fhl-2n-9kL"/>
+                                            <constraint firstAttribute="trailing" secondItem="cSj-3z-WfM" secondAttribute="trailing" id="Gal-xI-HUe"/>
+                                            <constraint firstItem="cSj-3z-WfM" firstAttribute="leading" secondItem="8bM-5q-Sw2" secondAttribute="leading" id="Kzg-hG-rWn"/>
+                                            <constraint firstAttribute="trailing" secondItem="uiI-rZ-82o" secondAttribute="trailing" constant="10" id="RwI-0y-5MZ"/>
+                                            <constraint firstAttribute="bottom" secondItem="fkS-Ac-sRY" secondAttribute="bottom" constant="20" id="bug-0r-HLK"/>
+                                            <constraint firstItem="uiI-rZ-82o" firstAttribute="leading" secondItem="8bM-5q-Sw2" secondAttribute="leading" constant="10" id="gkO-qi-OkO"/>
+                                            <constraint firstItem="cSj-3z-WfM" firstAttribute="top" secondItem="uiI-rZ-82o" secondAttribute="bottom" constant="20" id="h8u-7t-Zl2"/>
+                                            <constraint firstItem="fkS-Ac-sRY" firstAttribute="top" secondItem="cSj-3z-WfM" secondAttribute="bottom" constant="20" id="xXM-AG-tN2"/>
+                                            <constraint firstItem="uiI-rZ-82o" firstAttribute="top" secondItem="8bM-5q-Sw2" secondAttribute="top" constant="5" id="yNK-eZ-z08"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="8bM-5q-Sw2" secondAttribute="bottom" id="8vd-By-iAK"/>
+                                    <constraint firstItem="8bM-5q-Sw2" firstAttribute="width" secondItem="s3i-1d-apY" secondAttribute="width" id="Sip-JH-fI2"/>
+                                    <constraint firstItem="8bM-5q-Sw2" firstAttribute="top" secondItem="s3i-1d-apY" secondAttribute="top" id="WiO-uJ-6mh"/>
+                                    <constraint firstAttribute="trailing" secondItem="8bM-5q-Sw2" secondAttribute="trailing" id="ahg-1i-dVt"/>
+                                    <constraint firstItem="8bM-5q-Sw2" firstAttribute="leading" secondItem="s3i-1d-apY" secondAttribute="leading" id="iiL-hK-VDA"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="g5M-EE-bP2" secondAttribute="bottom" id="7DB-yZ-Aez"/>
+                            <constraint firstItem="g5M-EE-bP2" firstAttribute="top" secondItem="v9s-uH-xJw" secondAttribute="top" id="AbI-lB-iG8"/>
+                            <constraint firstItem="s3i-1d-apY" firstAttribute="leading" secondItem="v9s-uH-xJw" secondAttribute="leading" id="IZc-rR-bbn"/>
+                            <constraint firstItem="d9Z-BY-ILn" firstAttribute="top" secondItem="ATC-Uj-ElT" secondAttribute="top" constant="10" id="IpQ-B0-2Jz"/>
+                            <constraint firstItem="s3i-1d-apY" firstAttribute="top" secondItem="A9t-kb-JeP" secondAttribute="bottom" constant="20" id="OiG-jt-fuy"/>
+                            <constraint firstItem="A9t-kb-JeP" firstAttribute="top" secondItem="d9Z-BY-ILn" secondAttribute="bottom" constant="20" id="VzK-N9-du5"/>
+                            <constraint firstItem="g5M-EE-bP2" firstAttribute="leading" secondItem="v9s-uH-xJw" secondAttribute="leading" id="Zox-Ae-lRL"/>
+                            <constraint firstAttribute="trailing" secondItem="s3i-1d-apY" secondAttribute="trailing" id="a4i-sc-IhU"/>
+                            <constraint firstItem="ATC-Uj-ElT" firstAttribute="trailing" secondItem="d9Z-BY-ILn" secondAttribute="trailing" id="bG2-QC-D6s"/>
+                            <constraint firstAttribute="trailing" secondItem="g5M-EE-bP2" secondAttribute="trailing" id="c4t-bK-Kef"/>
+                            <constraint firstItem="A9t-kb-JeP" firstAttribute="centerX" secondItem="v9s-uH-xJw" secondAttribute="centerX" id="hqX-io-CZ0"/>
+                            <constraint firstAttribute="bottom" secondItem="s3i-1d-apY" secondAttribute="bottom" id="q7X-x3-rWa"/>
+                            <constraint firstItem="d9Z-BY-ILn" firstAttribute="leading" secondItem="ATC-Uj-ElT" secondAttribute="leading" id="qc1-Pc-OzH"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ATC-Uj-ElT"/>
+                    </view>
+                    <connections>
+                        <outlet property="accountField" destination="jud-Ec-uFA" id="IAr-Dy-C0D"/>
+                        <outlet property="addressField" destination="jGm-jH-pn0" id="u3r-UC-UYC"/>
+                        <outlet property="bankDetailLbl" destination="cSj-3z-WfM" id="qA2-yw-I4P"/>
+                        <outlet property="bankField" destination="3sB-nN-GfN" id="do6-X9-gOF"/>
+                        <outlet property="dayField" destination="ej1-Ev-eMx" id="Cza-Ho-Cyn"/>
+                        <outlet property="designationField" destination="qne-VS-K91" id="eHB-Pu-ITW"/>
+                        <outlet property="emailBtn" destination="Vrh-tN-MVZ" id="gCY-A2-bPX"/>
+                        <outlet property="emailField" destination="uAV-p1-CTh" id="pQe-89-70U"/>
+                        <outlet property="ethnicBGField" destination="wcI-yX-lru" id="TpZ-xo-aHd"/>
+                        <outlet property="experienceField" destination="UHK-XR-LL5" id="TmW-vs-ktb"/>
+                        <outlet property="habitField" destination="6Uw-lQ-3Ae" id="bIE-ba-JKn"/>
+                        <outlet property="monthField" destination="f65-XF-IEh" id="UGW-0l-1Zc"/>
+                        <outlet property="phoneField" destination="YuC-XJ-X2g" id="MDU-Ah-zkU"/>
+                        <outlet property="postcodeField" destination="Uqf-Dy-T2y" id="GY2-rK-tsu"/>
+                        <outlet property="registrationField" destination="pb7-Pw-spN" id="KtW-E0-UFC"/>
+                        <outlet property="sortCodeFieldsStack" destination="a4i-FP-IPd" id="iCK-BG-h2A"/>
+                        <outlet property="sortCodeLbl" destination="fWT-7z-9GK" id="8PL-8P-o8r"/>
+                        <outlet property="staffRegisterationLbl" destination="A9t-kb-JeP" id="c19-0P-ipQ"/>
+                        <outlet property="termsBtn" destination="xKB-CQ-ZhJ" id="p2B-4M-0jI"/>
+                        <outlet property="topTitleLbl" destination="LCL-BH-SKx" id="6AJ-1g-anL"/>
+                        <outlet property="usernameField" destination="tfH-IO-HVR" id="Psq-5N-YUr"/>
+                        <outlet property="verifyBtn" destination="rdg-sV-cuA" id="A38-Ff-xIP"/>
+                        <outlet property="verifyLabel" destination="Mg4-es-noC" id="t8v-R5-fpr"/>
+                        <outlet property="yearField" destination="gv5-Yo-uaa" id="MKo-lT-Nzq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BsJ-XX-fau" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5.7971014492753632" y="81.696428571428569"/>
+        </scene>
+        <!--Verify Code-->
+        <scene sceneID="01K-0o-fJs">
+            <objects>
+                <viewController storyboardIdentifier="VerifyCode" id="qbY-2Q-Pjw" customClass="VerifyCode" customModule="Staff4Care" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="grF-w5-AsR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RegularBG" translatesAutoresizingMaskIntoConstraints="NO" id="hHr-wX-yoI">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Inh-RS-XgQ" userLabel="Title Stack View">
+                                <rect key="frame" x="0.0" y="64" width="414" height="34"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Staff4Care" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dPz-Jd-Xpp">
+                                        <rect key="frame" x="166" y="0.0" width="82.5" height="16"/>
+                                        <fontDescription key="fontDescription" name="ITCAvantGardeStd-Md" family="ITC Avant Garde Gothic Std" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hxa-HL-ti5">
+                                        <rect key="frame" x="0.0" y="32" width="414" height="2"/>
+                                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="2" id="Bd0-Go-uww"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="hxa-HL-ti5" firstAttribute="width" secondItem="Inh-RS-XgQ" secondAttribute="width" id="AIc-sq-Abm"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="6Qq-s0-1LX" userLabel="Subtitle Stack View">
+                                <rect key="frame" x="20" y="178" width="374" height="80"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Verify Code" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cRh-oX-fmv">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="22"/>
+                                        <fontDescription key="fontDescription" name="ITCAvantGardeStd-Demi" family="ITC Avant Garde Gothic Std" pointSize="22"/>
+                                        <color key="textColor" red="0.60392156862745094" green="0.60392156862745094" blue="0.77647058823529413" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uml-lt-Pel" userLabel="A verification code has been sent to your desired method of communication, Please Enter It Below">
+                                        <rect key="frame" x="0.0" y="38" width="374" height="42"/>
+                                        <attributedString key="attributedText">
+                                            <fragment>
+                                                <string key="content">A verification code has been sent to your
+desired method of communication,
+</string>
+                                                <attributes>
+                                                    <color key="NSColor" red="0.28235294117647058" green="0.30980392156862746" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <font key="NSFont" size="14" name="ITCAvantGardeStd-Bk"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="Please Enter It Below">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.28235294117647058" green="0.30980392156862746" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <font key="NSFont" size="14" name="ITCAvantGardeStd-Bk"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacing="8" paragraphSpacingBefore="2" lineHeightMultiple="2" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A0j-zL-fGi" customClass="PinCodeTextField" customModule="PinCodeTextField">
+                                <rect key="frame" x="20" y="318" width="374" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="iDm-Ls-ULo"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                        <color key="value" red="0.15294117647058825" green="0.25490196078431371" blue="0.5607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                        <color key="value" red="0.32156862749999998" green="0.34509803919999998" blue="0.3294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="underlineColor">
+                                        <color key="value" red="0.86274509803921573" green="0.86274509803921573" blue="0.86274509803921573" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="updatedUnderlineColor">
+                                        <color key="value" red="0.15294117647058825" green="0.25490196078431371" blue="0.5607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="characterLimit">
+                                        <integer key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholderText" value="XXXXXX"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="underlineVMargin">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Update Contact Info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UYx-u5-BDd">
+                                <rect key="frame" x="126" y="388" width="162" height="16"/>
+                                <fontDescription key="fontDescription" name="ITCAvantGardeStd-Md" family="ITC Avant Garde Gothic Std" pointSize="16"/>
+                                <color key="textColor" red="0.60392156862745094" green="0.60392156862745094" blue="0.77647058823529413" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="AK9-s0-6MR">
+                                <rect key="frame" x="20" y="448" width="374" height="14"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0345 453 6452" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="84Z-Wh-uxH">
+                                        <rect key="frame" x="0.0" y="0.0" width="101.5" height="14"/>
+                                        <fontDescription key="fontDescription" name="ITCAvantGardeStd-Demi" family="ITC Avant Garde Gothic Std" pointSize="14"/>
+                                        <color key="textColor" red="0.15294117647058825" green="0.25490196078431371" blue="0.5607843137254902" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Resend" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Moj-2T-mxt">
+                                        <rect key="frame" x="322.5" y="0.0" width="51.5" height="14"/>
+                                        <fontDescription key="fontDescription" name="ITCAvantGardeStd-Md" family="ITC Avant Garde Gothic Std" pointSize="14"/>
+                                        <color key="textColor" red="0.60392156862745094" green="0.60392156862745094" blue="0.77647058823529413" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="29J-lK-jBr">
+                                <rect key="frame" x="20" y="492" width="374" height="101.5"/>
+                                <string key="text">Lorem Ipsum is simply dummy text of the printing and  typesetting industry. Lorem Ipsum has been the industry's  standard dummy text ever since the 1500s, when an  unknown printer took a galley.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wac-6U-e7p" customClass="CustomButton" customModule="Staff4Care" customModuleProvider="target">
+                                <rect key="frame" x="20" y="782" width="374" height="50"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="uk7-p8-UMz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ITCAvantGardeStd-Demi" family="ITC Avant Garde Gothic Std" pointSize="16"/>
+                                <state key="normal" title="Join Now">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="joinNowTapped:" destination="qbY-2Q-Pjw" eventType="touchUpInside" id="KcK-Kf-YgU"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="29J-lK-jBr" firstAttribute="top" secondItem="AK9-s0-6MR" secondAttribute="bottom" constant="30" id="787-CC-6Qz"/>
+                            <constraint firstItem="AK9-s0-6MR" firstAttribute="leading" secondItem="UUN-7u-biG" secondAttribute="leading" constant="20" id="96b-EV-mlQ"/>
+                            <constraint firstItem="6Qq-s0-1LX" firstAttribute="top" secondItem="Inh-RS-XgQ" secondAttribute="bottom" constant="80" id="B7m-ar-uf7"/>
+                            <constraint firstItem="UUN-7u-biG" firstAttribute="trailing" secondItem="A0j-zL-fGi" secondAttribute="trailing" constant="20" id="DUq-TG-wtj"/>
+                            <constraint firstItem="wac-6U-e7p" firstAttribute="leading" secondItem="UUN-7u-biG" secondAttribute="leading" constant="20" id="Fpq-kC-iDZ"/>
+                            <constraint firstItem="hHr-wX-yoI" firstAttribute="top" secondItem="grF-w5-AsR" secondAttribute="top" id="J5u-oA-lbM"/>
+                            <constraint firstItem="Inh-RS-XgQ" firstAttribute="trailing" secondItem="UUN-7u-biG" secondAttribute="trailing" id="JtK-vF-xl2"/>
+                            <constraint firstItem="Inh-RS-XgQ" firstAttribute="leading" secondItem="UUN-7u-biG" secondAttribute="leading" id="KUX-GN-P8h"/>
+                            <constraint firstItem="A0j-zL-fGi" firstAttribute="leading" secondItem="UUN-7u-biG" secondAttribute="leading" constant="20" id="NEv-cz-Ze0"/>
+                            <constraint firstItem="A0j-zL-fGi" firstAttribute="top" secondItem="6Qq-s0-1LX" secondAttribute="bottom" constant="60" id="NYA-nc-3iw"/>
+                            <constraint firstItem="6Qq-s0-1LX" firstAttribute="leading" secondItem="UUN-7u-biG" secondAttribute="leading" constant="20" id="Ngh-Yk-0dU"/>
+                            <constraint firstItem="UUN-7u-biG" firstAttribute="trailing" secondItem="AK9-s0-6MR" secondAttribute="trailing" constant="20" id="URr-9a-j3F"/>
+                            <constraint firstItem="UUN-7u-biG" firstAttribute="bottom" secondItem="wac-6U-e7p" secondAttribute="bottom" constant="30" id="VP9-Co-HcL"/>
+                            <constraint firstAttribute="trailing" secondItem="hHr-wX-yoI" secondAttribute="trailing" id="VyZ-Iz-KgY"/>
+                            <constraint firstItem="AK9-s0-6MR" firstAttribute="top" secondItem="A0j-zL-fGi" secondAttribute="bottom" constant="80" id="WSd-RQ-ws8"/>
+                            <constraint firstItem="hHr-wX-yoI" firstAttribute="leading" secondItem="grF-w5-AsR" secondAttribute="leading" id="ZZw-lf-wRb"/>
+                            <constraint firstAttribute="bottom" secondItem="hHr-wX-yoI" secondAttribute="bottom" id="b8v-BK-bIH"/>
+                            <constraint firstItem="wac-6U-e7p" firstAttribute="centerX" secondItem="grF-w5-AsR" secondAttribute="centerX" id="eAf-Hh-E1A"/>
+                            <constraint firstItem="29J-lK-jBr" firstAttribute="leading" secondItem="UUN-7u-biG" secondAttribute="leading" constant="20" id="iGE-7z-I0V"/>
+                            <constraint firstAttribute="trailing" secondItem="29J-lK-jBr" secondAttribute="trailing" constant="20" id="igc-Xj-o7h"/>
+                            <constraint firstItem="UYx-u5-BDd" firstAttribute="top" secondItem="A0j-zL-fGi" secondAttribute="bottom" constant="20" id="kxD-sv-BXL"/>
+                            <constraint firstItem="Inh-RS-XgQ" firstAttribute="top" secondItem="UUN-7u-biG" secondAttribute="top" constant="20" id="q71-7g-D0i"/>
+                            <constraint firstItem="UYx-u5-BDd" firstAttribute="centerX" secondItem="grF-w5-AsR" secondAttribute="centerX" id="xJn-zl-IpO"/>
+                            <constraint firstItem="UUN-7u-biG" firstAttribute="trailing" secondItem="wac-6U-e7p" secondAttribute="trailing" constant="20" id="y6C-K8-ua2"/>
+                            <constraint firstAttribute="trailing" secondItem="6Qq-s0-1LX" secondAttribute="trailing" constant="20" id="yU5-5p-IiI"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="UUN-7u-biG"/>
+                    </view>
+                    <connections>
+                        <outlet property="detailTextLabel" destination="29J-lK-jBr" id="Lun-l0-vMp"/>
+                        <outlet property="joinBtn" destination="wac-6U-e7p" id="YFl-A3-dvd"/>
+                        <outlet property="phoneLbl" destination="84Z-Wh-uxH" id="69x-WL-d6Y"/>
+                        <outlet property="pincodeTextField" destination="A0j-zL-fGi" id="LUk-s1-BDp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="33A-XD-82Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="743" y="74"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Drop-Down" width="13" height="8"/>
+        <image name="Email" width="17" height="17"/>
+        <image name="RegularBG" width="352.5" height="791"/>
+        <image name="account-icon" width="22" height="16"/>
+        <image name="bank-icon" width="21" height="20"/>
+        <image name="degree-icon" width="27" height="13.5"/>
+        <image name="designation-icon" width="20" height="19"/>
+        <image name="ethnic-icon" width="23.5" height="19"/>
+        <image name="habit-icon" width="23" height="23"/>
+        <image name="location-icon" width="16.5" height="22"/>
+        <image name="outline-button" width="22" height="22"/>
+        <image name="phone-icon" width="18" height="17"/>
+        <image name="postcode-icon" width="23.5" height="19"/>
+        <image name="profile" width="16" height="17"/>
+        <image name="reg-icon" width="17" height="22"/>
+    </resources>
+</document>

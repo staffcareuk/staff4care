@@ -1,0 +1,6 @@
+framework module Pods_Staff4Care {
+  umbrella header "Pods-Staff4Care-umbrella.h"
+
+  export *
+  module * { export * }
+}

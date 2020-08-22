@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1yq-uR-4j3">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Maps View Controller-->
+        <scene sceneID="MlP-ME-eU4">
+            <objects>
+                <viewController storyboardIdentifier="MapsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1yq-uR-4j3" customClass="MapsViewController" customModule="Staff4Care" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="U1e-ov-voX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="TW8-gj-5kL"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aEf-zd-xMX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1" y="78"/>
+        </scene>
+        <!--Maps Content View Controller-->
+        <scene sceneID="1bS-Pf-z7O">
+            <objects>
+                <viewController storyboardIdentifier="fpc_content" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ynq-fv-HvB" customClass="MapsContentViewController" customModule="Staff4Care" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ARy-aI-69p">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="FVD-J9-LXe">
+                                <rect key="frame" x="20" y="84" width="374" height="44"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="YUY-P2-Vmj"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FiP-H6-gfI">
+                                <rect key="frame" x="20" y="148" width="374" height="714"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="placecell" rowHeight="60" id="zbM-KA-HfD">
+                                        <rect key="frame" x="0.0" y="28" width="374" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zbM-KA-HfD" id="WhF-Eb-A6b">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="60"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="V63-N2-K18" firstAttribute="bottom" secondItem="FiP-H6-gfI" secondAttribute="bottom" id="5Lb-s1-Mws"/>
+                            <constraint firstItem="FiP-H6-gfI" firstAttribute="leading" secondItem="V63-N2-K18" secondAttribute="leading" constant="20" id="ZLD-Fz-eLp"/>
+                            <constraint firstItem="FiP-H6-gfI" firstAttribute="top" secondItem="FVD-J9-LXe" secondAttribute="bottom" constant="20" id="hQT-cu-v48"/>
+                            <constraint firstItem="FVD-J9-LXe" firstAttribute="top" secondItem="V63-N2-K18" secondAttribute="top" constant="40" id="j82-Gc-28K"/>
+                            <constraint firstAttribute="trailing" secondItem="FVD-J9-LXe" secondAttribute="trailing" constant="20" id="lDN-EP-xof"/>
+                            <constraint firstItem="FVD-J9-LXe" firstAttribute="leading" secondItem="V63-N2-K18" secondAttribute="leading" constant="20" id="p17-EZ-UXe"/>
+                            <constraint firstItem="V63-N2-K18" firstAttribute="trailing" secondItem="FiP-H6-gfI" secondAttribute="trailing" constant="20" id="tT3-ZO-HD8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="V63-N2-K18"/>
+                    </view>
+                    <connections>
+                        <outlet property="placesTableView" destination="FiP-H6-gfI" id="KOD-rA-WxD"/>
+                        <outlet property="searchBar" destination="FVD-J9-LXe" id="i3j-56-s8b"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dsv-Uw-vpm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="806" y="191"/>
+        </scene>
+    </scenes>
+</document>
