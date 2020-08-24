@@ -7,6 +7,9 @@
 //
 
 import UIKit
+protocol BottomSheetButtonTapDelegate: class {
+    func applyPressed()
+}
 
 class BottomSheetViewController: UIViewController {
 
@@ -21,6 +24,12 @@ class BottomSheetViewController: UIViewController {
     let availabilityLabel = UILabel()
     let lineView          = UIView()
     let addressLabel      = UILabel()
+    let applyJobbutton    = UIButton()
+    let seeMoreButton     = UIButton()
+    let separator         = UIView()
+    let InstructionsView  = UITextView()
+
+
     
     var address = [String]()
 
@@ -28,6 +37,11 @@ class BottomSheetViewController: UIViewController {
 
 
     var height : CGFloat = 0
+    var yComponent: CGFloat = 0.0
+
+    var seeMoreCollapsed = true
+    
+    weak var delegate: BottomSheetButtonTapDelegate?
 
     
     var dimissBtnCallBack : (()->())?
@@ -49,7 +63,31 @@ class BottomSheetViewController: UIViewController {
     }
     func jobSelectedFromPreviousController(job :JobsList){
         self.selectedJob = job
-        price.attributedText = NSAttributedString(string: selectedJob?.amount ?? "NA", attributes: [NSAttributedString.Key.foregroundColor : UIColor(rgb: 0x27418F) , NSAttributedString.Key.font: UIFont(name: Fonts.Book, size: 16)!])
+        if let amount = selectedJob?.amount {
+            var paymentType = ""
+            if let type = selectedJob?.payment_type {
+                switch type {
+                case "1":
+                    paymentType = "\\total"
+                    break
+                case "2":
+                    paymentType = "\\hr"
+                case "3":
+                    paymentType = "\\day"
+                case "4":
+                    paymentType = "\\week"
+                
+                    
+                default:
+                    break
+                }
+            }
+            price.attributedText = NSAttributedString(string: "£" + amount + paymentType, attributes: [NSAttributedString.Key.foregroundColor : UIColor(rgb: 0x27418F) , NSAttributedString.Key.font: UIFont(name: Fonts.Book, size: 16)!])
+                  
+        } else {
+             price.attributedText = NSAttributedString(string: "NA", attributes: [NSAttributedString.Key.foregroundColor : UIColor(rgb: 0x27418F) , NSAttributedString.Key.font: UIFont(name: Fonts.Book, size: 16)!])
+        }
+      
         
         clientName.attributedText = NSAttributedString(string: selectedJob?.hospitalName ?? "NA", attributes: [NSAttributedString.Key.foregroundColor : UIColor(rgb: 0x27418F) , NSAttributedString.Key.font: UIFont(name: Fonts.Demi, size: 12)!])
         
@@ -59,6 +97,9 @@ class BottomSheetViewController: UIViewController {
                
         availabilityLabel.attributedText = NSAttributedString(string: selectedJob?.jobTo ?? "NA", attributes: [NSAttributedString.Key.foregroundColor : UIColor(rgb: 0x9A9AC6) , NSAttributedString.Key.font: UIFont(name: Fonts.Book, size: 12)!])
                
+        if let instructions = selectedJob?.jobInstructions {
+            InstructionsView.attributedText = NSAttributedString(string: instructions, attributes: [NSAttributedString.Key.foregroundColor : UIColor(rgb: 0x27418F) , NSAttributedString.Key.font: UIFont(name: Fonts.Demi, size: 14)!])
+        }
         print("Address :: " , address)
         view.setNeedsLayout()
         view.updateConstraints()
@@ -68,9 +109,43 @@ class BottomSheetViewController: UIViewController {
     func changeHeight() {
         UIView.animate(withDuration: 0.3) { [weak self] in
                    let frame = self?.view.frame
-            let yComponent = UIScreen.main.bounds.height * 0.65
-                   self?.view.frame = CGRect(x: 0, y: yComponent, width: frame!.width, height: frame!.height)
+            if UIScreen.main.bounds.size.height > 667.0 {
+                self?.yComponent = UIScreen.main.bounds.height * 0.65
+            }
+            else if UIScreen.main.bounds.size.height <= 667.0 {
+                self?.yComponent = UIScreen.main.bounds.height * 0.6
+            }
+            self?.view.frame = CGRect(x: 0, y: CGFloat(self!.yComponent), width: frame!.width, height: frame!.height)
                }
+    }
+    func increaseHeight() {
+        var yComponent2 : CGFloat = 0.0
+        if !seeMoreCollapsed {
+            UIView.animate(withDuration: 0.3) { [weak self] in
+                                    let frame = self?.view.frame
+                            if UIScreen.main.bounds.size.height > 667.0 {
+                                            yComponent2 = UIScreen.main.bounds.height * 0.65
+                                yComponent2 -= 160
+                                        }
+                                        else if UIScreen.main.bounds.size.height <= 667.0 {
+                                            yComponent2 = UIScreen.main.bounds.height * 0.6
+                                            yComponent2 -= 175
+                                        }
+                                    self?.view.frame = CGRect(x: 0, y: yComponent2, width: frame!.width, height: frame!.height)
+                self?.separator.isHidden = false
+                self?.InstructionsView.isHidden = false
+                                }
+        }
+        else {
+            UIView.animate(withDuration: 0.3) { [weak self] in
+                                              let frame = self?.view.frame
+                                      // let yComponent = UIScreen.main.bounds.height * 0.65
+                self?.view.frame = CGRect(x: 0, y: self!.yComponent, width: frame!.width, height: frame!.height)
+                self?.separator.isHidden = true
+                self?.InstructionsView.isHidden = true
+                                          }
+        }
+       
     }
     func hideView() {
         UIView.animate(withDuration: 0.3) { [weak self] in
@@ -121,7 +196,7 @@ class BottomSheetViewController: UIViewController {
        
         mainView.addSubview(price)
         price.translatesAutoresizingMaskIntoConstraints = false
-        price.topAnchor.constraint(equalTo: priceLabel.bottomAnchor, constant: 30).isActive = true
+        price.topAnchor.constraint(equalTo: priceLabel.bottomAnchor, constant: 10).isActive = true
         price.textAlignment = .center
         price.centerXAnchor.constraint(equalTo: priceLabel.centerXAnchor, constant: 0).isActive = true
         
@@ -132,7 +207,7 @@ class BottomSheetViewController: UIViewController {
         stackView.distribution = .fill
         mainView.addSubview(stackView)
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        let left = stackView.leftAnchor.constraint(equalTo: clientImage.rightAnchor, constant: 20).isActive = true
+        _ = stackView.leftAnchor.constraint(equalTo: clientImage.rightAnchor, constant: 20).isActive = true
         stackView.topAnchor.constraint(equalTo: mainView.topAnchor, constant: 40).isActive = true
         stackView.rightAnchor.constraint(equalTo: mainView.rightAnchor, constant: 10).isActive = true
         
@@ -183,16 +258,16 @@ class BottomSheetViewController: UIViewController {
         
         
        // Adding Buttons
-    
-        let applyJobbutton = UIButton()
+        
         mainView.addSubview(applyJobbutton)
         applyJobbutton.translatesAutoresizingMaskIntoConstraints = false
         
-        applyJobbutton.topAnchor.constraint(equalTo: mainView.topAnchor, constant: UIScreen.main.bounds.size.height * 0.35 - 65).isActive = true
+        applyJobbutton.topAnchor.constraint(equalTo: addressLabel.bottomAnchor, constant: 35).isActive = true
+      
         applyJobbutton.heightAnchor.constraint(equalToConstant: 50).isActive = true
    
-        applyJobbutton.centerXAnchor.constraint(equalTo: mainView.centerXAnchor).isActive = true
-        applyJobbutton.widthAnchor.constraint(equalToConstant: self.view.bounds.size.width - 20).isActive = true
+        applyJobbutton.rightAnchor.constraint(equalTo: mainView.rightAnchor, constant: -10).isActive = true
+        applyJobbutton.widthAnchor.constraint(equalToConstant: (self.view.bounds.size.width * 0.49 ) - 10).isActive = true
         
       
         applyJobbutton.backgroundColor = .red
@@ -203,8 +278,59 @@ class BottomSheetViewController: UIViewController {
         applyJobbutton.setGradientBackgroundColor(colors: [ UIColor(red: 192/255.0, green: 221/255.0, blue: 184/255.0, alpha: 1.0), UIColor(red: 174/255.0, green: 200/255.0, blue: 55/255.0, alpha: 1.0)], axis: .vertical, cornerRadius: 25) { view in
            guard let btn = view as? UIButton, let imageView = btn.imageView else { return }
            btn.bringSubviewToFront(imageView) // To display imageview of button
+            
+    
        }
-        //applyJobbutton.applyGradient(colors: [UIColor.green.cgColor,UIColor.black.cgColor])
+        
+        mainView.addSubview(seeMoreButton)
+               seeMoreButton.translatesAutoresizingMaskIntoConstraints = false
+               
+        seeMoreButton.topAnchor.constraint(equalTo: addressLabel.bottomAnchor, constant: 35).isActive = true
+               seeMoreButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+          
+               seeMoreButton.leftAnchor.constraint(equalTo: mainView.leftAnchor, constant: 10).isActive = true
+               seeMoreButton.widthAnchor.constraint(equalToConstant: (self.view.bounds.size.width * 0.49 ) - 10).isActive = true
+               
+             
+               seeMoreButton.backgroundColor = .red
+               seeMoreButton.setTitleColor(.white, for: .normal)
+              
+               let string2 = NSAttributedString(string: "See More", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white , NSAttributedString.Key.font: UIFont(name: Fonts.Demi, size: 16)!])
+               seeMoreButton.setAttributedTitle(NSAttributedString(attributedString: string2), for: .normal)
+               seeMoreButton.setGradientBackgroundColor(colors: [ UIColor(red: 154/255.0, green: 154/255.0, blue: 198/255.0, alpha: 1.0), UIColor(red: 39/255.0, green: 65/255.0, blue: 143/255.0, alpha: 1.0)], axis: .vertical, cornerRadius: 25) { view in
+                  guard let btn = view as? UIButton, let imageView = btn.imageView else { return }
+                  btn.bringSubviewToFront(imageView) // To display imageview of button
+              }
+        // Add See More View
+        
+          // Add Seaparator
+        mainView.addSubview(separator)
+        separator.backgroundColor = .darkGray
+        separator.translatesAutoresizingMaskIntoConstraints = false
+        separator.heightAnchor.constraint(equalToConstant: 2).isActive = true
+        separator.layer.masksToBounds = true
+        separator.layer.cornerRadius = 1
+        separator.leftAnchor.constraint(equalTo: mainView.leftAnchor, constant: 10).isActive = true
+        separator.rightAnchor.constraint(equalTo: mainView.rightAnchor, constant: -10).isActive = true
+        separator.topAnchor.constraint(equalTo: seeMoreButton.bottomAnchor, constant: 10).isActive = true
+        separator.isHidden = true
+        // Add Instructions View
+        mainView.addSubview(InstructionsView)
+        InstructionsView.translatesAutoresizingMaskIntoConstraints = false
+        InstructionsView.layer.masksToBounds = true
+        InstructionsView.layer.cornerRadius = 12.0
+        InstructionsView.topAnchor.constraint(equalTo: separator.bottomAnchor, constant: 10).isActive = true
+        InstructionsView.leftAnchor.constraint(equalTo: mainView.leftAnchor, constant: 10).isActive = true
+        InstructionsView.rightAnchor.constraint(equalTo: mainView.rightAnchor, constant: -10).isActive = true
+        InstructionsView.heightAnchor.constraint(equalToConstant: 150).isActive = true
+        InstructionsView.backgroundColor = .tertiarySystemBackground
+        InstructionsView.layer.borderColor = UIColor.lightGray.cgColor
+        InstructionsView.layer.borderWidth = 1.0
+        InstructionsView.isEditable = false
+      
+        // Add Button Targets
+                   applyJobbutton.addTarget(self, action: #selector(applyJobTapped), for: .touchUpInside)
+                   seeMoreButton.addTarget(self, action: #selector(seeMoreTapped), for: .touchUpInside)
     
         view.insertSubview(mainView, at: 0)
     }
@@ -213,6 +339,13 @@ class BottomSheetViewController: UIViewController {
     }
     @objc func dimissBtnPressed() {
         dimissBtnCallBack!()
+    }
+    @objc func applyJobTapped() {
+        delegate?.applyPressed()
+    }
+    @objc func seeMoreTapped() {
+        self.increaseHeight()
+        self.seeMoreCollapsed = !self.seeMoreCollapsed
     }
     func heightForView(text:String, font:UIFont, width:CGFloat) -> CGFloat {
         let label:UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: width, height: CGFloat.greatestFiniteMagnitude))
@@ -231,7 +364,8 @@ class BottomSheetViewController: UIViewController {
         self.view.frame = CGRect(x: 0, y: y + translation.y, width: view.frame.width, height: view.frame.height)
         recognizer.setTranslation(CGPoint.zero, in: self.view)
     }
-
+   
+    
 }
 extension UILabel{
 

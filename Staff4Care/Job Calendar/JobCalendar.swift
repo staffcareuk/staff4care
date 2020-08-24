@@ -9,7 +9,7 @@
 import UIKit
 import FSCalendar
 
-class JobCalendar: UIViewController {
+class JobCalendar: BaseViewController {
     
     // MARK:- IB Outlets
     @IBOutlet weak var upcomingButton: UIButton!
@@ -57,6 +57,10 @@ class JobCalendar: UIViewController {
         
       
     
+    }
+    // MARK:- Overriden Methods
+    override func backButtonTapped() {
+        self.navigationController?.popViewController(animated: true)
     }
  
     

@@ -13,6 +13,7 @@ struct Constants {
     static var UDID = ""
 }
 
+
 class Fonts {
     static let Book = "ITCAvantGardeStd-Bk"
     static let Demi = "ITCAvantGardeStd-Demi"

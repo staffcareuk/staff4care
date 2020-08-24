@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TravelHistory: UIViewController {
+class TravelHistory: BaseViewController {
     
     // MARK:- IBOutlets
     @IBOutlet weak var containerView: UIView!
@@ -40,6 +40,10 @@ class TravelHistory: UIViewController {
         travelTableView.delegate = self
         travelTableView.dataSource = self
 
+    }
+    // MARK:- Overriden Methods
+    override func backButtonTapped() {
+        self.navigationController?.popViewController(animated: true)
     }
     
     // MARK:- Methods

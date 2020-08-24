@@ -8,11 +8,12 @@
 
 import UIKit
 
-class Availability: UIViewController {
+class Availability: BaseViewController {
     // MARK:- IBOutlets
     @IBOutlet weak var availabilityTableView: UITableView!
     
 
+    // MARK:- LifeCycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         availabilityTableView.delegate = self
@@ -21,7 +22,10 @@ class Availability: UIViewController {
 
     }
   
-
+   // MARK:- Overriden Methods
+   override func backButtonTapped() {
+       self.navigationController?.popViewController(animated: true)
+   }
 
 }
 extension Availability : UITableViewDelegate , UITableViewDataSource {

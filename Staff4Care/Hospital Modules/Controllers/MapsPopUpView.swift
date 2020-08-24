@@ -123,6 +123,10 @@ class MapsPopUpView: UIViewController , UIGestureRecognizerDelegate{
            
 }
 extension MapsPopUpView: SetPlaceOnMap {
+    func setLocationPressed() {
+        
+    }
+    
     func getLocationfromPlace(latitude: Double, longitude: Double) {
         print("Latitude " , latitude , " " , "Longitude " , longitude)
     }

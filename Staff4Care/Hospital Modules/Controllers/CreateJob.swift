@@ -10,7 +10,8 @@ import UIKit
 import SearchTextField
 import CoreLocation
 import IQKeyboardManagerSwift
-class CreateJob: UIViewController {
+import GoogleMaps
+class CreateJob: BaseViewController {
     
     // MARK:- IBOutlets
     
@@ -34,6 +35,7 @@ class CreateJob: UIViewController {
     @IBOutlet weak var cubcategoryTableViewHeght: NSLayoutConstraint!
     @IBOutlet weak var subCategoryStackvIEW: UIStackView!
     @IBOutlet weak var clientSubCategoryTableView: UITableView!
+    @IBOutlet weak var locationTextField: CustomTextField!
     
     // MARK:- Variables
     
@@ -61,6 +63,9 @@ class CreateJob: UIViewController {
     // Bool
     var showPaymentTV = false
     
+    
+    // Geocoder
+    let goocoder = GMSGeocoder()
    
     
   
@@ -91,11 +96,13 @@ class CreateJob: UIViewController {
         viewModel.getPaymentTypes()
         setLocationProperties()
      
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
-            self?.showMapsPopUp(title: "Please select your Location")
-        }
+       
         viewSlideInFromTopToBottom(view: categoryTableView)
 
+    }
+    // MARK:- Overriden Methods
+    override func backButtonTapped() {
+        self.navigationController?.popViewController(animated: true)
     }
     // MARK:- Methods
     private func fadeAnimateView() {
@@ -135,6 +142,7 @@ class CreateJob: UIViewController {
     private func setDelegates() {
         clientCategoryTxtField.delegate = self
         clientSubCategoryTxtField.delegate = self
+        locationTextField.delegate = self
         paymentTypeTextField.delegate = self
         categoryTableView.delegate = self
         categoryTableView.dataSource = self
@@ -147,6 +155,10 @@ class CreateJob: UIViewController {
         categoryTableView.isScrollEnabled = false
         clientSubCategoryTableView.isScrollEnabled = false
         paymentTypeTableView.isScrollEnabled = false
+        
+        
+        locationTextField.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(locationFieldTapped)))
+        
         dateTextField.inputView = datePicker
         datePicker.datePickerMode = .date
         toTime.inputView = toTimePicker
@@ -176,6 +188,10 @@ class CreateJob: UIViewController {
         formatter3.timeStyle = .short
         toTime.text = formatter3.string(from: toTimePicker.date.addingTimeInterval(3*60*60))
         
+    }
+    @objc func locationFieldTapped() {
+self.showMapsPopUp(title: "Please select your Location")
+                        
     }
      @objc func ToTimeDonePressed(_ sender: Any) {
             print("Done")
@@ -252,6 +268,18 @@ class CreateJob: UIViewController {
              fromTime.text = formatter.string(from: fromTimePicker.date)
         
     }
+    func updateAddress(location: CLLocationCoordinate2D) {
+        goocoder.reverseGeocodeCoordinate(location) { response, error in
+            if let location = response?.firstResult() {
+                
+                if let lines = location.lines {
+                    self.locationTextField.text = lines[0]
+                }
+            }
+        }
+        
+        
+    }
    func animateDropDown(collapsed : Bool){
           if collapsed{
               
@@ -310,9 +338,8 @@ class CreateJob: UIViewController {
             //     popvc.updateHeight(height: popvc.titleLabel.intrinsicContentSize.height + 170)
                 popvc.containerView.backgroundColor = .red
                 popvc.didMove(toParent: self)
-                popvc.useCurrentLocation = { [weak self] in
-                    
-                    print("Coordinates :: " , self?.latitude , self?.longitude)
+                popvc.useCurrentLocation = {
+              
                 }
 
             
@@ -389,6 +416,7 @@ extension CreateJob: UITableViewDelegate , UITableViewDataSource {
                 cell.nameLbl.text = viewModel.categoriesDropDown?.categoriesList?[indexPath.section].categoryTitle
                 if indexPath.section == viewModel.categoriesDropDown?.categoriesList?.count ?? 1 - 1 {
                     cell.separatorView.isHidden = true
+                    
                 }
             
             }
@@ -433,6 +461,10 @@ extension CreateJob: UITableViewDelegate , UITableViewDataSource {
 }
 // MARK:- TextField ButtonClick Methods
 extension CreateJob: DesignableTextFieldDelegate {
+   
+   
+   
+    
     func textFieldIconClicked(btn: UIButton) {
     }
     
@@ -506,9 +538,10 @@ extension CreateJob: CLLocationManagerDelegate {
         let location = locations.last
         //let center = CLLocationCoordinate2D(latitude: location!.coordinate.latitude, longitude: location!.coordinate.longitude)
         self.locationManager.stopUpdatingLocation()
-        if let lat = location?.coordinate.latitude , let lang = location?.coordinate.longitude {
-             self.latitude  = String(lat)
-             self.longitude = String(lang)
+        if let _ = location?.coordinate.latitude , let _ = location?.coordinate.longitude {
+            if let position = location?.coordinate{
+                self.updateAddress(location: position)
+            }
         }
       
     }
@@ -518,3 +551,15 @@ extension CreateJob: CLLocationManagerDelegate {
         print("Errors: " + error.localizedDescription)
     }
 }
+extension CreateJob: UITextFieldDelegate {
+   
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        if textField == locationTextField {
+           return false
+        }
+        return true
+       
+    }
+}
+
+

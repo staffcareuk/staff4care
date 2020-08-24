@@ -13,6 +13,7 @@ protocol SetPlaceOnMap : class{
     func getLocationfromPlace(latitude: Double,longitude: Double)
     func cancelTapped()
     func editingBegin()
+    func setLocationPressed()
 }
 class MapsContentViewController: UIViewController {
     
@@ -21,12 +22,22 @@ class MapsContentViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var placesTableView: UITableView!
 
+    @IBOutlet weak var setLocationBtn: UIButton!
     // MARK:- Variables
     var places = ["Los Angeles" , "Chicago" , "Nevada" , "Delaware" , "Ohio"]
     var resultsArray:[Dictionary<String, AnyObject>] = Array()
     weak var locationDelegate: SetPlaceOnMap?
 
-
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+             
+              let string = NSAttributedString(string: "Set Location", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white , NSAttributedString.Key.font: UIFont(name: Fonts.Demi, size: 18)!])
+                            setLocationBtn.setAttributedTitle(NSAttributedString(attributedString: string), for: .normal)
+              setLocationBtn.setGradientBackgroundColor(colors: [ UIColor(red: 154/255.0, green: 154/255.0, blue: 198/255.0, alpha: 1.0), UIColor(red: 39/255.0, green: 65/255.0, blue: 143/255.0, alpha: 1.0)], axis: .vertical, cornerRadius: 25) { view in
+                  guard let btn = view as? UIButton, let imageView = btn.imageView else { return }
+                  btn.bringSubviewToFront(imageView) // To display imageview of button
+              }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -42,11 +53,14 @@ class MapsContentViewController: UIViewController {
         searchBar.searchTextField.tintColor = .white
         placesTableView.dataSource = self
         searchBar.searchTextField.addTarget(self, action: #selector(searchPlaceFromGoogle(_:)), for: .editingChanged)
-        
+        setLocationBtn.addTarget(self, action: #selector(setLocationTapped), for: .touchUpInside)
         
 
     }
     // MARK:- Methods
+    @objc func setLocationTapped(){
+        locationDelegate?.setLocationPressed()
+    }
     @objc func dismissKeyboard() {
         searchBar.resignFirstResponder()
        

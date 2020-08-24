@@ -29,7 +29,6 @@ class UserProfile: UIViewController {
         super.viewDidLoad()
         profileCV.delegate = self
         profileCV.dataSource = self
-        print(self.navigationController?.viewControllers)
 
     }
   

@@ -8,14 +8,12 @@
 
 import UIKit
 
-class HospitalCategorySearch: UIViewController {
+class HospitalCategorySearch: BaseViewController {
     
     // MARK:- IBOutlets
-    @IBOutlet weak var menuBtn: UIButton!
-    @IBOutlet weak var notificatioBtn: UIButton!
+    
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var clientCollectionView: UICollectionView!
-    @IBOutlet weak var allJobsCollectionView: UICollectionView!
     
     // MARK:- Variables
     var viewModel = SearchJobViewModel()
@@ -33,24 +31,17 @@ class HospitalCategorySearch: UIViewController {
            super.viewDidLoad()
            searchBar.searchTextField.backgroundColor = .white
            searchBar.setImage(UIImage(named: "search-icon"), for: .search, state: .normal)
-           allJobsCollectionView.delegate = self
-           allJobsCollectionView.dataSource = self
-           if let layout = allJobsCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-               layout.scrollDirection = .horizontal
-               allJobsCollectionView.showsHorizontalScrollIndicator = false
-           }
+        
         viewModel.searchJobDelegate = self
         url += parentCategoryId
         viewModel.getSubCategoriesList(url: url)
         //viewModel.getAvailableJobs()
         
        }
-    // MARK:- IBActions
-    @IBAction func menuBtnTapped(_ sender: Any) {
+    override func backButtonTapped() {
+        self.navigationController?.popViewController(animated: true)
     }
-    @IBAction func notificatioBtnTapped(_ sender: Any) {
-    }
-    
+   
     // MARK:- Navigation Methods
     private func pushCreateJobVC() {
            let storyboard = UIStoryboard(name: "CreateJobs", bundle: nil)
@@ -82,14 +73,7 @@ extension HospitalCategorySearch: UICollectionViewDataSource , UICollectionViewD
                 return cell
             }
         }
-        else if collectionView == allJobsCollectionView {
-            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "nearbyclient", for: indexPath) as? JobCell {
-                if let job = viewModel.allJobs?.jobsList?[indexPath.row] {
-                    cell.configureCell(job: job)
-                }
-                return cell
-            }
-        }
+       
         return UICollectionViewCell()
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -128,9 +112,7 @@ extension HospitalCategorySearch: SearchJobProtocol {
     }
     
     func getJobsSuccess() {
-        DispatchQueue.main.async {
-            self.allJobsCollectionView.reloadData()
-        }
+      
     }
     
     func getJobsFailed() {

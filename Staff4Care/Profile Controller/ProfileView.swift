@@ -7,7 +7,7 @@
 //
 
 import UIKit
-class ProfileView: UIViewController {
+class ProfileView: BaseViewController {
     
     // MARK:- IBOutlets
     @IBOutlet weak var profileStackView: UIStackView!
@@ -79,6 +79,11 @@ class ProfileView: UIViewController {
         setLabels()
       
        
+    }
+    // MARK:- Overriden Methods
+    override func backButtonTapped() {
+        self.navigationController?.popViewController(animated: true)
+        print(navigationController?.viewControllers)
     }
     //MARK:- UI Methods
     

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fpk-Vk-IhV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fpk-Vk-IhV">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -26,49 +26,11 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RegularBG" translatesAutoresizingMaskIntoConstraints="NO" id="FNy-I6-hey">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sZl-or-78L" userLabel="TopView">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="hU2-I3-SOo">
-                                        <rect key="frame" x="10" y="34" width="394" height="52"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lcf-iE-PcJ">
-                                                <rect key="frame" x="0.0" y="0.0" width="46" height="52"/>
-                                                <state key="normal" image="hamburger"/>
-                                            </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Staff4Care" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QYs-ct-3Zz">
-                                                <rect key="frame" x="153" y="0.0" width="82.5" height="52"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p6B-c4-2u6">
-                                                <rect key="frame" x="342" y="0.0" width="52" height="52"/>
-                                                <state key="normal" image="notification-icon"/>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="8sz-Ya-VJi"/>
-                                    <constraint firstAttribute="trailing" secondItem="hU2-I3-SOo" secondAttribute="trailing" constant="10" id="Ltr-Ao-Frb"/>
-                                    <constraint firstItem="hU2-I3-SOo" firstAttribute="leading" secondItem="sZl-or-78L" secondAttribute="leading" constant="10" id="mTS-S2-0Sj"/>
-                                    <constraint firstItem="hU2-I3-SOo" firstAttribute="top" secondItem="sZl-or-78L" secondAttribute="top" constant="34" id="qnl-Ri-Jg3"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JTz-95-2pA" userLabel="TopViewLayer">
-                                <rect key="frame" x="0.0" y="70" width="414" height="2"/>
-                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="2" id="3uS-7a-aqC"/>
-                                </constraints>
-                            </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_wallet" translatesAutoresizingMaskIntoConstraints="NO" id="zVQ-A0-zN2">
-                                <rect key="frame" x="20" y="112" width="98" height="84"/>
+                                <rect key="frame" x="20" y="90" width="49" height="42"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="atr-v8-DxP">
-                                <rect key="frame" x="143" y="102" width="110.5" height="66.5"/>
+                                <rect key="frame" x="94" y="90" width="110.5" height="66.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Wallet" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gu6-uJ-hu6">
                                         <rect key="frame" x="0.0" y="0.0" width="110.5" height="16.5"/>
@@ -85,7 +47,7 @@
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f82-aR-ft3">
-                                <rect key="frame" x="20" y="178.5" width="374" height="235"/>
+                                <rect key="frame" x="20" y="166.5" width="374" height="235"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Payments" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sIT-Oe-p1J">
                                         <rect key="frame" x="147" y="20" width="80.5" height="21"/>
@@ -103,13 +65,13 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ag8-Gu-xwC">
-                                                <rect key="frame" x="37" y="39" width="86.5" height="62"/>
+                                                <rect key="frame" x="52.5" y="54.5" width="55.5" height="31"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_pending" translatesAutoresizingMaskIntoConstraints="NO" id="Mbb-OP-KHm">
-                                                        <rect key="frame" x="0.0" y="0.0" width="62" height="62"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="31" height="31"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CVI-rD-no7">
-                                                        <rect key="frame" x="62" y="0.0" width="24.5" height="62"/>
+                                                        <rect key="frame" x="31" y="0.0" width="24.5" height="31"/>
                                                         <fontDescription key="fontDescription" name="ITCAvantGardeStd-Demi" family="ITC Avant Garde Gothic Std" pointSize="22"/>
                                                         <color key="textColor" red="0.75294117647058822" green="0.8666666666666667" blue="0.72156862745098038" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -142,13 +104,13 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="76P-HJ-IRW">
-                                                <rect key="frame" x="37.5" y="39" width="86.5" height="62"/>
+                                                <rect key="frame" x="53" y="54.5" width="55.5" height="31"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_reject" translatesAutoresizingMaskIntoConstraints="NO" id="1Sv-yF-wIm">
-                                                        <rect key="frame" x="0.0" y="0.0" width="62" height="62"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="31" height="31"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c68-N7-9ob">
-                                                        <rect key="frame" x="62" y="0.0" width="24.5" height="62"/>
+                                                        <rect key="frame" x="31" y="0.0" width="24.5" height="31"/>
                                                         <fontDescription key="fontDescription" name="ITCAvantGardeStd-Demi" family="ITC Avant Garde Gothic Std" pointSize="22"/>
                                                         <color key="textColor" red="0.68235294117647061" green="0.78431372549019607" blue="0.21568627450980393" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -192,7 +154,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TeQ-vs-3wa">
-                                <rect key="frame" x="20" y="418.5" width="374" height="443.5"/>
+                                <rect key="frame" x="20" y="406.5" width="374" height="455.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="paymentcell" rowHeight="80" id="jji-9l-kvL" customClass="PaymentCell" customModule="Staff4Care" customModuleProvider="target">
@@ -206,10 +168,10 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="374" height="80"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="generic-hospital" translatesAutoresizingMaskIntoConstraints="NO" id="ddh-KR-mcV">
-                                                            <rect key="frame" x="8" y="8" width="124" height="124"/>
+                                                            <rect key="frame" x="8" y="8" width="62" height="62"/>
                                                         </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="3fj-4T-4iM">
-                                                            <rect key="frame" x="147" y="15" width="138.5" height="52"/>
+                                                            <rect key="frame" x="85" y="15" width="138.5" height="52"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QqF-Bh-ebB">
                                                                     <rect key="frame" x="0.0" y="0.0" width="138.5" height="28"/>
@@ -228,13 +190,13 @@ Birmingham, B23 7LE</string>
                                                             </subviews>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="dJu-bQ-e2U">
-                                                            <rect key="frame" x="271.5" y="9" width="92.5" height="62"/>
+                                                            <rect key="frame" x="302.5" y="24.5" width="61.5" height="31"/>
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_reject" translatesAutoresizingMaskIntoConstraints="NO" id="NPm-19-EiB">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="62" height="62"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="31" height="31"/>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OPa-0U-1eG">
-                                                                    <rect key="frame" x="62" y="24" width="30.5" height="14"/>
+                                                                    <rect key="frame" x="31" y="8.5" width="30.5" height="14"/>
                                                                     <fontDescription key="fontDescription" name="ITCAvantGardeStd-Demi" family="ITC Avant Garde Gothic Std" pointSize="12"/>
                                                                     <color key="textColor" red="0.15294117647058825" green="0.25490196078431371" blue="0.5607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -285,28 +247,19 @@ Birmingham, B23 7LE</string>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="JTz-95-2pA" firstAttribute="top" secondItem="sZl-or-78L" secondAttribute="bottom" id="2C9-LJ-RfD"/>
+                            <constraint firstItem="atr-v8-DxP" firstAttribute="top" secondItem="8vq-zL-wG4" secondAttribute="top" constant="90" id="4GY-XZ-sWN"/>
                             <constraint firstItem="zVQ-A0-zN2" firstAttribute="leading" secondItem="yK8-HD-kJB" secondAttribute="leading" constant="20" id="5BD-XV-0yZ"/>
                             <constraint firstItem="f82-aR-ft3" firstAttribute="top" secondItem="atr-v8-DxP" secondAttribute="bottom" constant="10" id="5cv-2F-KGw"/>
                             <constraint firstItem="f82-aR-ft3" firstAttribute="leading" secondItem="yK8-HD-kJB" secondAttribute="leading" constant="20" id="615-4Z-TLd"/>
                             <constraint firstItem="TeQ-vs-3wa" firstAttribute="top" secondItem="f82-aR-ft3" secondAttribute="bottom" constant="5" id="B0j-dC-rra"/>
-                            <constraint firstItem="sZl-or-78L" firstAttribute="leading" secondItem="8vq-zL-wG4" secondAttribute="leading" id="INa-gC-Y6s"/>
                             <constraint firstItem="TeQ-vs-3wa" firstAttribute="leading" secondItem="yK8-HD-kJB" secondAttribute="leading" constant="20" id="MWc-4W-zA1"/>
                             <constraint firstItem="atr-v8-DxP" firstAttribute="leading" secondItem="zVQ-A0-zN2" secondAttribute="trailing" constant="25" id="NmZ-Fs-8n6"/>
-                            <constraint firstItem="JTz-95-2pA" firstAttribute="top" secondItem="sZl-or-78L" secondAttribute="bottom" id="T9x-r4-Zl1"/>
-                            <constraint firstItem="JTz-95-2pA" firstAttribute="leading" secondItem="8vq-zL-wG4" secondAttribute="leading" id="TYO-bz-dV5"/>
-                            <constraint firstAttribute="trailing" secondItem="JTz-95-2pA" secondAttribute="trailing" id="XIg-Wg-RRn"/>
+                            <constraint firstItem="zVQ-A0-zN2" firstAttribute="top" secondItem="8vq-zL-wG4" secondAttribute="top" constant="90" id="QGR-OZ-y2a"/>
                             <constraint firstAttribute="trailing" secondItem="FNy-I6-hey" secondAttribute="trailing" id="cBQ-Px-VbD"/>
                             <constraint firstItem="yK8-HD-kJB" firstAttribute="bottom" secondItem="TeQ-vs-3wa" secondAttribute="bottom" id="dkz-h2-jQz"/>
-                            <constraint firstItem="JTz-95-2pA" firstAttribute="top" secondItem="sZl-or-78L" secondAttribute="bottom" id="ejg-iw-Wrd"/>
-                            <constraint firstItem="sZl-or-78L" firstAttribute="top" secondItem="8vq-zL-wG4" secondAttribute="top" id="fjr-mZ-T17"/>
-                            <constraint firstAttribute="trailing" secondItem="sZl-or-78L" secondAttribute="trailing" id="he6-ba-QDz"/>
                             <constraint firstAttribute="bottom" secondItem="FNy-I6-hey" secondAttribute="bottom" id="sCc-VN-yDl"/>
                             <constraint firstItem="yK8-HD-kJB" firstAttribute="trailing" secondItem="f82-aR-ft3" secondAttribute="trailing" constant="20" id="uD2-sS-uhB"/>
-                            <constraint firstItem="JTz-95-2pA" firstAttribute="top" secondItem="sZl-or-78L" secondAttribute="bottom" id="uG2-ID-Wsy"/>
                             <constraint firstItem="yK8-HD-kJB" firstAttribute="trailing" secondItem="TeQ-vs-3wa" secondAttribute="trailing" constant="20" id="ukX-5y-3v5"/>
-                            <constraint firstItem="zVQ-A0-zN2" firstAttribute="top" secondItem="JTz-95-2pA" secondAttribute="bottom" constant="40" id="wMO-Ql-RWd"/>
-                            <constraint firstItem="atr-v8-DxP" firstAttribute="top" secondItem="JTz-95-2pA" secondAttribute="bottom" constant="30" id="xFB-kJ-Q3l"/>
                             <constraint firstItem="FNy-I6-hey" firstAttribute="leading" secondItem="8vq-zL-wG4" secondAttribute="leading" id="xTx-8l-bNW"/>
                             <constraint firstItem="FNy-I6-hey" firstAttribute="top" secondItem="8vq-zL-wG4" secondAttribute="top" id="yQH-n3-aX8"/>
                         </constraints>
@@ -328,10 +281,8 @@ Birmingham, B23 7LE</string>
     <resources>
         <image name="RegularBG" width="352.5" height="791"/>
         <image name="generic-hospital" width="62" height="62"/>
-        <image name="hamburger" width="23" height="19.5"/>
         <image name="ic_pending" width="31" height="31"/>
         <image name="ic_reject" width="31" height="31"/>
         <image name="ic_wallet" width="49" height="42"/>
-        <image name="notification-icon" width="26" height="26"/>
     </resources>
 </document>

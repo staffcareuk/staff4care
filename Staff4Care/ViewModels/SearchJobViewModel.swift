@@ -37,6 +37,7 @@ class SearchJobViewModel {
     var nearestJobsURL    = "https://api.bluenee.co.uk/cig/index.php/api/staff/nearestjobs/"
     var updateLocationURL = "https://api.bluenee.co.uk/cig/index.php/api/staff/location/"
     var nearestStaffURL   = "https://api.bluenee.co.uk/cig/index.php/api/jobs/nearbystaff/"
+    var applyJobURL       = "https://api.bluenee.co.uk/cig/index.php/api/applications/apply/"
     var allJobs: Jobs?
     var nearestJobs: Jobs?
     var nearbyStaff: NearbyStaff?
@@ -153,6 +154,22 @@ class SearchJobViewModel {
         }
     }
     
+    // Apply against Job
+    func applyJob(params: [String:Any], jobID: String) {
+        if let userID = loggedUser?.userID {
+            applyJobURL += userID
+            applyJobURL += "/"
+            applyJobURL += jobID
+        }
+        JobServices.shared.applyForJob(urlString: applyJobURL, parameters: params) { result in
+            switch result {
+            case .success(let response):
+                print(response)
+            case .failure(let reason):
+                print(reason)
+            }
+        }
+    }
   
 
     

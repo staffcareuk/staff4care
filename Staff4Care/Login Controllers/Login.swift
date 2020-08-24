@@ -7,7 +7,7 @@
 //
 
 import UIKit
-class Login: UIViewController  {
+class Login: BaseViewController  {
 
     // MARK: IBOutlets
     @IBOutlet weak var loginCardViewHeight: NSLayoutConstraint!
@@ -78,8 +78,12 @@ class Login: UIViewController  {
       
 
     }
+    override func backButtonTapped() {
+        print("Child Back")
+    }
    
     override func viewDidLoad() {
+        super.hideNavigationBar()
         super.viewDidLoad()
         setupConstraintsAndProperties()
         setupTitle()
@@ -112,21 +116,13 @@ class Login: UIViewController  {
             self.addChild(popvc)
             
             popvc.view.frame = self.view.frame
-            
             self.view.addSubview(popvc.view)
             popvc.titleLabel.text = title
             popvc.buttonStackView.isHidden = true
              popvc.updateHeight(height: popvc.titleLabel.intrinsicContentSize.height + 170)
             popvc.containerView.backgroundColor = .black
             popvc.didMove(toParent: self)
-//            popvc.yesCallBack = { [unowned self] in
-//                                   print("Yes")
-//                               }
-//                               popvc.noCallBack = { [unowned self] in
-//                                   print("No")
-//                               }
 
-        
         }
           
     }
@@ -137,12 +133,7 @@ class Login: UIViewController  {
             popvc.modalTransitionStyle = .coverVertical
             self.present(popvc, animated: true, completion: nil)
             popvc.updateHeight(height: 160)
-//            popvc.yesCallBack = { [unowned self] in
-//                        print("Yes")
-//                    }
-//                    popvc.noCallBack = { [unowned self] in
-//                        print("No")
-//                    }
+
 
         }
         

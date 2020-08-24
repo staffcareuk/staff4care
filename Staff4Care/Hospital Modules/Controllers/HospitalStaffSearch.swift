@@ -8,17 +8,18 @@
 
 import UIKit
 
-class HospitalStaffSearch: UIViewController {
+class HospitalStaffSearch: BaseViewController {
     
     // MARK:- IBOutlets
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var clientCollectionView: UICollectionView!
     @IBOutlet weak var nearbyStaffCollectionView: UICollectionView!
-    @IBOutlet weak var menuBtn: UIButton!
-    @IBOutlet weak var titleLbl: UILabel!
-    @IBOutlet weak var notificationBtn: UIButton!
+
+    @IBOutlet weak var nearbyLblTopConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var collectionViewTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var stackviewTopConstraint: NSLayoutConstraint!
     // MARK:- Variables
     var viewModel = SearchJobViewModel()
     var urlString = "https://api.bluenee.co.uk/cig/index.php/api/categories/list"
@@ -28,7 +29,16 @@ class HospitalStaffSearch: UIViewController {
     // MARK:- LifeCycle Methods
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.navigationBar.isHidden = true        
+        self.navigationController?.navigationBar.isHidden = true
+        if view.bounds.size.height > 667.0 {
+          
+        }
+        else if view.bounds.size.height <= 667.0 {
+            nearbyLblTopConstraint.constant = 0
+            stackviewTopConstraint.constant = 0
+            collectionViewTopConstraint.constant = 2
+            self.view.layoutIfNeeded()
+        }
     }
 
     override func viewDidLoad() {
@@ -47,15 +57,12 @@ class HospitalStaffSearch: UIViewController {
         viewModel.getCategoriesList(url: urlString)
         viewModel.getNearbyStaff()
     }
-    
-    
-    // MARK:- IBAction Methods
-    @IBAction func menuBtnTapped(_ sender: Any) {
-        
+    // MARK:- Overriden Methods
+    override func backButtonTapped() {
+        self.navigationController?.popViewController(animated: true)
     }
-    @IBAction func notificationBtnTapped(_ sender: Any) {
-        
-    }
+    
+
     
     // MARK:- NavigationMethods
     private func pushSubCateogryVC(categoryId: String) {

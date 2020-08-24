@@ -7,7 +7,17 @@
 //
 
 import Foundation
+struct ApplyJobModel: Codable {
+    let message: String?
+    let responseCode: Int?
+    let status: Bool?
 
+    enum CodingKeys: String, CodingKey {
+        case message
+        case responseCode = "response_code"
+        case status
+    }
+}
 class JobServices {
     
     static let shared = JobServices()
@@ -144,5 +154,37 @@ class JobServices {
                  }
              }.resume()
          }
+    func applyForJob(urlString: String,parameters: [String:Any] ,completion: @escaping (Result<ApplyJobModel,GenericResponseError>) -> Void) {
+        
+        guard let url = URL(string: urlString) else {return}
+        var request = URLRequest(url: url)
+        
+        request.httpMethod = "GET"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("14digital@12345",  forHTTPHeaderField: "x-api-key")
+        request.addValue(userToken,  forHTTPHeaderField: "Authorization")
+        
+        guard let httpBody = try? JSONSerialization.data(withJSONObject: parameters, options: []) else {return}
+        request.httpBody = httpBody
+        
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            
+            guard let data = data, error == nil else {
+                if let error = error as NSError?, error.domain == NSURLErrorDomain {
+                    completion(.failure(.domainError))
+                }
+                return
+            }
+            do {
+                print(data)
+                let response = try JSONDecoder().decode(ApplyJobModel.self, from: data)
+                print(response)
+                completion(.success(response))
+                
+            } catch {
+                completion(.failure(.decodingError))
+            }
+        }.resume()
+    }
          
 }

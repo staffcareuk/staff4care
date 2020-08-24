@@ -9,7 +9,7 @@
 import UIKit
 import FSCalendar
 
-class Holidays: UIViewController {
+class Holidays: BaseViewController {
     
     // MARK:- IBOutlets
     
@@ -60,7 +60,10 @@ class Holidays: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-    
+    // MARK:- Overriden Methods
+    override func backButtonTapped() {
+        self.navigationController?.popViewController(animated: true)
+    }
     // MARK:- Methods
     private func configureCalendar() {
                  calendarView.delegate = self

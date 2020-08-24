@@ -28,6 +28,7 @@ class CustomTextField: UITextField , UITextFieldDelegate{
         self.layer.borderColor = UIColor.clear.cgColor
         self.addTarget(self, action: #selector(textFieldDidChange(_:)),
         for: .editingChanged)
+       
         
        
 
@@ -38,14 +39,17 @@ class CustomTextField: UITextField , UITextFieldDelegate{
         get { return delegate as? DesignableTextFieldDelegate }
     }
     
-
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        print("Beginn")
+    }
+  
     @objc func buttonClicked(btn: UIButton){
         self.myDelegate?.textFieldIconClicked(btn: btn)
     }
     @objc func buttonClickedRight(btn: UIButton){
          self.myDelegate?.textFieldRightButtonClicked(btn: btn)
      }
-
+    
     //Padding images on left
     override func leftViewRect(forBounds bounds: CGRect) -> CGRect {
         var textRect = super.leftViewRect(forBounds: bounds)
@@ -134,6 +138,7 @@ class CustomTextField: UITextField , UITextFieldDelegate{
           textfield.layer.addSublayer(bottomLine)
           
       }
+   
     func textFieldDidEndEditing(_ textField: UITextField) {
         if textField.text == "" {
             UIView.animate(withDuration: 0.5) {

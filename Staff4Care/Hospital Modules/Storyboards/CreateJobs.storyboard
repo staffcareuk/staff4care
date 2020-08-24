@@ -23,56 +23,17 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RegularBG" translatesAutoresizingMaskIntoConstraints="NO" id="hec-1T-ecA">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PBX-Np-XUz">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="QZn-Hk-LFh">
-                                        <rect key="frame" x="10" y="34" width="394" height="28"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rxH-Dr-uew">
-                                                <rect key="frame" x="0.0" y="0.0" width="23" height="28"/>
-                                                <state key="normal" image="hamburger"/>
-                                            </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Staff4Care" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eFS-oW-AlZ">
-                                                <rect key="frame" x="154.5" y="0.0" width="82.5" height="28"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8F5-gf-bZY">
-                                                <rect key="frame" x="368" y="0.0" width="26" height="28"/>
-                                                <state key="normal" image="notification-icon"/>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="QZn-Hk-LFh" firstAttribute="top" secondItem="PBX-Np-XUz" secondAttribute="top" constant="34" id="OPD-O0-uhB"/>
-                                    <constraint firstAttribute="trailing" secondItem="QZn-Hk-LFh" secondAttribute="trailing" constant="10" id="afK-QI-twa"/>
-                                    <constraint firstItem="QZn-Hk-LFh" firstAttribute="leading" secondItem="PBX-Np-XUz" secondAttribute="leading" constant="10" id="d8k-Ie-gKz"/>
-                                    <constraint firstAttribute="bottom" secondItem="QZn-Hk-LFh" secondAttribute="bottom" constant="8" id="it5-Sn-r0Y"/>
-                                    <constraint firstAttribute="height" constant="70" id="mh8-NF-tmA"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TnR-uT-Ht2" userLabel="bottom layer">
-                                <rect key="frame" x="0.0" y="70" width="414" height="2"/>
-                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="2" id="j3h-lp-HGt"/>
-                                </constraints>
-                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Job" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L8D-y1-skI">
-                                <rect key="frame" x="148" y="97" width="118" height="21"/>
+                                <rect key="frame" x="148" y="85" width="118" height="21"/>
                                 <fontDescription key="fontDescription" name="ITCAvantGardeStd-Demi" family="ITC Avant Garde Gothic Std" pointSize="21"/>
                                 <color key="textColor" red="0.15294117647058825" green="0.25490196078431371" blue="0.5607843137254902" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oWA-HZ-juj">
-                                <rect key="frame" x="0.0" y="138" width="414" height="738"/>
+                                <rect key="frame" x="0.0" y="126" width="414" height="750"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Zr-zh-f0o" customClass="CustomButton" customModule="Staff4Care" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="838" width="374" height="50"/>
+                                        <rect key="frame" x="20" y="908" width="374" height="50"/>
                                         <color key="backgroundColor" red="0.1529411765" green="0.25490196079999999" blue="0.56078431370000004" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="tR7-nB-3Ew"/>
@@ -114,7 +75,7 @@
                                                         <real key="value" value="10"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="image" keyPath="leadingImage" value="category-TF-icon"/>
-                                                    <userDefinedRuntimeAttribute type="image" keyPath="trailingImage" value="dropdown-arrow-icon"/>
+                                                    <userDefinedRuntimeAttribute type="image" keyPath="trailingImage" value="Drop-Down"/>
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
                                             <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LwU-pk-Goh">
@@ -190,7 +151,7 @@
                                                         <real key="value" value="10"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="image" keyPath="leadingImage" value="subcategor-TF-icon"/>
-                                                    <userDefinedRuntimeAttribute type="image" keyPath="trailingImage" value="dropdown-arrow-icon"/>
+                                                    <userDefinedRuntimeAttribute type="image" keyPath="trailingImage" value="Drop-Down"/>
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
                                             <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9b2-sG-x9k">
@@ -268,7 +229,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="z6j-Hb-WMc">
                                         <rect key="frame" x="20" y="300" width="374" height="50"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Residential Care" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RGL-QX-Wwd" customClass="CustomTextField" customModule="Staff4Care" customModuleProvider="target">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Payment Type" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RGL-QX-Wwd" customClass="CustomTextField" customModule="Staff4Care" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="aSL-ga-QXk"/>
@@ -279,8 +240,8 @@
                                                     <userDefinedRuntimeAttribute type="number" keyPath="padding">
                                                         <real key="value" value="10"/>
                                                     </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="image" keyPath="leadingImage" value="category-TF-icon"/>
-                                                    <userDefinedRuntimeAttribute type="image" keyPath="trailingImage" value="dropdown-arrow-icon"/>
+                                                    <userDefinedRuntimeAttribute type="image" keyPath="leadingImage" value="payment-type"/>
+                                                    <userDefinedRuntimeAttribute type="image" keyPath="trailingImage" value="Drop-Down"/>
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
                                             <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hUv-YE-wUT">
@@ -352,11 +313,25 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="padding">
                                                 <real key="value" value="10"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="leadingImage" value="payment-icon"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hn8-0y-1VP" userLabel="Location" customClass="CustomTextField" customModule="Staff4Care" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="440" width="374" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="QO0-Bv-uyN"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="padding">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="image" keyPath="leadingImage" value="date-TF-icon"/>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="15:00" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VBp-yx-6xy" userLabel="From Time" customClass="CustomTextField" customModule="Staff4Care" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="440" width="165.5" height="50"/>
+                                        <rect key="frame" x="20" y="510" width="165.5" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="iOv-9z-e25"/>
                                         </constraints>
@@ -370,7 +345,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="18:00" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pTo-pr-V2R" userLabel="To Time" customClass="CustomTextField" customModule="Staff4Care" customModuleProvider="target">
-                                        <rect key="frame" x="228.5" y="440" width="165.5" height="50"/>
+                                        <rect key="frame" x="228.5" y="510" width="165.5" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="00T-Em-mJu"/>
                                         </constraints>
@@ -384,7 +359,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UaX-Yk-IiQ">
-                                        <rect key="frame" x="197" y="460" width="20" height="16"/>
+                                        <rect key="frame" x="197" y="530" width="20" height="16"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="16" id="peV-J4-X8i"/>
                                             <constraint firstAttribute="width" constant="20" id="yqh-jI-8ha"/>
@@ -394,7 +369,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="7Hc-Vn-Pni">
-                                        <rect key="frame" x="20" y="510" width="374" height="180"/>
+                                        <rect key="frame" x="20" y="580" width="374" height="180"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="180" id="GPO-XK-RED"/>
@@ -415,6 +390,8 @@
                                     <constraint firstItem="Y3Z-9k-cKH" firstAttribute="leading" secondItem="oWA-HZ-juj" secondAttribute="leading" constant="20" id="8LM-PU-PkH"/>
                                     <constraint firstAttribute="trailing" secondItem="7Hc-Vn-Pni" secondAttribute="trailing" constant="20" id="9LH-Nt-alt"/>
                                     <constraint firstItem="UaX-Yk-IiQ" firstAttribute="centerX" secondItem="oWA-HZ-juj" secondAttribute="centerX" id="9RR-oz-dXb"/>
+                                    <constraint firstItem="Hn8-0y-1VP" firstAttribute="bottom" secondItem="VBp-yx-6xy" secondAttribute="top" constant="-20" id="DWR-Wu-HaX"/>
+                                    <constraint firstItem="Hn8-0y-1VP" firstAttribute="top" secondItem="mYd-aC-pxd" secondAttribute="bottom" constant="20" id="EEB-nE-oAc"/>
                                     <constraint firstItem="z6j-Hb-WMc" firstAttribute="top" secondItem="j8g-Yn-NEs" secondAttribute="bottom" constant="20" id="Iie-AU-FDR"/>
                                     <constraint firstItem="z6j-Hb-WMc" firstAttribute="leading" secondItem="oWA-HZ-juj" secondAttribute="leading" constant="20" id="JjD-D9-W82"/>
                                     <constraint firstItem="8Zr-zh-f0o" firstAttribute="centerX" secondItem="oWA-HZ-juj" secondAttribute="centerX" id="KBN-fq-MKm"/>
@@ -428,17 +405,18 @@
                                     <constraint firstItem="Y3Z-9k-cKH" firstAttribute="top" secondItem="XDT-56-0u4" secondAttribute="bottom" constant="20" id="V6X-6t-C2M"/>
                                     <constraint firstItem="j8g-Yn-NEs" firstAttribute="leading" secondItem="oWA-HZ-juj" secondAttribute="leading" constant="20" id="W5B-O3-BSl"/>
                                     <constraint firstAttribute="trailing" secondItem="mYd-aC-pxd" secondAttribute="trailing" constant="20" id="Weh-wt-bi1"/>
-                                    <constraint firstItem="VBp-yx-6xy" firstAttribute="top" secondItem="mYd-aC-pxd" secondAttribute="bottom" constant="20" id="Xl7-h6-YvD"/>
                                     <constraint firstItem="Y3Z-9k-cKH" firstAttribute="top" secondItem="XDT-56-0u4" secondAttribute="bottom" constant="20" id="abC-Rn-r9u"/>
                                     <constraint firstItem="XDT-56-0u4" firstAttribute="top" secondItem="zq6-Gt-WTF" secondAttribute="bottom" constant="20" id="apP-ha-Udi"/>
                                     <constraint firstItem="zq6-Gt-WTF" firstAttribute="top" secondItem="oWA-HZ-juj" secondAttribute="top" constant="20" id="d3N-SP-gbK"/>
-                                    <constraint firstItem="UaX-Yk-IiQ" firstAttribute="top" secondItem="mYd-aC-pxd" secondAttribute="bottom" constant="40" id="e5C-TC-rtj"/>
+                                    <constraint firstItem="UaX-Yk-IiQ" firstAttribute="top" secondItem="Hn8-0y-1VP" secondAttribute="bottom" constant="40" id="e5C-TC-rtj"/>
                                     <constraint firstItem="VBp-yx-6xy" firstAttribute="width" secondItem="oWA-HZ-juj" secondAttribute="width" multiplier="0.4" id="hWz-uS-h9w"/>
                                     <constraint firstAttribute="trailing" secondItem="pTo-pr-V2R" secondAttribute="trailing" constant="20" id="jne-rY-gtZ"/>
                                     <constraint firstItem="pTo-pr-V2R" firstAttribute="width" secondItem="oWA-HZ-juj" secondAttribute="width" multiplier="0.4" id="k7M-Fe-45l"/>
                                     <constraint firstItem="zq6-Gt-WTF" firstAttribute="leading" secondItem="oWA-HZ-juj" secondAttribute="leading" constant="20" id="lLS-Sk-byg"/>
+                                    <constraint firstAttribute="trailing" secondItem="Hn8-0y-1VP" secondAttribute="trailing" constant="20" id="mPf-4M-OTq"/>
                                     <constraint firstItem="mYd-aC-pxd" firstAttribute="leading" secondItem="oWA-HZ-juj" secondAttribute="leading" constant="20" id="mZe-2z-Rf3"/>
                                     <constraint firstItem="XDT-56-0u4" firstAttribute="top" secondItem="zq6-Gt-WTF" secondAttribute="bottom" constant="20" id="mg6-xp-vhL"/>
+                                    <constraint firstItem="Hn8-0y-1VP" firstAttribute="leading" secondItem="oWA-HZ-juj" secondAttribute="leading" constant="20" id="q9p-0K-IGb"/>
                                     <constraint firstItem="mYd-aC-pxd" firstAttribute="top" secondItem="z6j-Hb-WMc" secondAttribute="bottom" constant="20" id="vMa-Pa-fCl"/>
                                     <constraint firstItem="VBp-yx-6xy" firstAttribute="leading" secondItem="oWA-HZ-juj" secondAttribute="leading" constant="20" id="wPh-IB-fTV"/>
                                     <constraint firstAttribute="trailing" secondItem="XDT-56-0u4" secondAttribute="trailing" constant="20" id="wfQ-R3-F2x"/>
@@ -449,20 +427,14 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="TnR-uT-Ht2" secondAttribute="trailing" id="0xq-Aq-wNs"/>
                             <constraint firstAttribute="trailing" secondItem="hec-1T-ecA" secondAttribute="trailing" id="7un-OK-Kmh"/>
-                            <constraint firstAttribute="trailing" secondItem="PBX-Np-XUz" secondAttribute="trailing" id="ATP-HU-tp5"/>
                             <constraint firstItem="L8D-y1-skI" firstAttribute="centerX" secondItem="D8V-2Q-k2a" secondAttribute="centerX" id="D2R-S4-Pio"/>
                             <constraint firstAttribute="bottom" secondItem="hec-1T-ecA" secondAttribute="bottom" id="DUz-RY-4zl"/>
                             <constraint firstAttribute="bottom" secondItem="oWA-HZ-juj" secondAttribute="bottom" constant="20" id="FG6-YE-0AC"/>
-                            <constraint firstItem="PBX-Np-XUz" firstAttribute="leading" secondItem="D8V-2Q-k2a" secondAttribute="leading" id="Jlb-Nd-8nD"/>
                             <constraint firstItem="hec-1T-ecA" firstAttribute="top" secondItem="D8V-2Q-k2a" secondAttribute="top" id="PHZ-hm-hMb"/>
-                            <constraint firstItem="L8D-y1-skI" firstAttribute="top" secondItem="TnR-uT-Ht2" secondAttribute="bottom" constant="25" id="RMI-7X-ImM"/>
-                            <constraint firstItem="TnR-uT-Ht2" firstAttribute="top" secondItem="PBX-Np-XUz" secondAttribute="bottom" id="SvG-LH-ejh"/>
-                            <constraint firstItem="TnR-uT-Ht2" firstAttribute="leading" secondItem="D8V-2Q-k2a" secondAttribute="leading" id="Tos-0w-wyJ"/>
+                            <constraint firstItem="L8D-y1-skI" firstAttribute="top" secondItem="D8V-2Q-k2a" secondAttribute="top" constant="85" id="PnA-dY-8t4"/>
                             <constraint firstItem="oWA-HZ-juj" firstAttribute="trailing" secondItem="qig-KH-mGR" secondAttribute="trailing" id="iOY-Hk-Sef"/>
                             <constraint firstItem="oWA-HZ-juj" firstAttribute="top" secondItem="L8D-y1-skI" secondAttribute="bottom" constant="20" id="jxW-Q2-Ioo"/>
-                            <constraint firstItem="PBX-Np-XUz" firstAttribute="top" secondItem="D8V-2Q-k2a" secondAttribute="top" id="lgU-rO-pVD"/>
                             <constraint firstItem="oWA-HZ-juj" firstAttribute="width" secondItem="D8V-2Q-k2a" secondAttribute="width" id="wMi-F6-TLa"/>
                             <constraint firstItem="hec-1T-ecA" firstAttribute="leading" secondItem="D8V-2Q-k2a" secondAttribute="leading" id="xIs-S0-9f3"/>
                             <constraint firstItem="oWA-HZ-juj" firstAttribute="leading" secondItem="qig-KH-mGR" secondAttribute="leading" id="yzw-WR-Vtl"/>
@@ -482,6 +454,7 @@
                         <outlet property="dateTextField" destination="j8g-Yn-NEs" id="dxi-tM-ybo"/>
                         <outlet property="fromTime" destination="VBp-yx-6xy" id="VlJ-mu-sRC"/>
                         <outlet property="instructionsTextView" destination="7Hc-Vn-Pni" id="0IH-an-UZs"/>
+                        <outlet property="locationTextField" destination="Hn8-0y-1VP" id="bIP-hP-9g1"/>
                         <outlet property="paymentTypeStackView" destination="z6j-Hb-WMc" id="PFm-c4-yRw"/>
                         <outlet property="paymentTypeTableView" destination="hUv-YE-wUT" id="HCh-tn-7Zh"/>
                         <outlet property="paymentTypeTableViewHeight" destination="0Ua-El-Kff" id="vTp-CW-9PR"/>
@@ -497,14 +470,14 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Drop-Down" width="13" height="8"/>
         <image name="RegularBG" width="352.5" height="791"/>
         <image name="category-TF-icon" width="20" height="18.5"/>
         <image name="clock-TF-icon" width="20" height="20"/>
         <image name="date-TF-icon" width="19.5" height="18"/>
-        <image name="dropdown-arrow-icon" width="8" height="13"/>
-        <image name="hamburger" width="23" height="19.5"/>
         <image name="hospital-TF-icon" width="20" height="20"/>
-        <image name="notification-icon" width="26" height="26"/>
+        <image name="payment-icon" width="5" height="7"/>
+        <image name="payment-type" width="8.5" height="6.5"/>
         <image name="subcategor-TF-icon" width="20" height="19"/>
     </resources>
 </document>

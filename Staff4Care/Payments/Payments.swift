@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Payments: UIViewController {
+class Payments: BaseViewController {
     
     // MARK:- IBOutlets
     @IBOutlet weak var currencyTitleLbl: UILabel!
@@ -31,7 +31,7 @@ class Payments: UIViewController {
     lazy var animationDuration:Double = endValue / (endValue/2)
     let animationStartDate = Date()
 
-
+    // MARK:- LifeCycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         containerView.layer.borderWidth = 2.0
@@ -54,10 +54,11 @@ class Payments: UIViewController {
         
         }
     
-       
-        
-        // Do any additional setup after loading the view.
-    
+       // MARK:- Overriden Methods
+       override func backButtonTapped() {
+           self.navigationController?.popViewController(animated: true)
+       }
+            
     // MARK:- Methods
     private func convertToCurrencyString(label: UILabel) {
         let currencyFormatter = NumberFormatter()

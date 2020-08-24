@@ -10,19 +10,20 @@ import UIKit
 import CoreLocation
 import GoogleMaps
 import GooglePlaces
-class SearchJob: UIViewController {
+class SearchJob: BaseViewController {
     
     // MARK:- IBOutlets
     
-    @IBOutlet weak var menuBtn: UIButton!
-    @IBOutlet weak var titleLbl: UILabel!
-    @IBOutlet weak var notificationBtn: UIButton!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var clientCollectionView: UICollectionView!
     @IBOutlet weak var allJobsCollectionView: UICollectionView!
+    @IBOutlet weak var categoryCollectionViewTop: NSLayoutConstraint!
     
     @IBOutlet weak var mapView: GMSMapView!
     
+    @IBOutlet weak var nearbyTop: NSLayoutConstraint!
+    @IBOutlet weak var stackviewTop: NSLayoutConstraint!
+    @IBOutlet weak var jobCollectionViewTop: NSLayoutConstraint!
     // MARK:- Variables
     
     var viewModel = SearchJobViewModel()
@@ -36,16 +37,30 @@ class SearchJob: UIViewController {
     var geocoder = GMSGeocoder()
     var address = [String]()
     
+    var remarks = String()
+    
+    let bottomSheetVC = BottomSheetViewController()
+    var currentSelectedJob : JobsList?
+    
     
     let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.light)
     lazy var blurEffectView = UIVisualEffectView(effect: blurEffect)
     var blurViewRemovedFromSuperView = false
     
     // MARK:- LifeCycle Methods
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        nearbyTop.constant = 0
+        stackviewTop.constant = 0
+        categoryCollectionViewTop.constant = 2
+        jobCollectionViewTop.constant = 0
+        self.view.layoutIfNeeded()
+    }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         //addBlurView()
         addBottomSheetView()
+        bottomSheetVC.delegate = self
         bottomSheetVC.dimissBtnCallBack = {
             self.removeBottomSheetandBlurView()
             self.allJobsCollectionView.isHidden = false
@@ -60,6 +75,7 @@ class SearchJob: UIViewController {
     }
 
     override func viewDidLoad() {
+        //super.hideNavigationBar()
         super.viewDidLoad()
         searchBar.searchTextField.backgroundColor = .white
         searchBar.setImage(UIImage(named: "search-icon"), for: .search, state: .normal)
@@ -76,7 +92,12 @@ class SearchJob: UIViewController {
         viewModel.getCategoriesList(url: urlString)
         
     }
+    // MARK:- Overriden Methods
+    override func backButtonTapped() {
+        self.navigationController?.popViewController(animated: true)
+    }
     // MARK:- Methods
+    
     
      private func setMap(latitude: CLLocationDegrees , longitude: CLLocationDegrees){
             
@@ -99,7 +120,6 @@ class SearchJob: UIViewController {
           self.locationManager.startUpdatingLocation()
           
       }
-    let bottomSheetVC = BottomSheetViewController()
     func addBottomSheetView() {
         // 1- Init bottomSheetVC
         
@@ -137,9 +157,7 @@ class SearchJob: UIViewController {
    
     // MARK:- IBAction Methods
     
-    @IBAction func menuButtonTapped(_ sender: Any) {
-      
-    }
+   
     @objc func blurviewTapped() {
           removeBottomSheetandBlurView()
 
@@ -155,9 +173,6 @@ class SearchJob: UIViewController {
         blurEffectView.isHidden = true
         
     }
-    @IBAction func notificationButtonTapped(_ sender: Any) {
-    }
-    
     // MARK:- Navigation Methods
     
     func pushViewJobsVC() {
@@ -168,6 +183,24 @@ class SearchJob: UIViewController {
         }
         self.navigationController?.pushViewController(viewJobsVC, animated: true)
     }
+    private func showRemarksPopUp(title: String) {
+        if let popvc = UIStoryboard(name: "PopUpView", bundle: nil).instantiateViewController(withIdentifier: "RemarksPopUp") as? RemarksPopUp
+        {
+            self.addChild(popvc)
+            popvc.view.frame = self.view.frame
+            self.view.addSubview(popvc.view)
+            popvc.didMove(toParent: self)
+            popvc.remarksCallBack = { remarks in
+                
+                self.remarks = remarks
+                let parameter = ["remarks": self.remarks]
+                if let ID = self.currentSelectedJob?.jobID {
+                    self.viewModel.applyJob(params: parameter, jobID: ID)
+                }
+            }
+        }
+           
+       }
     
     
     
@@ -214,7 +247,7 @@ extension SearchJob: UICollectionViewDataSource , UICollectionViewDelegate , UIC
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == allJobsCollectionView {
             if let job = viewModel.nearestJobs?.jobsList?[indexPath.row] {
-             
+                self.currentSelectedJob = job
                 if let lat = job.latitude , let long = job.longitude {
                     let latitude   = NSString(string: lat)
                     let longitude  = NSString(string: long)
@@ -238,6 +271,9 @@ extension SearchJob: UICollectionViewDataSource , UICollectionViewDelegate , UIC
                     }
                 }
                 bottomSheetVC.jobSelectedFromPreviousController(job: job)
+                bottomSheetVC.seeMoreCollapsed = false
+                bottomSheetVC.separator.isHidden = true
+                bottomSheetVC.InstructionsView.isHidden = true
                 self.bottomSheetVC.address = self.address
                              self.allJobsCollectionView.isHidden = true
                              self.clientCollectionView.isHidden = true
@@ -338,6 +374,13 @@ extension SearchJob: CLLocationManagerDelegate {
         print("Errors: " + error.localizedDescription)
     }
 }
-extension SearchJob: GMSMapViewDelegate {
+extension SearchJob: GMSMapViewDelegate{
+    
+}
+extension SearchJob: BottomSheetButtonTapDelegate {
+    func applyPressed() {
+        self.showRemarksPopUp(title: "")
+    }
+    
     
 }

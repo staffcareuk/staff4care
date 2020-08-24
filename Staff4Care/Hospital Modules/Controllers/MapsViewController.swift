@@ -10,6 +10,9 @@ import UIKit
 import GoogleMaps
 import FloatingPanel
 import CoreLocation
+protocol AddressforLocationField: class {
+    func setAddress(location: CLLocationCoordinate2D)
+}
 
 class MapsViewController: UIViewController, FloatingPanelControllerDelegate {
     
@@ -35,7 +38,8 @@ class MapsViewController: UIViewController, FloatingPanelControllerDelegate {
     let fpc = FloatingPanelController()
     
     // Back Button
-    var backBtn = UIButton()
+    var setLocationBtn = UIButton()
+    
     
     // Send Coordinates Delegate
     weak var locationDelegate: SetPlaceOnMap?
@@ -48,12 +52,13 @@ class MapsViewController: UIViewController, FloatingPanelControllerDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+      
         setBottomPanel()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.navigationBar.isHidden = false
-        self.navigationController?.navigationBar.prefersLargeTitles = true
+//        navigationController?.navigationBar.isHidden = false
+//        self.navigationController?.navigationBar.prefersLargeTitles = true
 
     }
 
@@ -65,19 +70,19 @@ class MapsViewController: UIViewController, FloatingPanelControllerDelegate {
      }
    
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        if let controllers = self.navigationController?.viewControllers {
-            if let createJob = controllers.last as? CreateJob {
-                print("Got :: " , createJob)
-                createJob.locationFromMap = self.marker.position
-                createJob.fromMap = true                
-            }
-                   }
-        if self.isMovingFromParent {
-           // delegate?.passValue(clickedImage: selectedImage)
-        }
-    }
+//    override func viewWillDisappear(_ animated: Bool) {
+//        super.viewWillDisappear(animated)
+//        if let controllers = self.navigationController?.viewControllers {
+//            if let createJob = controllers.last as? CreateJob {
+//                print("Got :: " , createJob)
+//                createJob.locationFromMap = self.marker.position
+//                createJob.fromMap = true
+//            }
+//                   }
+//        if self.isMovingFromParent {
+//           // delegate?.passValue(clickedImage: selectedImage)
+//        }
+//    }
     // MARK:- IBAction Methods
     
     @IBAction func backBtnPressed(_ sender: Any) {
@@ -105,10 +110,7 @@ class MapsViewController: UIViewController, FloatingPanelControllerDelegate {
         let camera = GMSCameraPosition.camera(withLatitude: latitude, longitude: longitude, zoom: 16.0)
         mapView = GMSMapView.map(withFrame: self.view.frame, camera: camera)
         self.view.addSubview(mapView)
-//        self.view.addSubview(backBtn)
-//        self.backBtn.topAnchor.constraint(equalTo: view.topAnchor, constant: 70).isActive = true
-//        self.backBtn.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
-        
+
         // Creates a marker in the center of the map.
         marker.position = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         //marker.icon = UIImage(named: "hospital-icon")
@@ -187,16 +189,19 @@ extension MapsViewController: GMSMapViewDelegate {
             if let location = response?.firstResult() {
         //        marker.map = nil
                 self.marker = GMSMarker(position: marker.position)
-                let lines = location.lines! as [String]
+            
+                if let lines = location.lines {
+                    marker.userData = lines.joined(separator: "\n")
+                                  marker.title = lines.joined(separator: "\n")
+                                  marker.infoWindowAnchor = CGPoint(x: 0.5, y: -0.25)
+                                  marker.accessibilityLabel = "current"
+                                  marker.map = self.mapView
 
-                marker.userData = lines.joined(separator: "\n")
-                marker.title = lines.joined(separator: "\n")
-                marker.infoWindowAnchor = CGPoint(x: 0.5, y: -0.25)
-                marker.accessibilityLabel = "current"
-                marker.map = self.mapView
+                                  self.mapView.animate(toLocation: marker.position)
+                                  self.mapView.selectedMarker = marker
+                }
 
-                self.mapView.animate(toLocation: marker.position)
-                self.mapView.selectedMarker = marker
+              
             }
         }
         
@@ -209,6 +214,21 @@ extension MapsViewController: GMSMapViewDelegate {
     
 }
 extension MapsViewController: SetPlaceOnMap {
+    func setLocationPressed() {
+         if let controllers = self.navigationController?.viewControllers {
+            print(controllers)
+            //_ = self.navigationController?.viewControllers.popLast()
+            self.navigationController?.popViewController(animated: true)
+            if let createJob = self.navigationController?.viewControllers.last as? CreateJob {
+                        print("Got :: " , createJob)
+                        createJob.locationFromMap = self.marker.position
+                        createJob.fromMap = true
+                        createJob.updateAddress(location: self.marker.position)
+                        
+                    }
+                           }
+    }
+    
     func cancelTapped() {
         fpc.move(to: .half, animated: true)
     }
