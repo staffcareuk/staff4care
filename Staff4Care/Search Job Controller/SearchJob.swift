@@ -23,6 +23,7 @@ class SearchJob: BaseViewController {
     
     @IBOutlet weak var nearbyTop: NSLayoutConstraint!
     @IBOutlet weak var stackviewTop: NSLayoutConstraint!
+    @IBOutlet weak var searchBarTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var jobCollectionViewTop: NSLayoutConstraint!
     // MARK:- Variables
     
@@ -49,12 +50,21 @@ class SearchJob: BaseViewController {
     
     // MARK:- LifeCycle Methods
     override func viewWillAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        nearbyTop.constant = 0
-        stackviewTop.constant = 0
-        categoryCollectionViewTop.constant = 2
-        jobCollectionViewTop.constant = 0
-        self.view.layoutIfNeeded()
+        super.viewWillAppear(animated)
+        if view.bounds.size.height > 667.0 {
+            
+        }
+        else if view.bounds.size.height <= 667.0 {
+            nearbyTop.constant = 0
+            stackviewTop.constant = 0
+            categoryCollectionViewTop.constant = 2
+            jobCollectionViewTop.constant = 0
+            self.view.layoutIfNeeded()
+        }
+        if super.hasNotch {
+            searchBarTopConstraint.constant += 20
+        }
+      
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)

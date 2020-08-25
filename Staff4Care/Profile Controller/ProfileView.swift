@@ -19,6 +19,7 @@ class ProfileView: BaseViewController {
     
     @IBOutlet weak var careerQualificationLbl: UILabel!
     @IBOutlet weak var carehomeExpLbl: UILabel!
+    @IBOutlet weak var infoStackTop: NSLayoutConstraint!
     
     @IBOutlet weak var summaryContainerView: UIView!
     @IBOutlet weak var summaryContainerViewHeight: NSLayoutConstraint!
@@ -72,6 +73,12 @@ class ProfileView: BaseViewController {
         
         
         
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if hasNotch {
+            infoStackTop.constant += 20
+        }
     }
     override func viewDidLoad() {
         super.viewDidLoad()

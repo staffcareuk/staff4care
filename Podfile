@@ -16,5 +16,6 @@ target 'Staff4Care' do
   pod 'SwiftyJSON'
   pod 'SearchTextField'
   pod 'Firebase/Messaging'
+  pod 'NVActivityIndicatorView'
   
 end

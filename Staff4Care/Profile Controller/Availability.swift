@@ -12,8 +12,16 @@ class Availability: BaseViewController {
     // MARK:- IBOutlets
     @IBOutlet weak var availabilityTableView: UITableView!
     
-
+    @IBOutlet weak var titleLblTop: NSLayoutConstraint!
+    
     // MARK:- LifeCycle Methods
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if hasNotch {
+            titleLblTop.constant += 20
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         availabilityTableView.delegate = self

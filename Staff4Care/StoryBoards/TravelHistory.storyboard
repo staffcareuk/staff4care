@@ -312,6 +312,7 @@ Birmingham, B23 7LE</string>
                         <outlet property="containerView" destination="o7y-oy-jtd" id="Z46-3S-SoO"/>
                         <outlet property="containerViewWidth" destination="pKV-8r-EpX" id="wih-CO-Ui1"/>
                         <outlet property="shiftsButton" destination="nyp-yd-K4i" id="8TZ-WG-GrG"/>
+                        <outlet property="titleLblTop" destination="DJf-gv-2xK" id="oCM-0Q-EHW"/>
                         <outlet property="travelButton" destination="lp3-WB-6vb" id="YN6-tM-26m"/>
                         <outlet property="travelTableView" destination="Bct-oE-Je7" id="fhi-a5-817"/>
                     </connections>
@@ -456,6 +457,7 @@ Birmingham, B23 7LE</string>
                     <connections>
                         <outlet property="calendarView" destination="XOV-cH-udn" id="Pkj-eq-5cq"/>
                         <outlet property="holidaysTableView" destination="Wpz-8e-ePD" id="9aL-Sw-1OZ"/>
+                        <outlet property="titleLblTop" destination="AQ6-Be-ULD" id="dyh-7p-lDL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gXr-Kp-dYG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

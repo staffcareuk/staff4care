@@ -7,10 +7,15 @@
 //
 
 import UIKit
+protocol AuthenticationResponseDelegate: class{
+    func userAuthenticationSuccess()
+    func userAuthenticationFailure()
+}
 
 class LoginViewModel {
     
     var navigationController: UINavigationController?
+    weak var authenticationDelegate: AuthenticationResponseDelegate?
     
     
     // MARK:- Network Methods
@@ -20,9 +25,12 @@ class LoginViewModel {
         LoginServices.shared.loginUser(urlString: urlString, parameters: params) { result in
             switch result {
             case .success(let response):
+                self.authenticationDelegate?.userAuthenticationSuccess()
                 //self.responseDescription = response.message ?? "Unknown Error"
                 if response.status! {
                     loggedUser = response
+                    
+                    
                     if let token = response.token {
                         userToken = token
                     }
@@ -60,6 +68,7 @@ class LoginViewModel {
                 }
                 
             case .failure(let reason):
+                self.authenticationDelegate?.userAuthenticationFailure()
                 print(reason)
             }
         }

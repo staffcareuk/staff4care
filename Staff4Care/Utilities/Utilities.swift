@@ -39,6 +39,12 @@ class Utilities {
 
 
 public extension UIDevice {
+   
+        var hasNotch: Bool {
+            let bottom = UIApplication.shared.keyWindow?.safeAreaInsets.bottom ?? 0
+            return bottom > 0
+        }
+    
 
     /// pares the deveice name as the standard name
     var modelName: String {

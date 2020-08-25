@@ -1,5 +1,5 @@
 PODS:
-  - Alamofire (5.1.0)
+  - Alamofire (5.2.2)
   - Firebase/CoreOnly (6.30.0):
     - FirebaseCore (= 6.10.0)
   - Firebase/Messaging (6.30.0):
@@ -36,13 +36,13 @@ PODS:
   - FSCalendar (2.8.1)
   - GoogleDataTransport (7.2.0):
     - nanopb (~> 1.30905.0)
-  - GoogleMaps (3.8.0):
-    - GoogleMaps/Maps (= 3.8.0)
-  - GoogleMaps/Base (3.8.0)
-  - GoogleMaps/Maps (3.8.0):
+  - GoogleMaps (3.10.0):
+    - GoogleMaps/Maps (= 3.10.0)
+  - GoogleMaps/Base (3.10.0)
+  - GoogleMaps/Maps (3.10.0):
     - GoogleMaps/Base
-  - GooglePlaces (3.8.0):
-    - GoogleMaps/Base (= 3.8.0)
+  - GooglePlaces (3.10.0):
+    - GoogleMaps/Base (= 3.10.0)
   - GoogleUtilities/AppDelegateSwizzler (6.7.2):
     - GoogleUtilities/Environment
     - GoogleUtilities/Logger
@@ -60,12 +60,15 @@ PODS:
     - GoogleUtilities/Logger
   - GoogleUtilities/UserDefaults (6.7.2):
     - GoogleUtilities/Logger
-  - IQKeyboardManagerSwift (6.5.5)
+  - IQKeyboardManagerSwift (6.5.6)
   - nanopb (1.30905.0):
     - nanopb/decode (= 1.30905.0)
     - nanopb/encode (= 1.30905.0)
   - nanopb/decode (1.30905.0)
   - nanopb/encode (1.30905.0)
+  - NVActivityIndicatorView (5.0.1):
+    - NVActivityIndicatorView/Base (= 5.0.1)
+  - NVActivityIndicatorView/Base (5.0.1)
   - PinCodeTextField (0.1.0)
   - PromisesObjC (1.2.10)
   - Protobuf (3.13.0)
@@ -80,6 +83,7 @@ DEPENDENCIES:
   - GoogleMaps
   - GooglePlaces
   - IQKeyboardManagerSwift
+  - NVActivityIndicatorView
   - PinCodeTextField
   - SearchTextField
   - SwiftyJSON
@@ -101,6 +105,7 @@ SPEC REPOS:
     - GoogleUtilities
     - IQKeyboardManagerSwift
     - nanopb
+    - NVActivityIndicatorView
     - PinCodeTextField
     - PromisesObjC
     - Protobuf
@@ -108,7 +113,7 @@ SPEC REPOS:
     - SwiftyJSON
 
 SPEC CHECKSUMS:
-  Alamofire: 9d5c5f602928e512395b30950c5984eca840093c
+  Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
   Firebase: 210f41ca352067d83b1ba4fd2e7fb49a0c017397
   FirebaseCore: 9a41e2de78fef10f63cee30ab10e2945266bc1fc
   FirebaseCoreDiagnostics: 7535fe695737f8c5b350584292a70b7f8ff0357b
@@ -118,17 +123,18 @@ SPEC CHECKSUMS:
   FloatingPanel: bb17fd6fc7ae519f877f7bd30f4f6115a78acf07
   FSCalendar: 5245140456fcbcac5824c203b98bd8068bdfee1a
   GoogleDataTransport: 672fb0ce96fe7f7f31d43672fca62ad2c9c86f7b
-  GoogleMaps: 7c8d66d70e4e8c300f43a7219d8fdaad7b325a9a
-  GooglePlaces: d5f70c3e9e427964fdeca1301a665d276ccd8754
+  GoogleMaps: 8c080862ff2748ece9929471b30feb56a6c5079d
+  GooglePlaces: 9a6f5f3a0c88da2aa1bf7426a65d3e004f5e69a1
   GoogleUtilities: 7f2f5a07f888cdb145101d6042bc4422f57e70b3
-  IQKeyboardManagerSwift: 0fb93310284665245591f50f7a5e38de615960b7
+  IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
   nanopb: c43f40fadfe79e8b8db116583945847910cbabc9
+  NVActivityIndicatorView: 738e843cb8924e9e4fc3e559d0728031624bf860
   PinCodeTextField: a3c39be58bde3ed1d6888d0fb1d88b0a4a2277cc
   PromisesObjC: b14b1c6b68e306650688599de8a45e49fae81151
   Protobuf: 3dac39b34a08151c6d949560efe3f86134a3f748
   SearchTextField: 40dc3cc57def5a211f263cac263622c163bbc25a
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: ecd5e56f44567de34205514314369ed7ed8160fd
+PODFILE CHECKSUM: d03dd824a9bf255214428d392468554bd7ae18d0
 
 COCOAPODS: 1.9.3

@@ -13,6 +13,7 @@ class Holidays: BaseViewController {
     
     // MARK:- IBOutlets
     
+    @IBOutlet weak var titleLblTop: NSLayoutConstraint!
     @IBOutlet weak var calendarView: FSCalendar!
     @IBOutlet weak var holidaysTableView: UITableView!
     
@@ -47,6 +48,13 @@ class Holidays: BaseViewController {
     
     
     // MARK:- LifeCycle Methods
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if hasNotch {
+            titleLblTop.constant += 14
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

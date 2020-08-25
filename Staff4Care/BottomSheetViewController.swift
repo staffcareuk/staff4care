@@ -125,11 +125,11 @@ class BottomSheetViewController: UIViewController {
                                     let frame = self?.view.frame
                             if UIScreen.main.bounds.size.height > 667.0 {
                                             yComponent2 = UIScreen.main.bounds.height * 0.65
-                                yComponent2 -= 160
+                                yComponent2 -= 170
                                         }
                                         else if UIScreen.main.bounds.size.height <= 667.0 {
                                             yComponent2 = UIScreen.main.bounds.height * 0.6
-                                            yComponent2 -= 175
+                                            yComponent2 -= 185
                                         }
                                     self?.view.frame = CGRect(x: 0, y: yComponent2, width: frame!.width, height: frame!.height)
                 self?.separator.isHidden = false

@@ -461,6 +461,7 @@
                         <outlet property="paymentTypeTextField" destination="RGL-QX-Wwd" id="QEf-Bp-y2j"/>
                         <outlet property="postJobButton" destination="8Zr-zh-f0o" id="WTT-77-0tS"/>
                         <outlet property="subCategoryStackvIEW" destination="Y3Z-9k-cKH" id="6QK-Nf-BXD"/>
+                        <outlet property="titleLblTop" destination="PnA-dY-8t4" id="F8B-Ef-9I0"/>
                         <outlet property="toTime" destination="pTo-pr-V2R" id="nu6-Mq-o09"/>
                     </connections>
                 </viewController>
@@ -476,8 +477,8 @@
         <image name="clock-TF-icon" width="20" height="20"/>
         <image name="date-TF-icon" width="19.5" height="18"/>
         <image name="hospital-TF-icon" width="20" height="20"/>
-        <image name="payment-icon" width="5" height="7"/>
-        <image name="payment-type" width="8.5" height="6.5"/>
+        <image name="payment-icon" width="20" height="20"/>
+        <image name="payment-type" width="20" height="20"/>
         <image name="subcategor-TF-icon" width="20" height="19"/>
     </resources>
 </document>

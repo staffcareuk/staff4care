@@ -271,6 +271,8 @@ Birmingham, B23 7LE</string>
                         <outlet property="paymentsTableView" destination="TeQ-vs-3wa" id="UOR-XT-taj"/>
                         <outlet property="pendingAmountLabel" destination="CVI-rD-no7" id="iHk-9O-mIv"/>
                         <outlet property="rejectedAmountLabel" destination="c68-N7-9ob" id="VRp-Ez-cTG"/>
+                        <outlet property="stackviewTop" destination="4GY-XZ-sWN" id="maL-hc-Qah"/>
+                        <outlet property="walleticonTop" destination="QGR-OZ-y2a" id="Adr-LF-dAr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zg7-UM-lFe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -15,6 +15,8 @@ class HospitalCategorySearch: BaseViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var clientCollectionView: UICollectionView!
     
+    @IBOutlet weak var titleLblTop: NSLayoutConstraint!
+    @IBOutlet weak var searchBarTop: NSLayoutConstraint!
     // MARK:- Variables
     var viewModel = SearchJobViewModel()
     var parentCategoryId: String = ""
@@ -25,7 +27,11 @@ class HospitalCategorySearch: BaseViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.navigationBar.isHidden = true        
+        self.navigationController?.navigationBar.isHidden = true
+        if hasNotch {
+            searchBarTop.constant += 20
+            titleLblTop.constant += 20
+        }
     }
        override func viewDidLoad() {
            super.viewDidLoad()

@@ -22,6 +22,7 @@ class JobCalendar: BaseViewController {
     @IBOutlet weak var calendarView: FSCalendar!
     @IBOutlet weak var shiftsTableView: UITableView!
     
+    @IBOutlet weak var titleLblTop: NSLayoutConstraint!
     
     
     
@@ -44,6 +45,11 @@ class JobCalendar: BaseViewController {
     
     
     // MARK:- LifeCycle Methods
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        titleLblTop.constant += 14
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

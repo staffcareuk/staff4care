@@ -12,7 +12,7 @@ open class SearchTextField: UITextField {
     
     ////////////////////////////////////////////////////////////////////////
     // Public interface
-
+    
     /// Maximum number of results to be shown in the suggestions list
     open var maxNumberOfResults = 0
     
@@ -46,8 +46,7 @@ open class SearchTextField: UITextField {
             }
         }
     }
-    //Padding images on left
-
+    
     /// Show the suggestions list without filter when the text field is focused
     open var startVisible = false
     

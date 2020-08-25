@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import NVActivityIndicatorView
 class BaseViewController: UIViewController {
 
     var leftNavigationButton  = UIButton()
@@ -15,7 +15,15 @@ class BaseViewController: UIViewController {
     var navigationBarTitle    = UILabel()
     var bottomLayer           = UIView()
     
+    var hasNotch              = false
     
+    // Activity Indicator
+    var spinner = NVActivityIndicatorView(frame: .zero, type: .ballDoubleBounce, color:  UIColor(rgb: 0x27418F), padding: 10)
+    // Blur View
+    let blurEffectBackground = UIBlurEffect(style: UIBlurEffect.Style.light)
+    lazy var blurEffectViewBackground = UIVisualEffectView(effect: blurEffectBackground)
+    
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         addNavigationBar()
@@ -24,17 +32,71 @@ class BaseViewController: UIViewController {
     }
     
     // MARK:- Methods
+     func startIndicator() {
+          
+          addBlurViewforActivity()
+          view.addSubview(spinner)
+          spinner.translatesAutoresizingMaskIntoConstraints = false
+          spinner.heightAnchor.constraint(equalToConstant: 70).isActive = true
+          spinner.widthAnchor.constraint(equalToConstant: 70).isActive = true
+          spinner.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+          spinner.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+          
+      }
+    func stopIndicator() {
+        spinner.stopAnimating()
+        spinner.removeFromSuperview()
+        removeBlurViewforActivity()
+    }
+    
+    func addBlurViewforActivity() {
+        blurEffectViewBackground.frame = view.bounds
+        blurEffectViewBackground.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        view.addSubview(blurEffectViewBackground)
+        blurEffectViewBackground.alpha = 0
+        blurEffectViewBackground.isHidden = true
+        UIView.animate(withDuration: 0.2, animations: { [weak self] in
+            self?.blurEffectViewBackground.isHidden = false
+            self?.blurEffectViewBackground.alpha = 0.6
+            
+        }) { (finished) in
+            if finished {
+                self.spinner.startAnimating()
+            }
+        }
+        
+    }
+    func removeBlurViewforActivity() {
+        UIView.animate(withDuration: 0.2, animations: { [weak self] in
+            self?.blurEffectViewBackground.alpha = 0
+            self?.blurEffectViewBackground.isHidden = true
+            
+        }) { (finished) in
+            if finished {
+                self.blurEffectViewBackground.removeFromSuperview()
+            }
+        }
+    }
     func addNavigationBar() {
         
         self.view.addSubview(navigationBar)
         navigationBar.backgroundColor = .tertiarySystemBackground
         navigationBar.translatesAutoresizingMaskIntoConstraints = false
-        navigationBar.heightAnchor.constraint(equalToConstant: 70).isActive = true
+        if UIDevice.current.hasNotch {
+            navigationBar.heightAnchor.constraint(equalToConstant: 84).isActive = true
+            hasNotch = true
+
+        } else {
+            navigationBar.heightAnchor.constraint(equalToConstant: 70).isActive = true
+            hasNotch = false
+
+        }
         navigationBar.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
         navigationBar.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0).isActive = true
         navigationBar.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0).isActive = true
         
         self.view.addSubview(bottomLayer)
+        
         bottomLayer.backgroundColor = .red
         bottomLayer.translatesAutoresizingMaskIntoConstraints = false
         bottomLayer.heightAnchor.constraint(equalToConstant: 2).isActive = true

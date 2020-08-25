@@ -109,22 +109,22 @@
                                 </cells>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nearby You!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VFM-M8-o7d">
-                                <rect key="frame" x="15" y="497" width="76" height="16.5"/>
+                                <rect key="frame" x="15" y="497" width="84" height="14"/>
                                 <fontDescription key="fontDescription" name="ITCAvantGardeStd-Demi" family="ITC Avant Garde Gothic Std" pointSize="14"/>
                                 <color key="textColor" red="0.60392156860000001" green="0.60392156860000001" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Zwf-hf-zBv">
-                                <rect key="frame" x="263" y="497" width="97" height="24"/>
+                                <rect key="frame" x="253" y="497" width="107" height="22"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="90 Available" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CvO-OD-Afb">
-                                        <rect key="frame" x="0.0" y="0.0" width="54" height="24"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="59" height="22"/>
                                         <fontDescription key="fontDescription" name="ITCAvantGardeStd-Bk" family="ITC Avant Garde Gothic Std" pointSize="10"/>
                                         <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iqx-ek-9cs">
-                                        <rect key="frame" x="62" y="0.0" width="35" height="24"/>
+                                        <rect key="frame" x="67" y="0.0" width="40" height="22"/>
                                         <fontDescription key="fontDescription" name="ITCAvantGardeStd-Demi" family="ITC Avant Garde Gothic Std" pointSize="10"/>
                                         <state key="normal" title="View All">
                                             <color key="titleColor" red="0.60392156860000001" green="0.60392156860000001" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -133,7 +133,7 @@
                                 </subviews>
                             </stackView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Lxi-QL-Nl6">
-                                <rect key="frame" x="20" y="533.5" width="335" height="160"/>
+                                <rect key="frame" x="20" y="531" width="335" height="160"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="160" id="M2P-DN-qnF"/>
@@ -163,22 +163,22 @@
                                                             </constraints>
                                                         </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="t52-fX-Ssu">
-                                                            <rect key="frame" x="37.5" y="82" width="94" height="39.5"/>
+                                                            <rect key="frame" x="34" y="82" width="101.5" height="33"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hospital Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pbW-ig-A7n">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="94" height="15.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="101.5" height="13"/>
                                                                     <fontDescription key="fontDescription" name="ITCAvantGardeStd-Demi" family="ITC Avant Garde Gothic Std" pointSize="13"/>
                                                                     <color key="textColor" red="0.60392156860000001" green="0.60392156860000001" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Heading Here Please" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ote-zV-uEN">
-                                                                    <rect key="frame" x="0.0" y="15.5" width="94" height="12"/>
+                                                                    <rect key="frame" x="0.0" y="13" width="101.5" height="10"/>
                                                                     <fontDescription key="fontDescription" name="ITCAvantGardeStd-Bk" family="ITC Avant Garde Gothic Std" pointSize="10"/>
                                                                     <color key="textColor" red="0.28235294119999998" green="0.30980392159999998" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem Ipsum" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mGn-Zt-aAf">
-                                                                    <rect key="frame" x="0.0" y="27.5" width="94" height="12"/>
+                                                                    <rect key="frame" x="0.0" y="23" width="101.5" height="10"/>
                                                                     <fontDescription key="fontDescription" name="ITCAvantGardeStd-Bk" family="ITC Avant Garde Gothic Std" pointSize="10"/>
                                                                     <color key="textColor" red="0.81960784310000001" green="0.81960784310000001" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -186,7 +186,7 @@
                                                             </subviews>
                                                         </stackView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3.1 Miles" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JTC-P8-JKL">
-                                                            <rect key="frame" x="114.5" y="142" width="44.5" height="13"/>
+                                                            <rect key="frame" x="113" y="144" width="46" height="11"/>
                                                             <fontDescription key="fontDescription" name="ITCAvantGardeStd-Bk" family="ITC Avant Garde Gothic Std" pointSize="11"/>
                                                             <color key="textColor" red="0.28235294119999998" green="0.30980392159999998" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -257,6 +257,7 @@
                         <outlet property="nearbyLblTopConstraint" destination="xsv-MR-QpN" id="BSa-4r-e9q"/>
                         <outlet property="nearbyStaffCollectionView" destination="Lxi-QL-Nl6" id="Q7i-je-FGr"/>
                         <outlet property="searchBar" destination="KIa-FG-MRN" id="BX1-aV-fB1"/>
+                        <outlet property="searchbarTop" destination="Xj3-2t-6ev" id="cVj-po-OM6"/>
                         <outlet property="stackviewTopConstraint" destination="vdG-1t-EKa" id="5KQ-lf-MhU"/>
                     </connections>
                 </viewController>
@@ -276,7 +277,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </mapView>
                             <searchBar contentMode="redraw" searchBarStyle="prominent" placeholder="Find a Job" translatesAutoresizingMaskIntoConstraints="NO" id="X9Y-ds-bZU">
-                                <rect key="frame" x="20" y="149.5" width="335" height="50"/>
+                                <rect key="frame" x="20" y="146" width="335" height="50"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="9lW-KL-kWY"/>
@@ -291,13 +292,13 @@
                                 </userDefinedRuntimeAttributes>
                             </searchBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Care Homes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AJU-YJ-bj3">
-                                <rect key="frame" x="129" y="85" width="117.5" height="24.5"/>
+                                <rect key="frame" x="122" y="85" width="131.5" height="21"/>
                                 <fontDescription key="fontDescription" name="ITCAvantGardeStd-Demi" family="ITC Avant Garde Gothic Std" pointSize="21"/>
                                 <color key="textColor" red="0.60392156862745094" green="0.60392156862745094" blue="0.77647058823529413" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="XI8-gx-j6H">
-                                <rect key="frame" x="20" y="249.5" width="335" height="340"/>
+                                <rect key="frame" x="20" y="246" width="335" height="340"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="340" id="cxD-DL-3E1"/>
@@ -387,6 +388,8 @@
                     <connections>
                         <outlet property="clientCollectionView" destination="XI8-gx-j6H" id="sE2-rV-HjW"/>
                         <outlet property="searchBar" destination="X9Y-ds-bZU" id="B6W-Zp-UmC"/>
+                        <outlet property="searchBarTop" destination="ExO-hJ-Hm2" id="OzR-Kc-505"/>
+                        <outlet property="titleLblTop" destination="3hB-5T-UD0" id="iJT-pf-2bv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="734-Z3-LlZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

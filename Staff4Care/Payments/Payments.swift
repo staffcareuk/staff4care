@@ -17,7 +17,9 @@ class Payments: BaseViewController {
     @IBOutlet weak var rejectedAmountLabel: UILabel!
     @IBOutlet weak var paymentsTableView: UITableView!
     
+    @IBOutlet weak var walleticonTop: NSLayoutConstraint!
     
+    @IBOutlet weak var stackviewTop: NSLayoutConstraint!
     
     
     
@@ -32,6 +34,13 @@ class Payments: BaseViewController {
     let animationStartDate = Date()
 
     // MARK:- LifeCycle Methods
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if hasNotch {
+            walleticonTop.constant += 14
+            stackviewTop.constant += 14
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         containerView.layer.borderWidth = 2.0

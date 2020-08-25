@@ -208,6 +208,7 @@
                     </view>
                     <connections>
                         <outlet property="availabilityTableView" destination="2Jq-JY-AQ8" id="qcs-82-y7p"/>
+                        <outlet property="titleLblTop" destination="7el-os-foy" id="FPa-dk-73H"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s1U-8d-QuT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

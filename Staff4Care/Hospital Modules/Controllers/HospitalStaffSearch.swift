@@ -20,6 +20,7 @@ class HospitalStaffSearch: BaseViewController {
     
     @IBOutlet weak var collectionViewTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var stackviewTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var searchbarTop: NSLayoutConstraint!
     // MARK:- Variables
     var viewModel = SearchJobViewModel()
     var urlString = "https://api.bluenee.co.uk/cig/index.php/api/categories/list"
@@ -38,6 +39,9 @@ class HospitalStaffSearch: BaseViewController {
             stackviewTopConstraint.constant = 0
             collectionViewTopConstraint.constant = 2
             self.view.layoutIfNeeded()
+        }
+        if hasNotch {
+            searchbarTop.constant += 14
         }
     }
 

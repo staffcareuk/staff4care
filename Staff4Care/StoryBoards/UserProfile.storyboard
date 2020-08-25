@@ -728,6 +728,7 @@ standard dummy text ever since the 1500s, when an  </string>
                         <outlet property="experienceDescriptionLbl" destination="BjX-vu-Rlr" id="4T2-P2-Qw7"/>
                         <outlet property="experienceTitleLbl" destination="LmI-OE-7mQ" id="Dum-Rs-tNp"/>
                         <outlet property="firstAidLbl" destination="5el-EB-3a3" id="a4b-0u-WMn"/>
+                        <outlet property="infoStackTop" destination="2Fr-px-02P" id="Sym-DO-7sy"/>
                         <outlet property="profileStackView" destination="1na-mP-JB0" id="8JE-ck-luR"/>
                         <outlet property="qualificationsContainerView" destination="s12-7G-wQX" id="PDo-NP-TJs"/>
                         <outlet property="qualificationsContainerViewHeight" destination="doN-dz-uIf" id="f3A-L7-qVZ"/>
@@ -960,13 +961,13 @@ standard dummy text ever since the 1500s, when an  </string>
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HKq-Lh-4NU">
-                                <rect key="frame" x="191" y="77" width="32.5" height="18"/>
+                                <rect key="frame" x="191.5" y="77" width="31.5" height="21"/>
                                 <fontDescription key="fontDescription" name="ITCAvantGardeStd-Md" family="ITC Avant Garde Gothic Std" pointSize="18"/>
                                 <color key="textColor" red="0.60392156860000001" green="0.60392156860000001" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Qualifications &amp; Accreditation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xGO-Ff-xmd" customClass="EditProfileLabel" customModule="Staff4Care" customModuleProvider="target">
-                                <rect key="frame" x="20" y="125" width="374" height="40"/>
+                                <rect key="frame" x="20" y="128" width="374" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="95P-Wf-3wD"/>
                                 </constraints>
@@ -975,14 +976,14 @@ standard dummy text ever since the 1500s, when an  </string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4aU-Kw-WWz">
-                                <rect key="frame" x="20" y="195" width="374" height="2"/>
+                                <rect key="frame" x="20" y="198" width="374" height="2"/>
                                 <color key="backgroundColor" red="0.87058823529999996" green="0.87058823529999996" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="2" id="HcU-0N-0iZ"/>
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NYd-A8-CVl">
-                                <rect key="frame" x="0.0" y="217" width="414" height="625"/>
+                                <rect key="frame" x="0.0" y="220" width="414" height="622"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oxJ-Ff-pCp" userLabel="Main View">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="700"/>

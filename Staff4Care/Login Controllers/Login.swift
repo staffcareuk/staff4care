@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import NVActivityIndicatorView
 class Login: BaseViewController  {
 
     // MARK: IBOutlets
@@ -54,7 +55,10 @@ class Login: BaseViewController  {
     var selectedTab = "L"
     // View Model Object
     var loginVM = LoginViewModel()
+    
    
+   
+
    
     
     
@@ -75,7 +79,6 @@ class Login: BaseViewController  {
         super.viewWillAppear(animated)
       //  loginCardView.applyStylingProperties(foregoundColor: .white, shadowColor: 0x707070)
         nextButton.addRoundedBorder(shadowColor: 0x707070)
-      
 
     }
     override func backButtonTapped() {
@@ -85,6 +88,7 @@ class Login: BaseViewController  {
     override func viewDidLoad() {
         super.hideNavigationBar()
         super.viewDidLoad()
+
         setupConstraintsAndProperties()
         setupTitle()
         loginVM.navigationController = self.navigationController
@@ -109,6 +113,7 @@ class Login: BaseViewController  {
     
     
     // MARK: UI Methods
+  
     private func showPopUp(title: String) {
         if let popvc = UIStoryboard(name: "PopUpView", bundle: nil).instantiateViewController(withIdentifier: "PopUpView") as? PopUpView
         {
@@ -140,6 +145,10 @@ class Login: BaseViewController  {
         
     }
     private func setupConstraintsAndProperties() {
+        
+        // Delegate
+        loginVM.authenticationDelegate = self
+        
         loginCardViewHeight.constant  =   UIScreen.main.bounds.size.height * 0.45
         loginCardViewWidth.constant   =   UIScreen.main.bounds.size.width * 0.85
         loginCardViewCenterY.constant =   UIScreen.main.bounds.size.height * 0.02
@@ -192,6 +201,7 @@ class Login: BaseViewController  {
    
     // MARK: IBAction Methods
     @IBAction func nextButtonTapped(_ sender: UIButton) {
+        startIndicator()
         if selectedTab == "L" {
             loginVM.authenticateUser(userName: usernameField.text!, password: passwordField.text!)
         } else if selectedTab == "S" {
@@ -330,3 +340,19 @@ class Login: BaseViewController  {
 
 }
 
+extension Login: AuthenticationResponseDelegate {
+    func userAuthenticationSuccess() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) { [weak self] in
+            self?.stopIndicator()
+        }
+        
+    }
+    
+    func userAuthenticationFailure() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) { [weak self] in
+            self?.stopIndicator()
+        }
+    }
+    
+    
+}

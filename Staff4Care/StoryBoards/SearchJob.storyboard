@@ -267,6 +267,7 @@
                         <outlet property="mapView" destination="iy9-Ta-Ag6" id="EFJ-P4-Ind"/>
                         <outlet property="nearbyTop" destination="o6o-mW-lge" id="17g-2C-bFx"/>
                         <outlet property="searchBar" destination="Xzn-Z4-IIf" id="yBz-q8-M4o"/>
+                        <outlet property="searchBarTopConstraint" destination="pR4-jQ-vsf" id="RB9-1H-e3J"/>
                         <outlet property="stackviewTop" destination="uU0-F4-mrn" id="TGV-i0-6sY"/>
                     </connections>
                 </viewController>

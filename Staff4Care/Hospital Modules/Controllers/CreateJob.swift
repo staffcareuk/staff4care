@@ -37,6 +37,7 @@ class CreateJob: BaseViewController {
     @IBOutlet weak var clientSubCategoryTableView: UITableView!
     @IBOutlet weak var locationTextField: CustomTextField!
     
+    @IBOutlet weak var titleLblTop: NSLayoutConstraint!
     // MARK:- Variables
     
     var listShow = false
@@ -74,7 +75,7 @@ class CreateJob: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.isHidden = true
-        
+        titleLblTop.constant += 14
     }
    
     override func viewDidLayoutSubviews() {

@@ -235,6 +235,7 @@ Birmingham, B23 7LE</string>
                         <outlet property="containerViewWidth" destination="ipo-XF-aW2" id="Utd-o9-Zni"/>
                         <outlet property="pastButton" destination="RbI-2V-1sa" id="B0s-91-cWd"/>
                         <outlet property="shiftsTableView" destination="VRC-k8-AyZ" id="Gpe-6i-XDk"/>
+                        <outlet property="titleLblTop" destination="la6-WR-Ckr" id="s8x-7w-JQc"/>
                         <outlet property="upcomingButton" destination="yAb-CM-aCD" id="XRq-dv-Ast"/>
                     </connections>
                 </viewController>

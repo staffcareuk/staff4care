@@ -17,6 +17,7 @@ class TravelHistory: BaseViewController {
     @IBOutlet weak var bottomLayerViewWidth: NSLayoutConstraint!
     @IBOutlet weak var travelButton: UIButton!
     @IBOutlet weak var shiftsButton: UIButton!
+    @IBOutlet weak var titleLblTop: NSLayoutConstraint!
     @IBOutlet weak var travelTableView: UITableView!
     
     
@@ -33,6 +34,12 @@ class TravelHistory: BaseViewController {
     
     
     // MARK:- LifeCycle Methods
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if hasNotch {
+            titleLblTop.constant += 14
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
