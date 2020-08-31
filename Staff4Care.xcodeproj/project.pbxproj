@@ -37,6 +37,9 @@
 		7E3659CC24BA420B0064E01E /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3659CB24BA420B0064E01E /* UIViewController+Extension.swift */; };
 		7E3659CE24BA44410064E01E /* UIStoryboard+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3659CD24BA44410064E01E /* UIStoryboard+Extension.swift */; };
 		7E4001B524C878A600967414 /* DropDownListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4001B424C878A600967414 /* DropDownListCell.swift */; };
+		7E4A436224F6CEA700BEF22C /* AvailabilityShiftsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4A436024F6CEA700BEF22C /* AvailabilityShiftsModel.swift */; };
+		7E4A436524F6CF1800BEF22C /* AvailabilityServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4A436424F6CF1800BEF22C /* AvailabilityServices.swift */; };
+		7E4A436724F6D07B00BEF22C /* AvailabilityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4A436624F6D07B00BEF22C /* AvailabilityViewModel.swift */; };
 		7E4D9E7824AE3AB400E06AAB /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4D9E7724AE3AB400E06AAB /* ImagePicker.swift */; };
 		7E4D9E7A24AE421400E06AAB /* EditSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4D9E7924AE421400E06AAB /* EditSummary.swift */; };
 		7E4D9E7C24AE605800E06AAB /* EditAboutMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4D9E7B24AE605800E06AAB /* EditAboutMe.swift */; };
@@ -74,6 +77,8 @@
 		7E8FE605249A82FF000ED419 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8FE604249A82FF000ED419 /* Login.swift */; };
 		7E91FE8324A66AFE005FA076 /* SearchJob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E91FE8224A66AFE005FA076 /* SearchJob.swift */; };
 		7E91FE8524A66B29005FA076 /* SearchJob.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E91FE8424A66B29005FA076 /* SearchJob.storyboard */; };
+		7E93402424F9592F009F05FC /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E93402324F9592F009F05FC /* UserDefaults+Extension.swift */; };
+		7E93402624F95D21009F05FC /* SeeCandidates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E93402524F95D21009F05FC /* SeeCandidates.swift */; };
 		7E9C7F9524DF425B003B8BD0 /* Maps.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E9C7F9424DF425B003B8BD0 /* Maps.storyboard */; };
 		7E9C7F9724DF426F003B8BD0 /* MapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9C7F9624DF426F003B8BD0 /* MapsViewController.swift */; };
 		7E9E7F1824A777FA00376703 /* SearchJobViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9E7F1724A777FA00376703 /* SearchJobViewModel.swift */; };
@@ -93,6 +98,7 @@
 		7EC7A87124A8F42F004E81F0 /* ExpireJobTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EC7A86F24A8F42F004E81F0 /* ExpireJobTableViewCell.xib */; };
 		7EC7A87624A9013D004E81F0 /* UserProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EC7A87524A9013D004E81F0 /* UserProfile.storyboard */; };
 		7EC850D924E1E6E100C17EEB /* GetPlaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC850D824E1E6E100C17EEB /* GetPlaces.swift */; };
+		7ED4E0B624F68B39008F1129 /* GenericPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED4E0B524F68B39008F1129 /* GenericPopUp.swift */; };
 		7ED653F424A26CD30026AD89 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED653F324A26CD30026AD89 /* UILabel+Extension.swift */; };
 		7ED653F624A278590026AD89 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED653F524A278590026AD89 /* CustomTextField.swift */; };
 		7EDF7B5624AB895F001A6C95 /* PaddedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDF7B5524AB895F001A6C95 /* PaddedLabel.swift */; };
@@ -138,6 +144,9 @@
 		7E3659CB24BA420B0064E01E /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		7E3659CD24BA44410064E01E /* UIStoryboard+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Extension.swift"; sourceTree = "<group>"; };
 		7E4001B424C878A600967414 /* DropDownListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownListCell.swift; sourceTree = "<group>"; };
+		7E4A436024F6CEA700BEF22C /* AvailabilityShiftsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvailabilityShiftsModel.swift; sourceTree = "<group>"; };
+		7E4A436424F6CF1800BEF22C /* AvailabilityServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailabilityServices.swift; sourceTree = "<group>"; };
+		7E4A436624F6D07B00BEF22C /* AvailabilityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailabilityViewModel.swift; sourceTree = "<group>"; };
 		7E4D9E7724AE3AB400E06AAB /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		7E4D9E7924AE421400E06AAB /* EditSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditSummary.swift; sourceTree = "<group>"; };
 		7E4D9E7B24AE605800E06AAB /* EditAboutMe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAboutMe.swift; sourceTree = "<group>"; };
@@ -175,6 +184,8 @@
 		7E8FE604249A82FF000ED419 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		7E91FE8224A66AFE005FA076 /* SearchJob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchJob.swift; sourceTree = "<group>"; };
 		7E91FE8424A66B29005FA076 /* SearchJob.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchJob.storyboard; sourceTree = "<group>"; };
+		7E93402324F9592F009F05FC /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
+		7E93402524F95D21009F05FC /* SeeCandidates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeCandidates.swift; sourceTree = "<group>"; };
 		7E9C7F9424DF425B003B8BD0 /* Maps.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Maps.storyboard; sourceTree = "<group>"; };
 		7E9C7F9624DF426F003B8BD0 /* MapsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsViewController.swift; sourceTree = "<group>"; };
 		7E9E7F1724A777FA00376703 /* SearchJobViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchJobViewModel.swift; sourceTree = "<group>"; };
@@ -195,6 +206,7 @@
 		7EC7A86F24A8F42F004E81F0 /* ExpireJobTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpireJobTableViewCell.xib; sourceTree = "<group>"; };
 		7EC7A87524A9013D004E81F0 /* UserProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserProfile.storyboard; sourceTree = "<group>"; };
 		7EC850D824E1E6E100C17EEB /* GetPlaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPlaces.swift; sourceTree = "<group>"; };
+		7ED4E0B524F68B39008F1129 /* GenericPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericPopUp.swift; sourceTree = "<group>"; };
 		7ED653F324A26CD30026AD89 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		7ED653F524A278590026AD89 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		7EDF7B5524AB895F001A6C95 /* PaddedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddedLabel.swift; sourceTree = "<group>"; };
@@ -252,6 +264,7 @@
 				7EE657B724B217BF00A1ACC6 /* CALayer+Extension.swift */,
 				7E3659CB24BA420B0064E01E /* UIViewController+Extension.swift */,
 				7E3659CD24BA44410064E01E /* UIStoryboard+Extension.swift */,
+				7E93402324F9592F009F05FC /* UserDefaults+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -362,6 +375,7 @@
 				7E29222024CC8B820007AE2D /* CategoriesServices.swift */,
 				7EC5242D24CF4F3A00A2C928 /* JobsServices.swift */,
 				7E132D4A24DDCED60021AD69 /* LocationServices.swift */,
+				7E4A436424F6CF1800BEF22C /* AvailabilityServices.swift */,
 			);
 			path = "Web Services";
 			sourceTree = "<group>";
@@ -398,7 +412,10 @@
 		7E7AAA9624B5F3A000A3517E /* Custom PopUps */ = {
 			isa = PBXGroup;
 			children = (
+				7E2030B924DF25170089D985 /* MapsPopUpView.swift */,
+				7E185BEA24F18CF300AAE615 /* RemarksPopUp.swift */,
 				7E7AAA9724B5F3D200A3517E /* PopUpView.swift */,
+				7ED4E0B524F68B39008F1129 /* GenericPopUp.swift */,
 			);
 			path = "Custom PopUps";
 			sourceTree = "<group>";
@@ -432,11 +449,10 @@
 				7E7B812224C768C900AFDF6D /* HospitalCategorySearch.swift */,
 				7E7B812424C76EE000AFDF6D /* CreateJob.swift */,
 				7E1FE3CD24C9DDE500C3F650 /* HospitalRegistration.swift */,
-				7E2030B924DF25170089D985 /* MapsPopUpView.swift */,
 				7E9C7F9624DF426F003B8BD0 /* MapsViewController.swift */,
 				7E5F547F24E00F090083B910 /* MapsContentViewController.swift */,
-				7E185BEA24F18CF300AAE615 /* RemarksPopUp.swift */,
 				7E185BED24F1A7CD00AAE615 /* BaseViewController.swift */,
+				7E93402524F95D21009F05FC /* SeeCandidates.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -493,6 +509,7 @@
 				7E9E7F1724A777FA00376703 /* SearchJobViewModel.swift */,
 				7E620EA324C307AF00BC777B /* LoginViewModel.swift */,
 				7E7FE4CB24D08D8400A921C5 /* ViewJobsViewModel.swift */,
+				7E4A436624F6D07B00BEF22C /* AvailabilityViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -505,6 +522,7 @@
 				7E7FE4CD24D0A1D800A921C5 /* CreateJobResponseModel.swift */,
 				7E7512B324EAB28400D067DE /* PaymentTitles.swift */,
 				7E192A7E24EC2C4E0039FD8E /* NearbyStaffModel.swift */,
+				7E4A436024F6CEA700BEF22C /* AvailabilityShiftsModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -716,6 +734,7 @@
 				7E4D9E7C24AE605800E06AAB /* EditAboutMe.swift in Sources */,
 				7E2042B0249A8F42004EE1CD /* UIView+Extension.swift in Sources */,
 				7E0E995924A64DD2007B266E /* VerifyCode.swift in Sources */,
+				7E4A436224F6CEA700BEF22C /* AvailabilityShiftsModel.swift in Sources */,
 				7EA093C424E02F90002B4475 /* RoutesManager.swift in Sources */,
 				7EC7A87024A8F42F004E81F0 /* ExpireJobTableViewCell.swift in Sources */,
 				7E4D9E7E24AE63B500E06AAB /* EditQualifications.swift in Sources */,
@@ -727,6 +746,7 @@
 				7E8FE605249A82FF000ED419 /* Login.swift in Sources */,
 				7E9C7F9724DF426F003B8BD0 /* MapsViewController.swift in Sources */,
 				7E2030BA24DF25170089D985 /* MapsPopUpView.swift in Sources */,
+				7E93402424F9592F009F05FC /* UserDefaults+Extension.swift in Sources */,
 				7E21FE4C249939280002DA1F /* LoginIntro.swift in Sources */,
 				7EE657B824B217BF00A1ACC6 /* CALayer+Extension.swift in Sources */,
 				7E18DB2224AA304000DF9B59 /* ProfileCollectionViewCell.swift in Sources */,
@@ -740,6 +760,7 @@
 				7E574FB924A5022600CCEAAB /* Registration.swift in Sources */,
 				7E4D9E7824AE3AB400E06AAB /* ImagePicker.swift in Sources */,
 				7E62DD7324AF872D00648788 /* ChartCollectionViewCell.swift in Sources */,
+				7E93402624F95D21009F05FC /* SeeCandidates.swift in Sources */,
 				7EDF7B5624AB895F001A6C95 /* PaddedLabel.swift in Sources */,
 				7E62DD6D24AF7DC900648788 /* Availability.swift in Sources */,
 				7E2042B5249AA041004EE1CD /* Constants.swift in Sources */,
@@ -759,6 +780,7 @@
 				7E185BEB24F18CF300AAE615 /* RemarksPopUp.swift in Sources */,
 				7EC7A86D24A8D2F7004E81F0 /* ViewJobsTableViewCell.swift in Sources */,
 				7E18DB2024AA1F0900DF9B59 /* UserProfile.swift in Sources */,
+				7E4A436524F6CF1800BEF22C /* AvailabilityServices.swift in Sources */,
 				7E2042AE249A8E83004EE1CD /* UIColor+Extension.swift in Sources */,
 				7E7FE4D024D0A23A00A921C5 /* CreateFindJobsViewModel.swift in Sources */,
 				7E9E7F1D24A7882500376703 /* JobCell.swift in Sources */,
@@ -766,11 +788,13 @@
 				7EE657B624B213A700A1ACC6 /* CalendarCell.swift in Sources */,
 				7E62DD7124AF86B800648788 /* ChartTableViewCell.swift in Sources */,
 				7E21FE31249932B80002DA1F /* AppDelegate.swift in Sources */,
+				7ED4E0B624F68B39008F1129 /* GenericPopUp.swift in Sources */,
 				7EC5243024CF4F7300A2C928 /* JobsResponseModel.swift in Sources */,
 				7E620EA724C310BC00BC777B /* Utilities.swift in Sources */,
 				7E62DD7924AFADA300648788 /* HeaderCelllTableViewCell.swift in Sources */,
 				7EB381BA24B38F0A004D886E /* TravelHistoryCell.swift in Sources */,
 				7E21FE33249932B80002DA1F /* SceneDelegate.swift in Sources */,
+				7E4A436724F6D07B00BEF22C /* AvailabilityViewModel.swift in Sources */,
 				7E7C589724A6822400BAB505 /* ClientCollectionViewCell.swift in Sources */,
 				7E7B812324C768C900AFDF6D /* HospitalCategorySearch.swift in Sources */,
 			);

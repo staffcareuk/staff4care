@@ -51,7 +51,7 @@ class Login: BaseViewController  {
     var heightIncreased = false
     var heightReduced = false
     var responseDescription = ""
-    var selectedRole = ""
+    var selectedRole = "2"
     var selectedTab = "L"
     // View Model Object
     var loginVM = LoginViewModel()
@@ -79,7 +79,11 @@ class Login: BaseViewController  {
         super.viewWillAppear(animated)
       //  loginCardView.applyStylingProperties(foregoundColor: .white, shadowColor: 0x707070)
         nextButton.addRoundedBorder(shadowColor: 0x707070)
-
+        if isKeyPresentInUserDefaults(key: "username") {
+            if let username = UserDefaults.standard.value(forKey: "username") as? String {
+              usernameField.text = username
+            }
+        }
     }
     override func backButtonTapped() {
         print("Child Back")
@@ -98,13 +102,13 @@ class Login: BaseViewController  {
             self.selectedRoleLabel.text = self.staffLabel.text
             self.showFilterMenu = true
             self.fadeAnimateView()
-            self.selectedRole = "1"
+            self.selectedRole = "2"
         }
         self.careProviderLabel.onClick = {
             self.selectedRoleLabel.text = self.careProviderLabel.text
             self.showFilterMenu = true
             self.fadeAnimateView()
-            self.selectedRole = "2"
+            self.selectedRole = "1"
         }
         
       
@@ -114,41 +118,14 @@ class Login: BaseViewController  {
     
     // MARK: UI Methods
   
-    private func showPopUp(title: String) {
-        if let popvc = UIStoryboard(name: "PopUpView", bundle: nil).instantiateViewController(withIdentifier: "PopUpView") as? PopUpView
-        {
-            
-            self.addChild(popvc)
-            
-            popvc.view.frame = self.view.frame
-            self.view.addSubview(popvc.view)
-            popvc.titleLabel.text = title
-            popvc.buttonStackView.isHidden = true
-             popvc.updateHeight(height: popvc.titleLabel.intrinsicContentSize.height + 170)
-            popvc.containerView.backgroundColor = .black
-            popvc.didMove(toParent: self)
-
-        }
-          
-    }
-    private func showPopUpInPresentationStyle() {
-        if let popvc = UIStoryboard(name: "PopUpView", bundle: nil).instantiateViewController(withIdentifier: "PopUpView") as? PopUpView
-        {
-            popvc.modalPresentationStyle = .overCurrentContext
-            popvc.modalTransitionStyle = .coverVertical
-            self.present(popvc, animated: true, completion: nil)
-            popvc.updateHeight(height: 160)
-
-
-        }
-        
-        
-    }
+  
+  
     private func setupConstraintsAndProperties() {
         
         // Delegate
         loginVM.authenticationDelegate = self
         
+        nextButton.isEnabled = false
         loginCardViewHeight.constant  =   UIScreen.main.bounds.size.height * 0.45
         loginCardViewWidth.constant   =   UIScreen.main.bounds.size.width * 0.85
         loginCardViewCenterY.constant =   UIScreen.main.bounds.size.height * 0.02
@@ -168,6 +145,8 @@ class Login: BaseViewController  {
         passwordField.isSecureTextEntry = true
         emailField.tag = 1
         passwordField.tag = 3
+        usernameField.delegate = self
+        passwordField.delegate = self
        
 
     }
@@ -201,6 +180,10 @@ class Login: BaseViewController  {
    
     // MARK: IBAction Methods
     @IBAction func nextButtonTapped(_ sender: UIButton) {
+        emailField.resignFirstResponder()
+        passwordField.resignFirstResponder()
+        phoneNoField.resignFirstResponder()
+        usernameField.resignFirstResponder()
         startIndicator()
         if selectedTab == "L" {
             loginVM.authenticateUser(userName: usernameField.text!, password: passwordField.text!)
@@ -284,7 +267,19 @@ class Login: BaseViewController  {
          heightReduced = false
 
     }
-    @IBAction func rememberMeBtnTapped(_ sender: Any) {
+    @IBAction func rememberMeBtnTapped(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
+        if sender.isSelected {
+            sender.setImage(UIImage(named: "filled-button"), for: .selected)
+            if !(usernameField.text!.isEmpty) {
+                UserDefaults.standard.set(usernameField.text, forKey: "username")
+            }
+        } else {
+            if isKeyPresentInUserDefaults(key: "username") {
+                UserDefaults.standard.removeObject(forKey: "username")
+            }
+            sender.setImage(UIImage(named: "outline-button"), for: .normal)
+        }
     }
     @IBAction func dropDownButtonPressed(_ sender: Any) {
        fadeAnimateView()
@@ -341,6 +336,21 @@ class Login: BaseViewController  {
 }
 
 extension Login: AuthenticationResponseDelegate {
+    func registerUserSuccess() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) { [weak self] in
+            self?.stopIndicator()
+        }
+    }
+    
+    func registerUserFailure(responseDescription: String) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) { [weak self] in
+            self?.stopIndicator()
+            self?.showPopUp(title: responseDescription, success: false, showFilledBtn: false)
+
+        }
+    }
+    
+  
     func userAuthenticationSuccess() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) { [weak self] in
             self?.stopIndicator()
@@ -348,11 +358,22 @@ extension Login: AuthenticationResponseDelegate {
         
     }
     
-    func userAuthenticationFailure() {
+    func userAuthenticationFailure(responseDescription: String) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) { [weak self] in
             self?.stopIndicator()
+            self?.showPopUp(title: responseDescription, success: false, showFilledBtn: false)
         }
     }
     
     
+}
+extension Login: UITextFieldDelegate {
+
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if usernameField.text?.isEmpty == false && passwordField.text?.isEmpty == false {
+            nextButton.isEnabled = true
+        } else {
+            nextButton.isEnabled = false
+        }
+    }
 }

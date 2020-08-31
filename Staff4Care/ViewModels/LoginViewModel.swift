@@ -9,7 +9,10 @@
 import UIKit
 protocol AuthenticationResponseDelegate: class{
     func userAuthenticationSuccess()
-    func userAuthenticationFailure()
+    func userAuthenticationFailure(responseDescription: String)
+    func registerUserSuccess()
+    func registerUserFailure(responseDescription: String)
+    
 }
 
 class LoginViewModel {
@@ -25,50 +28,42 @@ class LoginViewModel {
         LoginServices.shared.loginUser(urlString: urlString, parameters: params) { result in
             switch result {
             case .success(let response):
-                self.authenticationDelegate?.userAuthenticationSuccess()
-                //self.responseDescription = response.message ?? "Unknown Error"
-                if response.status! {
-                    loggedUser = response
-                    
-                    
-                    if let token = response.token {
-                        userToken = token
+                if let status = response.status {
+                    if !status {
+                        self.authenticationDelegate?.userAuthenticationFailure(responseDescription: response.message ?? "Incorrect Username or Password")
                     }
-                    
-                    DispatchQueue.main.async {
-                        if response.verifyAccount == "0"{
-                            self.pushVerifyCodeVC(parentController: "L")
-                            
+                    else if status {
+                        self.authenticationDelegate?.userAuthenticationSuccess()
+                        loggedUser = response
+                        if let token = response.token {
+                            userToken = token
                         }
-                            
-                        else{
-                            
-                            if response.profileComplete == "0" {
-                                if response.role == "1" {
-                                    self.pushRegistrationVC()
-                                }
-                                else if response.role == "2" {
-                                    self.pushCareProviderRegistrationVC()
-                                }
-                                
+                        DispatchQueue.main.async {
+                            if response.verifyAccount == "0"{
+                                self.pushVerifyCodeVC(parentController: "L")
                             }
-                            else {
-                                self.pushProfileVC()
-                                
+                            else{
+                                if response.profileComplete == "0" {
+                                    if response.role == "2" {
+                                        self.pushRegistrationVC()
+                                    }
+                                    else if response.role == "1" {
+                                        self.pushCareProviderRegistrationVC()
+                                    }
+                                }
+                                else {
+                                    self.pushProfileVC()
+                                }
                             }
+                            
                         }
                         
                     }
                 }
-                else {
-                    DispatchQueue.main.async {
-                        // self.showPopUp(title: response.message!)
-                    }
-                    
-                }
+               
                 
             case .failure(let reason):
-                self.authenticationDelegate?.userAuthenticationFailure()
+                self.authenticationDelegate?.userAuthenticationFailure(responseDescription: reason.localizedDescription)
                 print(reason)
             }
         }
@@ -81,17 +76,26 @@ class LoginViewModel {
         LoginServices.shared.signupUser(urlString: urlString, parameters: params) { (result) in
             switch result {
             case .success(let response):
-                if response.message == "User is registered successfully!" {
+                if response.responseCode == 200 {
                     signedupUser = response
                     if let token = response.token {
                         userToken = token
                     }
+                    self.authenticationDelegate?.registerUserSuccess()
+                    
                     print("Successfully Registered!!")
                     DispatchQueue.main.async {
                         self.pushVerifyCodeVC(parentController: "S")
                     }
                 }
+                else {
+                    if let message = response.message {
+                         self.authenticationDelegate?.registerUserFailure(responseDescription: message)
+                    }
+                   
+                }
             case .failure(let reason):
+                self.authenticationDelegate?.registerUserFailure(responseDescription: reason.localizedDescription)
                 print("Failure Reason :: " , reason)
             }
         }

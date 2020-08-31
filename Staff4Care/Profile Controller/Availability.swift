@@ -14,6 +14,10 @@ class Availability: BaseViewController {
     
     @IBOutlet weak var titleLblTop: NSLayoutConstraint!
     
+    // MARK:- Variables
+    var viewModel = AvailabilityViewModel()
+    
+    
     // MARK:- LifeCycle Methods
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -27,6 +31,8 @@ class Availability: BaseViewController {
         availabilityTableView.delegate = self
         availabilityTableView.dataSource = self
         availabilityTableView.register(UINib(nibName: "HeaderCell", bundle: nil), forCellReuseIdentifier: "headercell")
+        //availabilityTableView.isScrollEnabled = false
+        viewModel.getShifts()
 
     }
   

@@ -28,7 +28,7 @@ struct ClientModel {
 class SearchJobViewModel {
     
     // MARK:- Variables
-    var clientModel: [ClientModel] = [ClientModel(imageName: "carehome-image",clientName: "Care Homes") ,ClientModel( imageName: "residential-care",clientName: "Residential Care") ,ClientModel( imageName: "individual-care" , clientName: "Individual Care"), ClientModel(imageName: "hospital-image" , clientName: "Hospitals") ,ClientModel( imageName: "hospices-image", clientName: "Hospices" ), ClientModel(imageName: "clinic-image",clientName: "Clinics")]
+  
     
     var categoriesModel: Categories?
     var subcategoriesModel: Categories?
@@ -41,7 +41,7 @@ class SearchJobViewModel {
     var allJobs: Jobs?
     var nearestJobs: Jobs?
     var nearbyStaff: NearbyStaff?
-    var numberOfMiles = "500"
+    var numberOfMiles = "5000"
     
     
     // MARK:- Networking Methods
@@ -96,10 +96,10 @@ class SearchJobViewModel {
     // Get Nearest Jobs based on radius
     func getNearestJobs(latitude:String,longitude:String) {
         if let userID = loggedUser?.userID {
-            nearestJobsURL += "11"
+            nearestJobsURL += userID
             nearestJobsURL += "/" + numberOfMiles
-//            nearestJobsURL += "/" + latitude + "/" + longitude
-             nearestJobsURL += "/" + "73.018899" + "/" + "33.619799"
+           nearestJobsURL += "/" + longitude + "/" + latitude
+           
             
         }
         print(nearestJobsURL)

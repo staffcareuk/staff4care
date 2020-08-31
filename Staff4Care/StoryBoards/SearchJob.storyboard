@@ -286,60 +286,15 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RegularBG" translatesAutoresizingMaskIntoConstraints="NO" id="QdX-Ye-uat">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rkD-l7-o2D">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="0RT-SP-dKD">
-                                        <rect key="frame" x="10" y="34" width="355" height="28"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E4U-Fg-ovn">
-                                                <rect key="frame" x="0.0" y="0.0" width="23" height="28"/>
-                                                <state key="normal" image="hamburger"/>
-                                                <connections>
-                                                    <action selector="menuButtonTapped:" destination="B29-hB-cPS" eventType="touchUpInside" id="QvZ-J3-wav"/>
-                                                </connections>
-                                            </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Staff4Care" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kWb-uh-eTv">
-                                                <rect key="frame" x="135" y="0.0" width="82.5" height="28"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t3u-df-Dfk">
-                                                <rect key="frame" x="329" y="0.0" width="26" height="28"/>
-                                                <state key="normal" image="notification-icon"/>
-                                                <connections>
-                                                    <action selector="notificationButtonTapped:" destination="B29-hB-cPS" eventType="touchUpInside" id="yu3-Vf-I8M"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="0RT-SP-dKD" firstAttribute="leading" secondItem="rkD-l7-o2D" secondAttribute="leading" constant="10" id="C2z-Nk-zq5"/>
-                                    <constraint firstAttribute="height" constant="70" id="HDq-MY-2Ry"/>
-                                    <constraint firstAttribute="trailing" secondItem="0RT-SP-dKD" secondAttribute="trailing" constant="10" id="VRa-9r-cxk"/>
-                                    <constraint firstItem="0RT-SP-dKD" firstAttribute="top" secondItem="rkD-l7-o2D" secondAttribute="top" constant="34" id="mOE-TS-d7p"/>
-                                    <constraint firstAttribute="bottom" secondItem="0RT-SP-dKD" secondAttribute="bottom" constant="8" id="rX8-V9-sm2"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HHk-h2-cYh" userLabel="bottom layer">
-                                <rect key="frame" x="0.0" y="70" width="375" height="2"/>
-                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="2" id="5rG-UW-alv"/>
-                                </constraints>
-                            </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="generic-hospital" translatesAutoresizingMaskIntoConstraints="NO" id="eFl-cD-8OR">
-                                <rect key="frame" x="15" y="87" width="62" height="62"/>
+                                <rect key="frame" x="15" y="90" width="62" height="62"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="62" id="csm-Wx-dao"/>
                                     <constraint firstAttribute="height" constant="62" id="iZu-wY-kkj"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pqD-vS-SyG">
-                                <rect key="frame" x="92" y="107" width="232.5" height="36"/>
+                                <rect key="frame" x="92" y="110" width="232.5" height="36"/>
                                 <string key="text">Queen Elizabeth Hospital,
 Birmingham, B23 7LE</string>
                                 <fontDescription key="fontDescription" name="ITCAvantGardeStd-Demi" family="ITC Avant Garde Gothic Std" pointSize="18"/>
@@ -347,10 +302,10 @@ Birmingham, B23 7LE</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Aj-0M-Ohi">
-                                <rect key="frame" x="10" y="173" width="390" height="474"/>
+                                <rect key="frame" x="10" y="176" width="390" height="471"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find a Job" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZfG-Wx-QwL">
-                                        <rect key="frame" x="158" y="10" width="74" height="14"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jobs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZfG-Wx-QwL">
+                                        <rect key="frame" x="178.5" y="10" width="33.5" height="14"/>
                                         <fontDescription key="fontDescription" name="ITCAvantGardeStd-Demi" family="ITC Avant Garde Gothic Std" pointSize="14"/>
                                         <color key="textColor" red="0.60392156862745094" green="0.60392156862745094" blue="0.77647058823529413" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -400,7 +355,7 @@ Birmingham, B23 7LE</string>
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="160" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LAm-b0-2AK">
-                                        <rect key="frame" x="20" y="102" width="350" height="372"/>
+                                        <rect key="frame" x="20" y="102" width="350" height="369"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="viewjobcell" rowHeight="160" id="dz2-Tx-JNo" customClass="ViewJobsTableViewCell" customModule="Staff4Care" customModuleProvider="target">
@@ -460,7 +415,7 @@ Birmingham, B23 7LE</string>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="40" id="h8B-ou-Pao"/>
                                                                             </constraints>
-                                                                            <state key="normal" title="See Job">
+                                                                            <state key="normal" title="View Applicants">
                                                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             </state>
                                                                             <connections>
@@ -475,16 +430,6 @@ Birmingham, B23 7LE</string>
                                                                             </state>
                                                                             <connections>
                                                                                 <action selector="applyjobsButtonTapped:" destination="dz2-Tx-JNo" eventType="touchUpInside" id="VU5-A7-UWh"/>
-                                                                            </connections>
-                                                                        </button>
-                                                                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NRn-3p-xsi" customClass="CustomButton" customModule="Staff4Care" customModuleProvider="target">
-                                                                            <rect key="frame" x="330" y="0.0" width="0.0" height="40"/>
-                                                                            <color key="backgroundColor" red="0.20000000000000001" green="0.59999999999999998" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                                                                            <state key="normal" title="Apply Job">
-                                                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                            </state>
-                                                                            <connections>
-                                                                                <action selector="expirejobsButtonTapped:" destination="dz2-Tx-JNo" eventType="touchUpInside" id="Lxw-9i-2O8"/>
                                                                             </connections>
                                                                         </button>
                                                                     </subviews>
@@ -515,7 +460,6 @@ Birmingham, B23 7LE</string>
                                                     <outlet property="clientImage" destination="MEJ-rd-ZIl" id="lk1-ZH-ofK"/>
                                                     <outlet property="clientName" destination="hPt-Mr-4Zw" id="Vbh-Yw-KQo"/>
                                                     <outlet property="clientRole" destination="g3W-bv-SiF" id="rpb-f6-gEm"/>
-                                                    <outlet property="expireJobBtn" destination="NRn-3p-xsi" id="sDl-Fw-9Wp"/>
                                                     <outlet property="jobRoleLbl" destination="Bgd-tf-rqT" id="FiL-Vr-wPC"/>
                                                     <outlet property="parentView" destination="FFI-Vs-Z9d" id="U7U-vp-Ork"/>
                                                     <outlet property="seeJobBtn" destination="YH6-uJ-WHW" id="sDr-7b-AKe"/>
@@ -550,23 +494,17 @@ Birmingham, B23 7LE</string>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="HHk-h2-cYh" firstAttribute="leading" secondItem="LFz-ZZ-Byk" secondAttribute="leading" id="09X-pS-c2q"/>
-                            <constraint firstItem="pqD-vS-SyG" firstAttribute="top" secondItem="HHk-h2-cYh" secondAttribute="bottom" constant="35" id="13b-VR-8ay"/>
                             <constraint firstItem="pqD-vS-SyG" firstAttribute="leading" secondItem="eFl-cD-8OR" secondAttribute="trailing" constant="15" id="32l-5P-TK4"/>
                             <constraint firstItem="QdX-Ye-uat" firstAttribute="top" secondItem="LFz-ZZ-Byk" secondAttribute="top" id="4bq-F3-EMZ"/>
+                            <constraint firstItem="eFl-cD-8OR" firstAttribute="top" secondItem="lIr-wJ-isp" secondAttribute="top" constant="90" id="GWQ-DE-tvp"/>
                             <constraint firstAttribute="trailing" secondItem="QdX-Ye-uat" secondAttribute="trailing" id="KkB-3X-D85"/>
                             <constraint firstItem="0Aj-0M-Ohi" firstAttribute="leading" secondItem="lIr-wJ-isp" secondAttribute="leading" constant="10" id="RLH-kP-wmi"/>
-                            <constraint firstItem="rkD-l7-o2D" firstAttribute="trailing" secondItem="lIr-wJ-isp" secondAttribute="trailing" id="TcU-Zh-LPH"/>
                             <constraint firstItem="lIr-wJ-isp" firstAttribute="bottom" secondItem="0Aj-0M-Ohi" secondAttribute="bottom" constant="20" id="TzK-0e-ZSB"/>
                             <constraint firstItem="eFl-cD-8OR" firstAttribute="leading" secondItem="lIr-wJ-isp" secondAttribute="leading" constant="15" id="VNx-dJ-8yh"/>
                             <constraint firstAttribute="bottom" secondItem="QdX-Ye-uat" secondAttribute="bottom" id="Y8n-Ld-K1I"/>
+                            <constraint firstItem="pqD-vS-SyG" firstAttribute="top" secondItem="lIr-wJ-isp" secondAttribute="top" constant="110" id="f3Y-Zv-uOq"/>
                             <constraint firstItem="0Aj-0M-Ohi" firstAttribute="top" secondItem="pqD-vS-SyG" secondAttribute="bottom" constant="30" id="frk-3T-LUg"/>
-                            <constraint firstItem="eFl-cD-8OR" firstAttribute="top" secondItem="HHk-h2-cYh" secondAttribute="bottom" constant="15" id="izy-bd-zYt"/>
-                            <constraint firstItem="rkD-l7-o2D" firstAttribute="leading" secondItem="lIr-wJ-isp" secondAttribute="leading" id="nUe-Lg-vhp"/>
-                            <constraint firstItem="HHk-h2-cYh" firstAttribute="top" secondItem="rkD-l7-o2D" secondAttribute="bottom" id="o9d-lF-dW8"/>
-                            <constraint firstAttribute="trailing" secondItem="HHk-h2-cYh" secondAttribute="trailing" id="oJ1-ga-Va2"/>
                             <constraint firstItem="QdX-Ye-uat" firstAttribute="leading" secondItem="LFz-ZZ-Byk" secondAttribute="leading" id="qh4-I7-HOa"/>
-                            <constraint firstItem="rkD-l7-o2D" firstAttribute="top" secondItem="LFz-ZZ-Byk" secondAttribute="top" id="r2E-to-ocu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lIr-wJ-isp"/>
                     </view>
@@ -584,12 +522,25 @@ Birmingham, B23 7LE</string>
             </objects>
             <point key="canvasLocation" x="704.34782608695662" y="83.705357142857139"/>
         </scene>
+        <!--See Candidates-->
+        <scene sceneID="pRx-FC-39A">
+            <objects>
+                <viewController storyboardIdentifier="SeeCandidates" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1Hb-u5-cOr" customClass="SeeCandidates" customModule="Staff4Care" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DON-JS-kgN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="5EU-vb-b5A"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ntN-Er-nBL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1371" y="123"/>
+        </scene>
     </scenes>
     <resources>
         <image name="RegularBG" width="352.5" height="791"/>
         <image name="carehome-image" width="66" height="61"/>
         <image name="generic-hospital" width="62" height="62"/>
-        <image name="hamburger" width="23" height="19.5"/>
-        <image name="notification-icon" width="26" height="26"/>
     </resources>
 </document>

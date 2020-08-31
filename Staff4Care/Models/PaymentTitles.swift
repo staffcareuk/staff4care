@@ -9,22 +9,23 @@
 import Foundation
 import Foundation
 
-// MARK: - Welcome
+
+
 struct PaymentTitles: Codable {
-    let applicationStatusList: [PaymentType]?
+    let paymentTypeList: [PaymentTypeList]?
     let responseCode: Int?
     let status: Bool?
     let message: String?
 
     enum CodingKeys: String, CodingKey {
-        case applicationStatusList = "application_status_list"
+        case paymentTypeList = "payment_type_list"
         case responseCode = "response_code"
         case status, message
     }
 }
 
-// MARK: - ApplicationStatusList
-struct PaymentType: Codable {
+// MARK: - PaymentTypeList
+struct PaymentTypeList: Codable {
     let paymentTypeID, paymentTypeTitle: String?
 
     enum CodingKeys: String, CodingKey {

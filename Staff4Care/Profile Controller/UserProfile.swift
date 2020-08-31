@@ -12,8 +12,8 @@ class UserProfile: UIViewController {
     
     // MARK:- IBOutlets
     @IBOutlet weak var profileCV: UICollectionView!
-    var images = ["profile-menu","findjob-menu","calendar-menu","availability-menu","payments-menu","history-menu","holidays-menu","messages-menu"]
-    var titles = ["Profile","Find a Job","Calendar","Availability","Payments","History","Holidays","Messages"]
+    var images = ["profile-menu","findjob-menu","findjob-menu","calendar-menu","availability-menu","payments-menu","history-menu","holidays-menu","messages-menu"]
+    var titles = ["Profile","Find a Job","Jobs","Calendar","Availability","Payments","History","Holidays","Messages"]
     
     
     
@@ -35,7 +35,7 @@ class UserProfile: UIViewController {
 }
 extension UserProfile : UICollectionViewDelegate , UICollectionViewDataSource , UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 8
+        return 9
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -96,7 +96,7 @@ extension UserProfile {
                                    }
                self.navigationController?.pushViewController(loginVC, animated: true)
         } else if identifier == "Find a Job" {
-            if loggedUser?.role == "1" {
+            if loggedUser?.role == "2" {
                 let storyboard = UIStoryboard(name: "SearchJob", bundle: nil)
                 guard let loginVC = storyboard.instantiateViewController(identifier: "SearchJob") as? SearchJob else {
                     print("ViewController not found")
@@ -104,7 +104,7 @@ extension UserProfile {
                 }
                 self.navigationController?.pushViewController(loginVC, animated: true)
             }
-            else if loggedUser?.role == "2" {
+            else if loggedUser?.role == "1" {
                 let storyboard = UIStoryboard(name: "StaffSearch", bundle: nil)
                 guard let loginVC = storyboard.instantiateViewController(identifier: "HospitalStaffSearch") as? HospitalStaffSearch else {
                     print("ViewController not found")
@@ -113,6 +113,14 @@ extension UserProfile {
                 self.navigationController?.pushViewController(loginVC, animated: true)
             }
             
+        }
+        else if identifier == "Jobs" {
+            let storyboard = UIStoryboard(name: "SearchJob", bundle: nil)
+            guard let loginVC = storyboard.instantiateViewController(identifier: "ViewJobs") as? ViewJobs else {
+                print("ViewController not found")
+                return
+            }
+            self.navigationController?.pushViewController(loginVC, animated: true)
         }
         else if identifier == "Calendar" {
             let storyboard = UIStoryboard(name: "JobCalendar", bundle: nil)

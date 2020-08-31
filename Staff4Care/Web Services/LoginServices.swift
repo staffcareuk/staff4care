@@ -9,7 +9,7 @@
 import UIKit
 // MARK: - LoginResponse
 struct LoginResponse: Codable {
-    let userID, email, role, verificationCode: String?
+    var userID, email, role, verificationCode: String?
     let verifyAccount, profileComplete, phoneNumber, username: String?
     let status: Bool?
     let message: String?

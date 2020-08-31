@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewJobs: UIViewController {
+class ViewJobs: BaseViewController {
     // MARK:- IBOutlets
     @IBOutlet weak var bottomLayerView: UIView!
     @IBOutlet weak var pastJobBtn: UIButton!
@@ -33,17 +33,32 @@ class ViewJobs: UIViewController {
     
     
     // MARK:- LifeCycle Methods
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        // ViewModel Delegate
+        viewModel.getJobsDelegate = self
+        
+        if loggedUser?.role == "1" {
+                   viewModel.getAvailableJobs()
+               }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         setProperties()
-        
-//        viewModel.getJobsDelegate = self
-//        viewModel.getAvailableJobs()
-
     }
-    
+    // MARK:- Overriden Methods
+    override func backButtonTapped() {
+        self.navigationController?.popViewController(animated: true)
+    }
     // MARK:- Methods
     private func setProperties(){
+        
+        
+        
         containerViewWidth.constant = UIScreen.main.bounds.size.width - 20
         bottomLayerWidth.constant =   (containerViewWidth.constant / 2) - 30
         previousFrameToConstant = bottomLayerView.frame
@@ -104,12 +119,7 @@ class ViewJobs: UIViewController {
              self.bottomLayerView.frame = CGRect(x: self.previousFrameToConstant.origin.x, y: self.previousFrameToConstant.origin.y, width: self.previousFrameToConstant.width, height: self.previousFrameToConstant.height)
          }
      }
-    private func animateTableViewReloadData() {
-        UIView.transition(with: jobsTableView,
-        duration: 0.35,
-        options: .transitionFlipFromLeft,
-        animations: { self.jobsTableView.reloadData() })
-    }
+   
     private func animateTableViewTransitionRight() {
         let transition = CATransition()
         transition.type = CATransitionType.push
@@ -137,7 +147,7 @@ class ViewJobs: UIViewController {
 extension ViewJobs: UITableViewDelegate , UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if selectedTab == 0 {
-            return viewModel.latestJobs?.jobsList?.count ?? 0
+            return viewModel.postedJobs?.jobsList?.count ?? 0
          }
         else {
             return 6
@@ -148,7 +158,7 @@ extension ViewJobs: UITableViewDelegate , UITableViewDataSource {
         if selectedTab == 0 {
             if let cell = tableView.dequeueReusableCell(withIdentifier: "viewjobcell", for: indexPath) as? ViewJobsTableViewCell {
                 cell.buttonTapDelegate = self
-                if let job = viewModel.latestJobs?.jobsList?[indexPath.row] {
+                if let job = viewModel.postedJobs?.jobsList?[indexPath.row] {
                     cell.configureCell(job: job)
                 }
                 return cell
@@ -186,8 +196,8 @@ extension ViewJobs: UITableViewDelegate , UITableViewDataSource {
 }
 // MARK:- Cell Delegate Methods
 extension ViewJobs : JobsButtonsTapped {
-    func seeJobTapped() {
-        print("See Job Tapped")
+    func seeCandidates() {
+        // Go to Candidates VC
     }
     
     func applyJobTapped() {
@@ -202,16 +212,14 @@ extension ViewJobs : JobsButtonsTapped {
 }
 
 // MARK:- ViewJobs Delegate Methods
-//extension ViewJobs: GetJobsProtocol {
-//    func getJobsSuccess() {
-//        DispatchQueue.main.async {
-//            self.jobsTableView.reloadData()
-//        }
-//    }
-//
-//    func getJobsFailed() {
-//        print("Didn't got jobs from server")
-//    }
-//
-//
-//}
+extension ViewJobs: GetJobsProtocol {
+    func getJobsSuccess() {
+        DispatchQueue.main.async { [weak self] in
+            UIView.transition(with: (self?.jobsTableView)!, duration: 0.5, options: .transitionCrossDissolve, animations: {self?.jobsTableView.reloadData()}, completion: nil)
+        }
+    }
+    func getJobsFailed() {
+        print("Didn't got jobs from server")
+    }
+
+}

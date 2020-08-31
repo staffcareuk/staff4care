@@ -29,9 +29,51 @@ class BaseViewController: UIViewController {
         addNavigationBar()
         addTitleLabel()
         addNavigationButton()
+        
+        
     }
     
     // MARK:- Methods
+    func buttonCallBack() {
+        for controller in self.navigationController!.viewControllers as Array {
+            if controller.isKind(of: UserProfile.self) {
+                self.navigationController!.popToViewController(controller, animated: true)
+                break
+            }
+        }
+    }
+   
+    func showPopUp(title: String,success: Bool,showFilledBtn: Bool) {
+           if let popvc = UIStoryboard(name: "PopUpView", bundle: nil).instantiateViewController(withIdentifier: "GenericPopUp") as? GenericPopUp
+           {
+               self.addChild(popvc)
+              
+               popvc.view.frame = self.view.frame
+               self.view.addSubview(popvc.view)
+               popvc.titleLbl.text = title
+               popvc.containerView.backgroundColor = .tertiarySystemBackground
+            if success {
+                popvc.icon.image = UIImage(named: "ic_tick")
+            } else {
+                popvc.icon.image = UIImage(named: "ic_cross")
+            }
+            if showFilledBtn {
+                popvc.filledBtn.isHidden = false
+                popvc.subtitleLbl.isHidden = true
+            } else {
+                popvc.removeElements()
+            }
+               popvc.didMove(toParent: self)
+            
+               // Call Back
+            popvc.callBack = { [weak self] in
+                self?.buttonCallBack()
+            }
+           }
+        
+             
+       }
+    
      func startIndicator() {
           
           addBlurViewforActivity()

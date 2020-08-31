@@ -14,6 +14,8 @@ protocol DropDownCategoriesProtocol: class {
     func subcategoriesforDropDownFailed()
     func gotTitles()
     func titlesFailed()
+    func jobPostSuccess()
+    func jobPostFailure(response: String)
     
 }
 class CreateFindJobsViewModel {
@@ -23,7 +25,7 @@ class CreateFindJobsViewModel {
     var categoriesDropDown: Categories?
     var subcategoriesDropDown: Categories?
     var paymentTypes: PaymentTitles?
-    weak var dropDownDelegate: DropDownCategoriesProtocol?
+    weak var delegate: DropDownCategoriesProtocol?
     
     
     // MARK:- Networking Methods
@@ -34,8 +36,21 @@ class CreateFindJobsViewModel {
         JobServices.shared.postJob(urlString: postJobUrl, parameters: params) { result in
             switch result {
             case .success(let response):
+                if let status = response.status {
+                    if status {
+                        self.delegate?.jobPostSuccess()
+                    }
+                    else {
+                        if let description = response.message{
+                            self.delegate?.jobPostFailure(response: description)
+                        } else {
+                            self.delegate?.jobPostFailure(response: "Job Post Failed, Try Again")
+                        }
+                    }
+                }
                 print(response)
             case .failure(let reason):
+                self.delegate?.jobPostFailure(response: reason.localizedDescription)
                 print(reason)
             }
         }
@@ -48,10 +63,10 @@ class CreateFindJobsViewModel {
                case .success(let categories):
                    print("Categories :: " , categories)
                    self.categoriesDropDown = categories
-                   self.dropDownDelegate?.gotCategoriesforDD()
+                   self.delegate?.gotCategoriesforDD()
                case .failure(let reason):
                    print("Reason :: " , reason)
-                   self.dropDownDelegate?.categoriesforDropDownFailed()
+                   self.delegate?.categoriesforDropDownFailed()
                }
            }
        }
@@ -64,10 +79,10 @@ class CreateFindJobsViewModel {
                case .success(let categories):
                    print("SubCategories :: " , categories)
                    self.subcategoriesDropDown = categories
-                   self.dropDownDelegate?.gotSubCategoriesforDD()
+                   self.delegate?.gotSubCategoriesforDD()
                case .failure(let reason):
                    print("Reason :: " , reason)
-                   self.dropDownDelegate?.subcategoriesforDropDownFailed()
+                   self.delegate?.subcategoriesforDropDownFailed()
                }
            }
        }
@@ -76,12 +91,12 @@ class CreateFindJobsViewModel {
         CategoriesServices.shared.getPaymentTypes(urlString: paymentTypesURL) { result in
             switch result {
             case .success(let titles):
-                print(titles.applicationStatusList)
+                print(titles.paymentTypeList)
                 self.paymentTypes = titles
-                self.dropDownDelegate?.gotTitles()
+                self.delegate?.gotTitles()
             case .failure(let reason):
                 print(reason)
-                self.dropDownDelegate?.titlesFailed()
+                self.delegate?.titlesFailed()
             }
         }
     }

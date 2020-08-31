@@ -56,8 +56,9 @@ class VerifyCode: UIViewController {
             switch result {
             case .success(let response):
                 if response.responseCode == 200 {
+                  //  loggedUser?.role = signedupUser?.role
                     DispatchQueue.main.async {
-                        self.pushProfileVC()
+                        self.pushLoginVC()
                         
                     }
                 }
@@ -71,9 +72,9 @@ class VerifyCode: UIViewController {
     
     
     
-    func pushProfileVC() {
-          let storyboard = UIStoryboard(name: "UserProfile", bundle: nil)
-                        guard let loginVC = storyboard.instantiateViewController(identifier: "UserProfile") as? UserProfile else {
+    func pushLoginVC() {
+          let storyboard = UIStoryboard(name: "LoginScreens", bundle: nil)
+                        guard let loginVC = storyboard.instantiateViewController(identifier: "Login") as? Login else {
                                print("ViewController not found")
                                return
                            }

@@ -44,6 +44,7 @@ class CreateJob: BaseViewController {
     var actualHeight:CGFloat = 0.0
     var urlString = "https://api.bluenee.co.uk/cig/index.php/api/categories/list/"
     var parentCategoryID = "1"
+    var childCategoryID  = "1"
     
     var viewModel = CreateFindJobsViewModel()
     
@@ -91,14 +92,14 @@ class CreateJob: BaseViewController {
         super.viewDidLoad()
         setDelegates()
         
-        viewModel.dropDownDelegate = self
+        viewModel.delegate = self
         viewModel.getCategoriesList(url: urlString)
         viewModel.getSubCategoriesList(url: urlString + parentCategoryID)
         viewModel.getPaymentTypes()
         setLocationProperties()
      
        
-        viewSlideInFromTopToBottom(view: categoryTableView)
+       // viewSlideInFromTopToBottom(view: categoryTableView)
 
     }
     // MARK:- Overriden Methods
@@ -233,7 +234,7 @@ self.showMapsPopUp(title: "Please select your Location")
     private func animatePaymentTV(){
         view.layoutIfNeeded()
         paymentTypeTableView.isHidden = !paymentTypeTableView.isHidden
-        paymentTypeTableViewHeight.constant = paymentTypeTableView.isHidden ? 0 : CGFloat(45 * viewModel.paymentTypes!.applicationStatusList!.count)
+        paymentTypeTableViewHeight.constant = paymentTypeTableView.isHidden ? 0 : CGFloat(45 * viewModel.paymentTypes!.paymentTypeList!.count)
         
         UIView.animate(withDuration: 0.5, animations: {
             self.view.layoutIfNeeded()
@@ -243,7 +244,10 @@ self.showMapsPopUp(title: "Please select your Location")
     private func animateCategoryTV(){
         view.layoutIfNeeded()
         categoryTableView.isHidden = !categoryTableView.isHidden
-        categoryTableViewHeight.constant = categoryTableView.isHidden ? 0 : CGFloat(45 * viewModel.categoriesDropDown!.categoriesList!.count)
+        if viewModel.categoriesDropDown != nil && viewModel.categoriesDropDown!.categoriesList!.count > 0{
+            categoryTableViewHeight.constant = categoryTableView.isHidden ? 0 : CGFloat(45 * viewModel.categoriesDropDown!.categoriesList!.count)
+        }
+        
         
         UIView.animate(withDuration: 0.5, animations: {
             self.view.layoutIfNeeded()
@@ -285,7 +289,7 @@ self.showMapsPopUp(title: "Please select your Location")
           if collapsed{
               
               UIView.animate(withDuration: 0.7, delay:0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: .curveEaseInOut, animations:{
-                self.paymentTypeTableViewHeight.constant +=  CGFloat(45) * CGFloat(self.viewModel.paymentTypes!.applicationStatusList!.count)
+                self.paymentTypeTableViewHeight.constant +=  CGFloat(45) * CGFloat(self.viewModel.paymentTypes!.paymentTypeList!.count)
                 //  self.dropDownArrow.transform = CGAffineTransform(rotationAngle: .pi)
                 self.view.layoutIfNeeded()
                   
@@ -306,7 +310,7 @@ self.showMapsPopUp(title: "Please select your Location")
              // self.tableView.reloadData()
               UIView.animate(withDuration: 0.7, delay:0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: .curveEaseInOut, animations:{
                   
-                  self.paymentTypeTableViewHeight.constant -=  CGFloat(45) * CGFloat(self.viewModel.paymentTypes!.applicationStatusList!.count)
+                  self.paymentTypeTableViewHeight.constant -=  CGFloat(45) * CGFloat(self.viewModel.paymentTypes!.paymentTypeList!.count)
                 //  self.dropDownArrow.transform = CGAffineTransform(rotationAngle: .pi - 3.14159)
                  // self.tableView.separatorColor = UIColor.clear
                 self.view.layoutIfNeeded()
@@ -357,9 +361,6 @@ self.showMapsPopUp(title: "Please select your Location")
        }
     // MARK:- IBAction Methods
     @IBAction func postJobTapped(_ sender: Any) {
-        guard let jobTitle = clientNameTxtField.text , !jobTitle.isEmpty else {
-            return
-        }
         guard let jobCategory = clientCategoryTxtField.text , !jobCategory.isEmpty else {
             return
         }
@@ -385,9 +386,10 @@ self.showMapsPopUp(title: "Please select your Location")
             self.latitude   =  String(locationFromMap.latitude)
             self.longitude  =  String(locationFromMap.longitude)
         }
-        let serverParams = ["job_title":jobTitle,"job_category":jobCategory,"job_sub_category":jobSubcategory,
+        let serverParams = ["job_category":parentCategoryID,"job_sub_category":childCategoryID,
                             "job_date":jobDate,"job_from":jobFrom,"job_to":jobTo,"job_instructions":jobInstructions,"payment_type":"3",
                             "amount":amount,"longitude":self.longitude,"latitude":self.latitude]
+        startIndicator()
         viewModel.postJob(params: serverParams)
     }
     
@@ -403,7 +405,7 @@ extension CreateJob: UITableViewDelegate , UITableViewDataSource {
             return viewModel.categoriesDropDown?.categoriesList?.count ?? 0
         }
         else if tableView == paymentTypeTableView {
-            return viewModel.paymentTypes?.applicationStatusList?.count ?? 0
+            return viewModel.paymentTypes?.paymentTypeList?.count ?? 0
         }
         else {
             return viewModel.subcategoriesDropDown?.categoriesList?.count ?? 0
@@ -422,8 +424,8 @@ extension CreateJob: UITableViewDelegate , UITableViewDataSource {
             
             }
             else if tableView == paymentTypeTableView {
-                cell.nameLbl.text = viewModel.paymentTypes?.applicationStatusList?[indexPath.section].paymentTypeTitle
-                if indexPath.section == viewModel.paymentTypes?.applicationStatusList?.count ?? 1 - 1 {
+                cell.nameLbl.text = viewModel.paymentTypes?.paymentTypeList?[indexPath.section].paymentTypeTitle
+                if indexPath.section == viewModel.paymentTypes?.paymentTypeList?.count ?? 1 - 1 {
                                    cell.separatorView.isHidden = true
                                }
             }
@@ -450,9 +452,12 @@ extension CreateJob: UITableViewDelegate , UITableViewDataSource {
         else if tableView == clientSubCategoryTableView {
             clientSubCategoryTxtField.text = viewModel.subcategoriesDropDown?.categoriesList?[indexPath.section].categoryTitle
             animateSubCategoryTV()
+            if let Id = viewModel.subcategoriesDropDown?.categoriesList?[indexPath.section].categoryID {
+                          childCategoryID = Id
+                      }
         }
         else if tableView == paymentTypeTableView {
-            paymentTypeTextField.text = viewModel.paymentTypes?.applicationStatusList?[indexPath.section].paymentTypeTitle
+            paymentTypeTextField.text = viewModel.paymentTypes?.paymentTypeList?[indexPath.section].paymentTypeTitle
             animatePaymentTV()
 
         }
@@ -499,6 +504,21 @@ extension CreateJob: DesignableTextFieldDelegate {
 
 // MARK:- Categories Delegate Methods
 extension CreateJob: DropDownCategoriesProtocol {
+   
+    func jobPostSuccess() {
+        DispatchQueue.main.async { [weak self] in
+            self?.stopIndicator()
+            self?.showPopUp(title: "Job Posted Successfully!", success: true, showFilledBtn: true)
+        }
+    }
+    
+    func jobPostFailure(response: String) {
+        DispatchQueue.main.async { [weak self] in
+            self?.stopIndicator()
+            self?.showPopUp(title: response, success: false, showFilledBtn: true)
+               }
+    }
+    
     func gotTitles() {
         DispatchQueue.main.async {
             self.paymentTypeTableView.reloadData()
@@ -541,6 +561,8 @@ extension CreateJob: CLLocationManagerDelegate {
         self.locationManager.stopUpdatingLocation()
         if let _ = location?.coordinate.latitude , let _ = location?.coordinate.longitude {
             if let position = location?.coordinate{
+                self.latitude  = String(position.latitude)
+                self.longitude = String(position.longitude)
                 self.updateAddress(location: position)
             }
         }

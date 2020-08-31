@@ -7,32 +7,35 @@
 //
 
 import Foundation
-//protocol GetJobsProtocol: class {
-//    func getJobsSuccess()
-//    func getJobsFailed ()
-//}
+protocol GetJobsProtocol: class {
+    func getJobsSuccess()
+    func getJobsFailed ()
+}
 
 class ViewJobsViewModel {
 
     // MARK:- Variables
     
     var jobsUrl   = "https://api.bluenee.co.uk/cig/index.php/api/jobs/list/"
-   // weak var getJobsDelegate: GetJobsProtocol?
-    var latestJobs: Jobs?
+    weak var getJobsDelegate: GetJobsProtocol?
+    var postedJobs: Jobs?
     
     // MARK:- Methods
     
     // MARK:- Networking Methods
     func getAvailableJobs() {
+        if let userID = loggedUser?.userID {
+            jobsUrl += userID
+        }
           JobServices.shared.getAvailableJobs(urlString: jobsUrl) { result in
               switch result {
               case .success(let jobs):
                   print("Jobs :: " , jobs)
-                  self.latestJobs = jobs
-                  //self.getJobsDelegate?.getJobsSuccess()
+                  self.postedJobs = jobs
+                  self.getJobsDelegate?.getJobsSuccess()
               case .failure(let reason):
                   print("Reason :: " , reason)
-                  //self.getJobsDelegate?.getJobsFailed()
+                  self.getJobsDelegate?.getJobsFailed()
               }
           }
       }

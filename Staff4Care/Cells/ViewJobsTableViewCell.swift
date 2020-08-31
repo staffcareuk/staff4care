@@ -8,7 +8,7 @@
 
 import UIKit
 protocol JobsButtonsTapped  {
-  func seeJobTapped()
+  func seeCandidates()
   func applyJobTapped()
   func expireJobTapped()
 }
@@ -24,7 +24,6 @@ class ViewJobsTableViewCell: UITableViewCell {
     @IBOutlet weak var shifTimeLbl: UILabel!
     @IBOutlet weak var seeJobBtn: CustomButton!
     @IBOutlet weak var applyJobBtn: CustomButton!
-    @IBOutlet weak var expireJobBtn: CustomButton!
     
     // MARK:- Variables
     var buttonTapDelegate : JobsButtonsTapped?
@@ -32,7 +31,8 @@ class ViewJobsTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         seeJobBtn.setup(applyGradient: true,title: "See Job",rgb1: (154,154,198),rgb2: (39,65,143))
-        applyJobBtn.setup(applyGradient: true,title: "Apply Job",rgb1: (192,221,184),rgb2: (174,200,55))
+        applyJobBtn.setup(applyGradient: true,title: "View Applicants",rgb1: (192,221,184),rgb2: (174,200,55))
+        
 
         
     }
@@ -55,7 +55,7 @@ class ViewJobsTableViewCell: UITableViewCell {
     // MARK:- IBAction Methods
     
     @IBAction func seejobsButtonTapped(_ sender: Any) {
-        buttonTapDelegate?.seeJobTapped()
+        buttonTapDelegate?.seeCandidates()
         
     }
     @IBAction func applyjobsButtonTapped(_ sender: Any) {
