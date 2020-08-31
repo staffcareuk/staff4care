@@ -19,3 +19,4 @@ target 'Staff4Care' do
   pod 'NVActivityIndicatorView'
   
 end
+ 

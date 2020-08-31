@@ -576,8 +576,8 @@
 				7E21FE29249932B80002DA1F /* Sources */,
 				7E21FE2A249932B80002DA1F /* Frameworks */,
 				7E21FE2B249932B80002DA1F /* Resources */,
-				D7E3672D7A6DAF5E64864164 /* [CP] Embed Pods Frameworks */,
-				1B216DB3E28308FCFDBCBFB4 /* [CP] Copy Pods Resources */,
+				079DC77A01059B04920417CD /* [CP] Embed Pods Frameworks */,
+				B6CF1C09FB3A205ABDB76FB4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -654,21 +654,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1B216DB3E28308FCFDBCBFB4 /* [CP] Copy Pods Resources */ = {
+		079DC77A01059B04920417CD /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Staff4Care/Pods-Staff4Care-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Staff4Care/Pods-Staff4Care-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Staff4Care/Pods-Staff4Care-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Staff4Care/Pods-Staff4Care-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Staff4Care/Pods-Staff4Care-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Staff4Care/Pods-Staff4Care-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		4B1E4015E668CB2CCCCAA1BB /* [CP] Check Pods Manifest.lock */ = {
@@ -693,21 +693,21 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D7E3672D7A6DAF5E64864164 /* [CP] Embed Pods Frameworks */ = {
+		B6CF1C09FB3A205ABDB76FB4 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Staff4Care/Pods-Staff4Care-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Staff4Care/Pods-Staff4Care-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Staff4Care/Pods-Staff4Care-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Staff4Care/Pods-Staff4Care-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Staff4Care/Pods-Staff4Care-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Staff4Care/Pods-Staff4Care-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
