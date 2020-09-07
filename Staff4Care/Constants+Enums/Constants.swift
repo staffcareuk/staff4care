@@ -11,6 +11,8 @@ import Foundation
 struct Constants {
     static var notification_token = ""
     static var UDID = ""
+    static let baseUrl = "https://api.bluenee.co.uk/cig/index.php/api/"
+    static var user_id = ""
 }
 
 

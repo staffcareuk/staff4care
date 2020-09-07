@@ -37,7 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
         
         // Register push notification
         Constants.UDID = UIDevice.current.identifierForVendor!.uuidString
-        FirebaseApp.configure()
+//        FirebaseApp.configure()
         
         UNUserNotificationCenter.current().delegate = self
         registerForRemoteNotification()

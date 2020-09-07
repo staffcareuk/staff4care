@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		053B63122501734700FF44E7 /* SetAvailabityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053B63112501734700FF44E7 /* SetAvailabityModel.swift */; };
+		0542D7E824FD740B00A9D403 /* AvailabityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0542D7E624FD740B00A9D403 /* AvailabityVC.swift */; };
+		0542D7E924FD740B00A9D403 /* AvailabityVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0542D7E724FD740B00A9D403 /* AvailabityVC.xib */; };
+		055600AA24FFFB42008E3B1D /* AvailabityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055600A824FFFB42008E3B1D /* AvailabityCell.swift */; };
+		055600AB24FFFB42008E3B1D /* AvailabityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 055600A924FFFB42008E3B1D /* AvailabityCell.xib */; };
+		055600AE24FFFCA4008E3B1D /* DaysCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055600AC24FFFCA4008E3B1D /* DaysCell.swift */; };
+		055600AF24FFFCA4008E3B1D /* DaysCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 055600AD24FFFCA4008E3B1D /* DaysCell.xib */; };
+		055600B225001732008E3B1D /* AvailabityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055600B125001732008E3B1D /* AvailabityModel.swift */; };
+		055600B62500184B008E3B1D /* RouteUrls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055600B42500184B008E3B1D /* RouteUrls.swift */; };
+		055600B72500184B008E3B1D /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055600B52500184B008E3B1D /* ApiManager.swift */; };
 		05A264FB24F43B4400925EE4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 05A264FA24F43B4300925EE4 /* GoogleService-Info.plist */; };
 		7726A1FF7CB375832D76551B /* Pods_Staff4Care.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89351E713502780D7B7A29D1 /* Pods_Staff4Care.framework */; };
 		7E0E995924A64DD2007B266E /* VerifyCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0E995824A64DD2007B266E /* VerifyCode.swift */; };
@@ -113,6 +123,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		053B63112501734700FF44E7 /* SetAvailabityModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetAvailabityModel.swift; sourceTree = "<group>"; };
+		0542D7E624FD740B00A9D403 /* AvailabityVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailabityVC.swift; sourceTree = "<group>"; };
+		0542D7E724FD740B00A9D403 /* AvailabityVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AvailabityVC.xib; sourceTree = "<group>"; };
+		055600A824FFFB42008E3B1D /* AvailabityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailabityCell.swift; sourceTree = "<group>"; };
+		055600A924FFFB42008E3B1D /* AvailabityCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AvailabityCell.xib; sourceTree = "<group>"; };
+		055600AC24FFFCA4008E3B1D /* DaysCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysCell.swift; sourceTree = "<group>"; };
+		055600AD24FFFCA4008E3B1D /* DaysCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DaysCell.xib; sourceTree = "<group>"; };
+		055600B125001732008E3B1D /* AvailabityModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvailabityModel.swift; sourceTree = "<group>"; };
+		055600B42500184B008E3B1D /* RouteUrls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteUrls.swift; sourceTree = "<group>"; };
+		055600B52500184B008E3B1D /* ApiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		05A264FA24F43B4300925EE4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7E0E995824A64DD2007B266E /* VerifyCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyCode.swift; sourceTree = "<group>"; };
 		7E132D4A24DDCED60021AD69 /* LocationServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationServices.swift; sourceTree = "<group>"; };
@@ -235,6 +255,54 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0518616324FE9CE90023B345 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				055600A824FFFB42008E3B1D /* AvailabityCell.swift */,
+				055600A924FFFB42008E3B1D /* AvailabityCell.xib */,
+				055600AC24FFFCA4008E3B1D /* DaysCell.swift */,
+				055600AD24FFFCA4008E3B1D /* DaysCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		0542D7E424FD73B400A9D403 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0542D7E524FD73F800A9D403 /* AvailabityScreen */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		0542D7E524FD73F800A9D403 /* AvailabityScreen */ = {
+			isa = PBXGroup;
+			children = (
+				055600B0250015E2008E3B1D /* Model */,
+				0518616324FE9CE90023B345 /* Cell */,
+				0542D7E624FD740B00A9D403 /* AvailabityVC.swift */,
+				0542D7E724FD740B00A9D403 /* AvailabityVC.xib */,
+			);
+			path = AvailabityScreen;
+			sourceTree = "<group>";
+		};
+		055600B0250015E2008E3B1D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				053B63112501734700FF44E7 /* SetAvailabityModel.swift */,
+				055600B125001732008E3B1D /* AvailabityModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		055600B325001815008E3B1D /* ApiManager */ = {
+			isa = PBXGroup;
+			children = (
+				055600B52500184B008E3B1D /* ApiManager.swift */,
+				055600B42500184B008E3B1D /* RouteUrls.swift */,
+			);
+			path = ApiManager;
+			sourceTree = "<group>";
+		};
 		59BE119BC9FE81513C9C63CD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -298,6 +366,8 @@
 		7E21FE2F249932B80002DA1F /* Staff4Care */ = {
 			isa = PBXGroup;
 			children = (
+				055600B325001815008E3B1D /* ApiManager */,
+				0542D7E424FD73B400A9D403 /* Controllers */,
 				7EB7BB4C24B76BC4006847BC /* Staff4Care.entitlements */,
 				05A264FA24F43B4300925EE4 /* GoogleService-Info.plist */,
 				7E7B811524C7557500AFDF6D /* Hospital Modules */,
@@ -626,7 +696,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				055600AF24FFFCA4008E3B1D /* DaysCell.xib in Resources */,
 				7E62DD6F24AF7DF200648788 /* Availability.storyboard in Resources */,
+				055600AB24FFFB42008E3B1D /* AvailabityCell.xib in Resources */,
+				0542D7E924FD740B00A9D403 /* AvailabityVC.xib in Resources */,
 				7E9C7F9524DF425B003B8BD0 /* Maps.storyboard in Resources */,
 				7EE3080B24B1E7BB008CF034 /* JobCalendar.storyboard in Resources */,
 				7E21FE3D249932BD0002DA1F /* LaunchScreen.storyboard in Resources */,
@@ -725,6 +798,7 @@
 				7E5501B724B39A8400AD23FB /* HolidayCell.swift in Sources */,
 				7E7FE4CE24D0A1D800A921C5 /* CreateJobResponseModel.swift in Sources */,
 				7EE22FF624B24D4D0087F8C0 /* Payments.swift in Sources */,
+				0542D7E824FD740B00A9D403 /* AvailabityVC.swift in Sources */,
 				7ED653F424A26CD30026AD89 /* UILabel+Extension.swift in Sources */,
 				7EB381B824B38ACF004D886E /* DashedLineView.swift in Sources */,
 				7E7FE4CC24D08D8400A921C5 /* ViewJobsViewModel.swift in Sources */,
@@ -739,6 +813,8 @@
 				7EC7A87024A8F42F004E81F0 /* ExpireJobTableViewCell.swift in Sources */,
 				7E4D9E7E24AE63B500E06AAB /* EditQualifications.swift in Sources */,
 				7EB381BC24B39673004D886E /* Holidays.swift in Sources */,
+				055600B225001732008E3B1D /* AvailabityModel.swift in Sources */,
+				053B63122501734700FF44E7 /* SetAvailabityModel.swift in Sources */,
 				7E9E7F1824A777FA00376703 /* SearchJobViewModel.swift in Sources */,
 				7E5F548024E00F090083B910 /* MapsContentViewController.swift in Sources */,
 				7EB381B124B37954004D886E /* PaymentCell.swift in Sources */,
@@ -749,6 +825,7 @@
 				7E93402424F9592F009F05FC /* UserDefaults+Extension.swift in Sources */,
 				7E21FE4C249939280002DA1F /* LoginIntro.swift in Sources */,
 				7EE657B824B217BF00A1ACC6 /* CALayer+Extension.swift in Sources */,
+				055600AA24FFFB42008E3B1D /* AvailabityCell.swift in Sources */,
 				7E18DB2224AA304000DF9B59 /* ProfileCollectionViewCell.swift in Sources */,
 				7E4D9E7A24AE421400E06AAB /* EditSummary.swift in Sources */,
 				7EC850D924E1E6E100C17EEB /* GetPlaces.swift in Sources */,
@@ -776,11 +853,13 @@
 				7EB381B424B383DA004D886E /* TravelHistory.swift in Sources */,
 				7ED653F624A278590026AD89 /* CustomTextField.swift in Sources */,
 				7E132D4B24DDCED60021AD69 /* LocationServices.swift in Sources */,
+				055600B72500184B008E3B1D /* ApiManager.swift in Sources */,
 				7E325E0424AA486700EC3DD0 /* ProfileView.swift in Sources */,
 				7E185BEB24F18CF300AAE615 /* RemarksPopUp.swift in Sources */,
 				7EC7A86D24A8D2F7004E81F0 /* ViewJobsTableViewCell.swift in Sources */,
 				7E18DB2024AA1F0900DF9B59 /* UserProfile.swift in Sources */,
 				7E4A436524F6CF1800BEF22C /* AvailabilityServices.swift in Sources */,
+				055600AE24FFFCA4008E3B1D /* DaysCell.swift in Sources */,
 				7E2042AE249A8E83004EE1CD /* UIColor+Extension.swift in Sources */,
 				7E7FE4D024D0A23A00A921C5 /* CreateFindJobsViewModel.swift in Sources */,
 				7E9E7F1D24A7882500376703 /* JobCell.swift in Sources */,
@@ -791,6 +870,7 @@
 				7ED4E0B624F68B39008F1129 /* GenericPopUp.swift in Sources */,
 				7EC5243024CF4F7300A2C928 /* JobsResponseModel.swift in Sources */,
 				7E620EA724C310BC00BC777B /* Utilities.swift in Sources */,
+				055600B62500184B008E3B1D /* RouteUrls.swift in Sources */,
 				7E62DD7924AFADA300648788 /* HeaderCelllTableViewCell.swift in Sources */,
 				7EB381BA24B38F0A004D886E /* TravelHistoryCell.swift in Sources */,
 				7E21FE33249932B80002DA1F /* SceneDelegate.swift in Sources */,

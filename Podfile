@@ -12,7 +12,7 @@ target 'Staff4Care' do
   pod 'GoogleMaps'
   pod 'GooglePlaces'
   pod 'FloatingPanel'
-  pod 'Alamofire'
+  pod 'AlamofireImage', '~> 3.5'
   pod 'SwiftyJSON'
   pod 'SearchTextField'
   pod 'Firebase/Messaging'

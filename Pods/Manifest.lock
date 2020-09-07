@@ -1,5 +1,7 @@
 PODS:
-  - Alamofire (5.2.2)
+  - Alamofire (4.9.1)
+  - AlamofireImage (3.6.0):
+    - Alamofire (~> 4.9)
   - Firebase/CoreOnly (6.31.0):
     - FirebaseCore (= 6.10.1)
   - Firebase/Messaging (6.31.0):
@@ -76,7 +78,7 @@ PODS:
   - SwiftyJSON (5.0.0)
 
 DEPENDENCIES:
-  - Alamofire
+  - AlamofireImage (~> 3.5)
   - Firebase/Messaging
   - FloatingPanel
   - FSCalendar
@@ -91,6 +93,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - AlamofireImage
     - Firebase
     - FirebaseCore
     - FirebaseCoreDiagnostics
@@ -113,7 +116,8 @@ SPEC REPOS:
     - SwiftyJSON
 
 SPEC CHECKSUMS:
-  Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  AlamofireImage: be9963c6582d68b39e89191f64c82a7d7bf40fdd
   Firebase: 87483fa19acfdf99244523f2389e931927b91457
   FirebaseCore: 6fb954e350af0885803d5aa49865d15d9a6b264c
   FirebaseCoreDiagnostics: 7415bfb3883b3500c5a95c42b6ba66baae78f600
@@ -135,6 +139,6 @@ SPEC CHECKSUMS:
   SearchTextField: 40dc3cc57def5a211f263cac263622c163bbc25a
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: d03dd824a9bf255214428d392468554bd7ae18d0
+PODFILE CHECKSUM: f274d2643fc3a27bdd795a9b804de0cdc9f23c15
 
 COCOAPODS: 1.9.3

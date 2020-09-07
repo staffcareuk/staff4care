@@ -131,12 +131,8 @@ extension UserProfile {
             self.navigationController?.pushViewController(loginVC, animated: true)
         }
         else if identifier == "Availability" {
-            let storyboard = UIStoryboard(name: "Availability", bundle: nil)
-                             guard let loginVC = storyboard.instantiateViewController(identifier: "Availability") as? Availability else {
-                                    print("ViewController not found")
-                                    return
-                                }
-            self.navigationController?.pushViewController(loginVC, animated: true)
+            let vc = AvailabityVC()
+            self.navigationController?.pushViewController(vc, animated: true)
         }else if identifier == "Payments" {
             let storyboard = UIStoryboard(name: "Payments", bundle: nil)
                              guard let loginVC = storyboard.instantiateViewController(identifier: "Payments") as? Payments else {

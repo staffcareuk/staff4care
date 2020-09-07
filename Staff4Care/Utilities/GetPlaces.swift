@@ -16,7 +16,7 @@ func other() {
 
     var http = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=41.392788,-73.450949&radius=5000&type=restaurant&key=KEY_HERE"
 
-    AF.request(http).responseJSON { (responseData) -> Void in
+    Alamofire.request(http).responseJSON { (responseData) -> Void in
         if ((responseData.result) != nil) {
             let swiftyJsonVar = JSON(responseData.result)
             let results = swiftyJsonVar["results"].arrayValue
